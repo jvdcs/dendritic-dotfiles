@@ -1,0 +1,48 @@
+window-rule {
+    match app-id="niri_"
+    open-floating true
+    default-window-height { proportion 0.6; }
+    default-column-width { proportion 0.6; }
+}
+window-rule {
+    match app-id="fzf-kmux"
+    open-floating true
+    default-window-height { proportion 0.6; }
+    default-column-width { proportion 0.6; }
+}
+window-rule {
+    match app-id="niri_jump"
+    open-floating true
+    default-window-height { proportion 0.35; }
+    default-column-width { proportion 0.3; }
+}
+window-rule {
+    match app-id="xdg"
+    open-floating true
+    default-window-height { proportion 0.5; }
+    default-column-width { proportion 0.5; }
+}
+window-rule {
+    match title="Library"
+    open-floating true
+    default-window-height { proportion 0.5; }
+    default-column-width { proportion 0.5; }
+}
+window-rule {
+    match app-id=".blueman"
+    open-floating true
+    default-window-height { proportion 0.5; }
+    default-column-width { proportion 0.5; }
+}
+window-rule {
+    match app-id="nm-connection-editor"
+    open-floating true
+    default-window-height { proportion 0.5; }
+    default-column-width { proportion 0.5; }
+}
+window-rule {
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    block-out-from "screen-capture"
+    // Use this instead if you want them visible on third-party screenshot tools.
+    // block-out-from "screencast"
+}
