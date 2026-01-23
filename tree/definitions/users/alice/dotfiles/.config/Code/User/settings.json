@@ -437,5 +437,7 @@
     "*.s3db": "${capture}.${extname}-*"
   },
   "security.workspace.trust.untrustedFiles": "open",
-  "python.defaultInterpreterPath": "/home/alice/sandbox/kinyen/.venv"
+  "python.defaultInterpreterPath": "/home/alice/sandbox/kinyen/.venv",
+  "notebook.output.textLineLimit": 100,
+  "notebook.output.scrolling": true
 }

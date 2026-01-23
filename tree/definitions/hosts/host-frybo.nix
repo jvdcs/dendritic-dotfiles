@@ -45,7 +45,7 @@
 
       feature-syncthing
       feature-crabHole
-      # feature-docker
+      feature-docker
       feature-keyd
 
       # feature-noctalia
@@ -61,14 +61,16 @@
       # setting-stylix-colors-rosepine
       # setting-stylix-colors-ashen
 
-      packageSet-systemMonitoring
-      packageSet-systemInfo
+      (helpers.from inputs.nixpkgs-25_11 [
+        packageSet-systemInfo
+        packageSet-systemMonitoring
+      ])
 
+      packageSet-fileUtils
       packageSet-shellEnhancements
       packageSet-networkUtils
       packageSet-processUtils
       packageSet-waylandUtils
-      (helpers.from inputs.nixpkgs-25_05 packageSet-fileUtils)
 
       packageSet-hardwareControl
       packageSet-languageServers
