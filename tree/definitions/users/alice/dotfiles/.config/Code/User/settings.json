@@ -42,27 +42,25 @@
     "terminal.background": "#1a1a19",
     "terminal.foreground": "#d1d1d1",
     "terminalCursor.foreground": "#d1d1d1",
-    "terminalCursor.background": "#d1d1d1", 
+    "terminalCursor.background": "#d1d1d1",
     "terminal.selectionBackground": "#4b4b4a50",
-
     // ANSI COLORS (Mapped to your Token Colors)
-    "terminal.ansiBlack": "#2a2a29",        // Background
-    "terminal.ansiBrightBlack": "#4b4b4a",  // Comments / Muted
-    "terminal.ansiRed": "#ff968c",          // Error / Invalid
+    "terminal.ansiBlack": "#2a2a29", // Background
+    "terminal.ansiBrightBlack": "#4b4b4a", // Comments / Muted
+    "terminal.ansiRed": "#ff968c", // Error / Invalid
     "terminal.ansiBrightRed": "#ff968c",
-    "terminal.ansiGreen": "#60967d",        // Functions / Strings
-    "terminal.ansiBrightGreen": "#72a68c",  // Hover state green
-    "terminal.ansiYellow": "#ffc591",       // Warnings
+    "terminal.ansiGreen": "#60967d", // Functions / Strings
+    "terminal.ansiBrightGreen": "#72a68c", // Hover state green
+    "terminal.ansiYellow": "#ffc591", // Warnings
     "terminal.ansiBrightYellow": "#ffc591",
-    "terminal.ansiBlue": "#86adcd",         // Variables / Links
-    "terminal.ansiBrightBlue": "#a4c3e8",   // Active Links
-    "terminal.ansiMagenta": "#de9bc8",      // Constants / Keywords
+    "terminal.ansiBlue": "#86adcd", // Variables / Links
+    "terminal.ansiBrightBlue": "#a4c3e8", // Active Links
+    "terminal.ansiMagenta": "#de9bc8", // Constants / Keywords
     "terminal.ansiBrightMagenta": "#c586c0",
-    "terminal.ansiCyan": "#499294",         // Strings
+    "terminal.ansiCyan": "#499294", // Strings
     "terminal.ansiBrightCyan": "#499294",
-    "terminal.ansiWhite": "#d1d1d1",        // Standard Text
+    "terminal.ansiWhite": "#d1d1d1", // Standard Text
     "terminal.ansiBrightWhite": "#ffffff",
-
     "editorBracketMatch.border": "#00000000",
     "editorBracketMatch.background": "#00000000",
     "editor.findMatchBackground": "#4b4b4a50",
@@ -139,6 +137,7 @@
     "editor.selectionBackground": "#4b4b4a50",
     "editor.selectionHighlightBackground": "#4b4b4a50",
     "editor.lineHighlightBackground": "#222221",
+    "editor.lineHighlightBorder": "#86adcd",
     "editorWhitespace.foreground": "#4b4b4a",
     "editorIndentGuide.background1": "#00000000",
     "editorIndentGuide.activeBackground1": "#00000000",
@@ -189,7 +188,11 @@
     "editorBracketHighlight.foreground0": "#ffffff",
     "editorBracketHighlight.foreground1": "#6c6c6a",
     "editorBracketHighlight.foreground2": "#4b4b4a",
-    "editorBracketHighlight.unexpectedBracket.foreground": "#ff967c"
+    "editorBracketHighlight.unexpectedBracket.foreground": "#ff967c",
+    "notebook.focusedCellBorder": "#86adcd", // border when cell is focused
+    "notebook.selectedCellBorder": "#86adcd", // border for selected cell
+    "notebook.focusedCellBackground": "#00000000", // optional: keep background transparent
+    "notebook.selectedCellBackground": "#00000000" // optional: no fill
   },
   // --------------------------------------------------------------------------
   // TOKEN CUSTOMIZATIONS (Your existing syntax rules)
@@ -415,7 +418,7 @@
   "workbench.list.smoothScrolling": false,
   "terminal.integrated.smoothScrolling": false,
   "editor.stickyScroll.scrollWithEditor": false,
-  "notebook.scrolling.revealNextCellOnExecute": "none",
+  "notebook.scrolling.revealNextCellOnExecute": "firstLine",
   "output.smartScroll.enabled": false,
   "workbench.editor.titleScrollbarVisibility": "hidden",
   "editor.cursorSmoothCaretAnimation": "on",
@@ -433,5 +436,6 @@
     "*.sdb": "${capture}.${extname}-*",
     "*.s3db": "${capture}.${extname}-*"
   },
-  "security.workspace.trust.untrustedFiles": "open"
+  "security.workspace.trust.untrustedFiles": "open",
+  "python.defaultInterpreterPath": "/home/alice/sandbox/kinyen/.venv"
 }

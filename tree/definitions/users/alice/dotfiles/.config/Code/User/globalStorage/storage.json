@@ -9,11 +9,7 @@
                 "folderUri": "file:///home/alice/sandbox/kinyen"
             }
         ],
-        "emptyWindows": [
-            {
-                "backupFolder": "1769099790677"
-            }
-        ]
+        "emptyWindows": []
     },
     "windowControlHeight": 30,
     "profileAssociations": {
@@ -30,9 +26,7 @@
             "file:///home/alice/sandbox/dendritic-frybo-config": "__default__profile__",
             "file:///home/alice/sandbox/kinyen": "__default__profile__"
         },
-        "emptyWindows": {
-            "1769099790677": "__default__profile__"
-        }
+        "emptyWindows": {}
     },
     "theme": "vs-dark",
     "themeBackground": "#1a1a19",
@@ -59,7 +53,7 @@
             "editorPartMinWidth": 220,
             "titleBarHeight": 30,
             "activityBarWidth": 48,
-            "sideBarWidth": 0,
+            "sideBarWidth": 244,
             "auxiliaryBarWidth": 0,
             "statusBarHeight": 22,
             "windowBorder": false
@@ -67,12 +61,13 @@
     },
     "windowsState": {
         "lastActiveWindow": {
-            "backupPath": "/home/alice/.config/Code/Backups/1769099790677",
+            "folder": "file:///home/alice/sandbox/kinyen",
+            "backupPath": "/home/alice/.config/Code/Backups/f44a229158b25dbf5af3dd6a65acfb75",
             "uiState": {
                 "mode": 1,
                 "x": 0,
                 "y": 0,
-                "width": 720,
+                "width": 1440,
                 "height": 864
             }
         },
@@ -80,7 +75,7 @@
     },
     "windowSplashWorkspaceOverride": {
         "layoutInfo": {
-            "sideBarWidth": 180,
+            "sideBarWidth": 244,
             "auxiliaryBarWidth": 300,
             "workspaces": {
                 "3d81f909cd5a180b1e70da17fbd8454d": {
