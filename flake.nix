@@ -8,6 +8,7 @@
     determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-25_11.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs-25_05.url = "github:NixOS/nixpkgs/nixos-25.05";
 
     zen-browser-flake.url = "github:0xc000022070/zen-browser-flake";
     zen-browser-flake.inputs.nixpkgs.follows = "nixpkgs";

@@ -1016,7 +1016,8 @@
     },
     {
         "key": "shift+d",
-        "command": "notebook.cell.delete"
+        "command": "notebook.cell.delete",
+        "when": "notebookEditorFocused && !inputFocus"
     },
     {
         "key": "enter",
@@ -1094,7 +1095,7 @@
         "when": "isCompositeNotebook && !notebookCellListFocused && activeEditor == 'workbench.editor.repl'"
     },
     {
-        "key": "shift+i",
+        "key": "ctrl+i",
         "command": "notebook.cell.edit"
     },
     {
@@ -1139,7 +1140,8 @@
     },
     {
         "key": "shift+n",
-        "command": "notebook.cell.insertCodeCellBelow"
+        "command": "notebook.cell.insertCodeCellBelow",
+        "when": "notebookEditorFocused && !inputFocus"
     },
     {
         "key": "enter",
@@ -1176,19 +1178,9 @@
         "command": "-workbench.action.files.saveWithoutFormatting"
     },
     {
-        "key": "ctrl+f",
-        "command": "notebook.formatCell",
-        "when": "editorHasDocumentFormattingProvider && editorTextFocus && inCompositeEditor && notebookEditable && !editorReadonly && activeEditor == 'workbench.editor.notebook'"
-    },
-    {
         "key": "ctrl+shift+i",
         "command": "-notebook.formatCell",
         "when": "editorHasDocumentFormattingProvider && editorTextFocus && inCompositeEditor && notebookEditable && !editorReadonly && activeEditor == 'workbench.editor.notebook'"
-    },
-    {
-        "key": "ctrl+f",
-        "command": "editor.action.formatDocument",
-        "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
     },
     {
         "key": "ctrl+shift+i",
@@ -1204,11 +1196,6 @@
         "key": "ctrl+k ctrl+f",
         "command": "-editor.action.formatSelection",
         "when": "editorHasDocumentSelectionFormattingProvider && editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+f",
-        "command": "notebook.format",
-        "when": "notebookEditable && !editorTextFocus && activeEditor == 'workbench.editor.notebook'"
     },
     {
         "key": "ctrl+shift+i",
@@ -1286,7 +1273,8 @@
     },
     {
         "key": "shift+c",
-        "command": "notebook.cell.clearOutputs"
+        "command": "notebook.cell.clearOutputs",
+        "when": "notebookEditorFocused && !inputFocus"
     },
     {
         "key": "ctrl+shift+c",
@@ -1295,6 +1283,41 @@
     },
     {
         "key": "shift+enter",
-        "command": "notebook.cell.executeAndSelectBelow"
+        "command": "notebook.cell.executeAndSelectBelow",
+        "when": "!searchViewletFocus && !findInputFocussed && !notebookFindWidgetFocused"
+    },
+    {
+        "key": "ctrl+x",
+        "command": "-extension.vim_ctrl+x",
+        "when": "editorTextFocus && vim.active && vim.use<C-x> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+x",
+        "command": "-filesExplorer.cut",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "-inlineChat.regenerate",
+        "when": "inlineChatHasNotebookInline && inlineChatVisible && activeEditor == 'workbench.editor.notebook'"
+    },
+    {
+        "key": "shift+u",
+        "command": "extension.vim_ctrl+r"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "notebook.find",
+        "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused"
+    },
+    {
+        "key": "f",
+        "command": "-notebook.find",
+        "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused"
+    },
+    {
+        "key": "escape",
+        "command": "-interactive.input.clear",
+        "when": "isCompositeNotebook && !LinkedEditingInputVisible && !accessibilityHelpWidgetVisible && !breakpointWidgetVisible && !editorHasMultipleSelections && !editorHasSelection && !editorHoverVisible && !exceptionWidgetVisible && !findWidgetVisible && !inSnippetMode && !inlineChatVisible && !isComposing && !markersNavigationVisible && !notebookEditorFocused && !notificationToastsVisible && !parameterHintsVisible && !renameInputVisible && !selectionAnchorSet && !suggestWidgetVisible"
     }
 ]

@@ -13,7 +13,7 @@ image_filter = "triangle"
 
 [opener]
 pdf_viewer = [
-  { run = 'sioyek "$@"', block = false, desc = "Sioyek", for = "unix", orphan = true },
+  { run = 'sioyek --new-instance "$@"', block = false, desc = "Sioyek", for = "unix", orphan = true },
 ]
 image_viewer = [
   { run = 'swayimg "$@" $(find "$(dirname "$@")" -maxdepth 1 -type f | sort)', block = false, desc = "Swayimg", for = "unix", orphan = true },

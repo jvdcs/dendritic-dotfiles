@@ -5,7 +5,6 @@
         sioyek # keyboard-driven PDF viewer
         qimgv # lightweight image viewer
         swayimg # Wayland native image viewer
-        sublime
       ];
     };
 
