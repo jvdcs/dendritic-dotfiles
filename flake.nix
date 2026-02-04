@@ -1,0 +1,52 @@
+{
+  outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} (inputs.import-tree ./tree);
+
+  inputs = {
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    import-tree.url = "github:vic/import-tree";
+
+    determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-25_11.url = "github:NixOS/nixpkgs/nixos-25.11";
+    nixpkgs-25_05.url = "github:NixOS/nixpkgs/nixos-25.05";
+
+    zen-browser-flake.url = "github:0xc000022070/zen-browser-flake";
+    zen-browser-flake.inputs.nixpkgs.follows = "nixpkgs";
+    zen-browser-flake.inputs.home-manager.follows = "home-manager";
+
+    claude-code.url = "github:sadjow/claude-code-nix";
+    claude-code.inputs.nixpkgs.follows = "nixpkgs";
+
+    home-manager.url = "github:nix-community/home-manager/master";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    noctalia.url = "github:noctalia-dev/noctalia-shell";
+    noctalia.inputs.nixpkgs.follows = "nixpkgs";
+
+    emacs-overlay.url = "github:nix-community/emacs-overlay";
+    emacs-overlay.inputs.nixpkgs.follows = "nixpkgs";
+
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
+
+    quickshell.url = "github:outfoxxed/quickshell";
+    quickshell.inputs.nixpkgs.follows = "nixpkgs";
+
+    vicinae-extensions.url = "github:vicinaehq/extensions";
+    vicinae-extensions.inputs.nixpkgs.follows = "nixpkgs";
+    vicinae.url = "github:vicinaehq/vicinae";
+    vicinae.inputs.nixpkgs.follows = "nixpkgs";
+
+    niri-flake.url = "github:sodiboo/niri-flake";
+    niri-flake.inputs.nixpkgs.follows = "nixpkgs";
+
+    stylix.url = "github:nix-community/stylix";
+    stylix.inputs.nixpkgs.follows = "nixpkgs";
+
+    yazi.url = "github:sxyazi/yazi";
+    yazi.inputs.nixpkgs.follows = "nixpkgs";
+
+    nh.url = "github:nix-community/nh";
+    nh.inputs.nixpkgs.follows = "nixpkgs";
+  };
+}

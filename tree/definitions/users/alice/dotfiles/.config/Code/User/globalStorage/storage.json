@@ -1,0 +1,148 @@
+{
+    "telemetry.sqmId": "",
+    "telemetry.machineId": "9be20d06f744084ad8f52a98268513f62b7da159e7156f06dd86a8cc2131e591",
+    "telemetry.devDeviceId": "a6aafc18-6c10-466b-9f29-4dd71ed9c115",
+    "backupWorkspaces": {
+        "workspaces": [],
+        "folders": [
+            {
+                "folderUri": "file:///home/alice/sandbox/kinyen"
+            }
+        ],
+        "emptyWindows": []
+    },
+    "windowControlHeight": 30,
+    "profileAssociations": {
+        "workspaces": {
+            "file:///home/alice/sandbox/vscode-jupyter/DLSPEC": "__default__profile__",
+            "file:///home/alice/sandbox/vscode-jupyter": "__default__profile__",
+            "file:///home/alice/sandbox/superset-kinyen": "__default__profile__",
+            "file:///home/alice/.zen/alice/storage": "__default__profile__",
+            "file:///home/alice/.zen/alice": "__default__profile__",
+            "file:///home/alice/.config/Code/User/workspaceStorage": "__default__profile__",
+            "file:///home/alice/.zen/Profile%20Groups": "__default__profile__",
+            "file:///home/alice/saves/_": "__default__profile__",
+            "file:///home/alice/syncthing/saves": "__default__profile__",
+            "file:///home/alice/sandbox/dendritic-frybo-config": "__default__profile__",
+            "file:///home/alice/sandbox/kinyen": "__default__profile__",
+            "file:///home/alice/files": "__default__profile__",
+            "file:///home/alice/RQ2_2022/RQ2_2022": "__default__profile__",
+            "file:///home/alice/RQ4/RQ4_2022": "__default__profile__",
+            "file:///home/alice/sandbox/kinyen-OG": "__default__profile__"
+        },
+        "emptyWindows": {}
+    },
+    "theme": "vs-dark",
+    "themeBackground": "#1a1a19",
+    "windowSplash": {
+        "zoomLevel": 0,
+        "baseTheme": "vs-dark",
+        "colorInfo": {
+            "foreground": "#d1d1d1",
+            "background": "#1a1a19",
+            "editorBackground": "#1a1a19",
+            "titleBarBackground": "#222221",
+            "titleBarBorder": "rgba(0, 0, 0, 0)",
+            "activityBarBackground": "#2a2a29",
+            "activityBarBorder": "rgba(0, 0, 0, 0)",
+            "sideBarBackground": "#222221",
+            "sideBarBorder": "rgba(0, 0, 0, 0)",
+            "statusBarBackground": "#222221",
+            "statusBarBorder": "rgba(0, 0, 0, 0)",
+            "statusBarNoFolderBackground": "#222221",
+            "windowBorder": "rgba(0, 0, 0, 0)"
+        },
+        "layoutInfo": {
+            "sideBarSide": "right",
+            "editorPartMinWidth": 220,
+            "titleBarHeight": 30,
+            "activityBarWidth": 48,
+            "sideBarWidth": 180,
+            "auxiliaryBarWidth": 0,
+            "statusBarHeight": 22,
+            "windowBorder": false
+        }
+    },
+    "windowsState": {
+        "lastActiveWindow": {
+            "folder": "file:///home/alice/sandbox/kinyen",
+            "backupPath": "/home/alice/.config/Code/Backups/f44a229158b25dbf5af3dd6a65acfb75",
+            "uiState": {
+                "mode": 1,
+                "x": 0,
+                "y": 0,
+                "width": 1440,
+                "height": 864
+            }
+        },
+        "openedWindows": []
+    },
+    "windowSplashWorkspaceOverride": {
+        "layoutInfo": {
+            "sideBarWidth": 180,
+            "auxiliaryBarWidth": 300,
+            "workspaces": {
+                "3d81f909cd5a180b1e70da17fbd8454d": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "a6047f153df0de641b8ca504d8ff757c": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "b48ba4f3dc17a199aa2ee185f9424595": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "4af05779fd48206863bee4a2bb15896f": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "d458798528303de588c9450e1c164f5a": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "913e7d6d792d398418916bfa6b0bb5fb": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "963fcc128b4301e4f0b32ec0f02aea34": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "9b4b913b0e9c2c37450f7cb2fc1a07a5": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "3285497afc01028410d32b4519f8debe": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "c786f6639c17d8f119ed19549a1c5591": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "a5c9dd34fd5aad99bf46f58b1e9d2e73": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "de666b647ee369c130c5da0301f8e5b6": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "b6ac70c1cf56ea590f3f86767c073137": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "8c8db21367b50924bc590ff4edf91818": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "5663690500ada5b214904477e02464c4": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                }
+            }
+        }
+    }
+}

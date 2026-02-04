@@ -1,0 +1,53 @@
+[mgr]
+sort_by = "mtime"
+sort_reverse = true
+
+sort_dir_first = true
+show_hidden = false
+ratio = [1, 2, 3]
+linemode = "mtime"
+
+[preview]
+image_delay = 20
+image_filter = "triangle"
+
+[opener]
+pdf_viewer = [
+  { run = 'sioyek --new-instance "$@"', block = false, desc = "Sioyek", for = "unix", orphan = true },
+]
+image_viewer = [
+  { run = 'swayimg "$@" $(find "$(dirname "$@")" -maxdepth 1 -type f | sort)', block = false, desc = "Swayimg", for = "unix", orphan = true },
+]
+media_viewer = [
+  { run = 'mpv "$@"', block = false, desc = "Mpv", for = "unix", orphan = true },
+]
+edit = [
+  { run = 'hx "$@"', block = true, desc = "Helix", for = "unix" },
+  { run = 'zen "$@"', block = true, desc = "Zen", for = "unix" },
+  { run = 'code "$@"', block = false, desc = "Vscode", for = "unix", orphan = true },
+  { run = 'emacsclient -c "$@"', block = false, desc = "Emacs", for = "unix", orphan = true },
+  { run = 'swayimg "$@" "$(dirname "$@")"/*', block = false, desc = "Swayimg", for = "unix", orphan = true },
+]
+
+[open]
+prepend_rules = [
+  { mime = "application/pdf", use = "pdf_viewer" },
+  { mime = "image/*", use = "image_viewer" },
+  { mime = "video/*", use = "media_viewer" },
+  { mime = "audio/*", use = "media_viewer" },
+]
+
+[plugin]
+prepend_preloaders = [
+  { mime = "{audio,video,image}/*", run = "mediainfo" },
+  { mime = "application/subrip", run = "mediainfo" },
+  { mime = "application/postscript", run = "mediainfo" },
+]
+prepend_previewers = [
+  { mime = "{audio,video,image}/*", run = "mediainfo" },
+  { mime = "application/subrip", run = "mediainfo" },
+  { mime = "application/postscript", run = "mediainfo" },
+]
+
+[tasks]
+image_alloc = 1073741824 # = 1024*1024*1024 = 1024MB

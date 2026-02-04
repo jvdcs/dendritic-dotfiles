@@ -1,0 +1,116 @@
+# "$schema" = "https://yazi-rs.github.io/schemas/theme.json"
+[mgr]
+cwd = { fg = "white" }
+hovered = { fg = "white", bg = "black" }
+preview_hovered = {}
+# Find
+find_keyword = { fg = "yellow" }
+find_position = { fg = "darkgray" }
+# Marker
+marker_copied = { fg = "green", bg = "green" }
+marker_cut = { fg = "lightred", bg = "lightred" }
+marker_marked = { fg = "cyan", bg = "cyan" }
+marker_selected = { fg = "cyan", bg = "cyan" }
+# Count
+count_copied = { fg = "green" }
+count_cut = { fg = "lightred" }
+count_selected = { fg = "cyan" }
+# Border
+border_symbol = "│"
+border_style = { fg = "darkgray" }
+
+[tabs]
+active = { fg = "white", bg = "darkgray" }
+inactive = { fg = "darkgray", bg = "black" }
+sep_inner = { open = "", close = "" }
+sep_outer = { open = "", close = "" }
+
+[mode]
+normal_main = { fg = "white", bg = "darkgray" }
+normal_alt = { fg = "darkgray", bg = "black" }
+select_main = { fg = "black", bg = "cyan" }
+select_alt = { fg = "cyan", bg = "black" }
+unset_main = { fg = "black", bg = "cyan" }
+unset_alt = { fg = "cyan", bg = "black" }
+
+[status]
+overall = { fg = "white" }
+perm_type = { fg = "lightblue" }
+perm_read = { fg = "yellow" }
+perm_write = { fg = "lightred" }
+perm_exec = { fg = "green" }
+perm_sep = { fg = "darkgray" }
+progress_label = { fg = "darkgray" }
+progress_normal = { fg = "cyan", bg = "cyan" }
+progress_error = { bg = "lightred" }
+
+[which]
+cols = 3
+mask = { bg = "black" }
+cand = { fg = "yellow" }
+rest = { fg = "yellow" }
+desc = { fg = "darkgray" }
+separator = " "
+separator_style = {}
+
+[confirm]
+border = { fg = "darkgray" }
+title = { fg = "darkgray" }
+content = { fg = "white" }
+list = { fg = "white" }
+btn_yes = { fg = "white", bg = "darkgray" }
+btn_no = { fg = "darkgray", bg = "black" }
+
+[spot]
+border = { fg = "darkgray" }
+title = { fg = "darkgray" }
+tbl_col = { fg = "darkgray" }
+tbl_cell = { bg = "black" }
+
+[notify]
+title_info = { fg = "lightblue" }
+title_warn = { fg = "yellow" }
+title_error = { fg = "lightred" }
+
+[pick]
+border = { fg = "darkgray" }
+active = { fg = "white" }
+inactive = { fg = "darkgray" }
+
+[input]
+border = { fg = "darkgray" }
+title = { fg = "darkgray" }
+value = { fg = "white" }
+selected = { fg = "black", bg = "white" }
+
+[cmp]
+border = { fg = "darkgray" }
+active = { fg = "darkgray", bg = "black" }
+inactive = { fg = "darkgray" }
+
+[tasks]
+border = { fg = "darkgray" }
+title = { fg = "darkgray" }
+hovered = { bg = "black" }
+
+[help]
+on = { fg = "lightblue" }
+run = { fg = "cyan" }
+desc = { fg = "darkgray" }
+hovered = { bg = "black" }
+footer = { fg = "white", bg = "black" }
+
+[filetype]
+rules = [
+	# Image
+	{ mime = "image/*", fg = "yellow" },
+	# Video
+	{ mime = "{audio,video}/*", fg = "magenta" },
+	# Empty file
+	{ mime = "inode/empty", fg = "cyan" },
+	# Orphan symbolic links
+	{ url = "*", is = "orphan", fg = "red" },
+	# Fallback
+	{ url = "*", fg = "white" },
+	{ url = "*/", fg = "blue" }
+]

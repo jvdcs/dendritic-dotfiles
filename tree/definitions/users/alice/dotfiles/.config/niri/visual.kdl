@@ -1,0 +1,139 @@
+layer-rule {
+    match namespace="^vicinae$"
+    shadow {
+        on
+        softness 26
+        spread 0
+        offset x=0 y=8
+        color "#000000bb"
+    }
+}
+animations {
+    // Uncomment to turn off all animations.
+    // You can also put "off" into each individual animation to disable it.
+    // off
+    // Slow down all animations by this factor. Values below 1 speed them up instead.
+    // slowdown 3.0
+    // Individual animations.
+    workspace-switch {
+        spring damping-ratio=1.0 stiffness=1000 epsilon=0.0001
+    }
+    window-open {
+        duration-ms 150
+        curve "ease-out-expo"
+    }
+    window-close {
+        duration-ms 150
+        curve "ease-out-quad"
+    }
+    horizontal-view-movement {
+        spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
+    }
+    window-movement {
+        spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
+    }
+    window-resize {
+        spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
+    }
+    config-notification-open-close {
+        spring damping-ratio=0.6 stiffness=1000 epsilon=0.001
+    }
+    exit-confirmation-open-close {
+        spring damping-ratio=0.6 stiffness=500 epsilon=0.01
+    }
+    screenshot-ui-open {
+        duration-ms 200
+        curve "ease-out-quad"
+    }
+    overview-open-close {
+        spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
+    }
+    recent-windows-close {
+        spring damping-ratio=1.0 stiffness=800 epsilon=0.001
+    }
+}
+window-rule {
+    geometry-corner-radius 16
+    clip-to-geometry true
+}
+cursor {
+    xcursor-size 6
+}
+output "eDP-1" {
+    mode "2880x1800@120.000"
+    scale 2
+    transform "normal"
+}
+overview {
+    // zoom 0.4
+    // backdrop-color "#101010"
+    backdrop-color "#000000"
+}
+layout {
+    always-center-single-column
+    center-focused-column "never"
+    background-color "transparent"
+    default-column-width {
+        proportion 0.5
+    }
+    insert-hint {
+        color "#86adcd"
+    }
+    tab-indicator {
+        width 3
+        place-within-column
+        gap 0
+        length total-proportion=0.5
+        // position "right"
+        hide-when-single-tab
+    }
+    preset-column-widths {
+        proportion 0.33333333
+        proportion 0.5
+        proportion 0.66666667
+    }
+    focus-ring {
+        inactive-color "#000000"
+        off
+        active-color "#000000"
+    }
+    border {
+        // on
+        width 2
+        active-color "#86adcd"
+        inactive-color "#222221"
+        urgent-color "#86adcd"
+    }
+    shadow {
+        on
+        softness 26
+        spread 0
+        // softness 16
+        // spread 2
+        offset x=0 y=8
+        color "#000000bb"
+    }
+    // gaps 6
+    gaps 0
+    struts {
+ // left 12
+        // right 2
+ // top 7
+
+    }
+}
+recent-windows {
+    // off
+    open-delay-ms 0
+    debounce-ms 10000
+    highlight {
+        active-color "#ffffffaa"
+        urgent-color "#ffaaaaff"
+        padding 30
+        corner-radius 6
+    }
+    previews {
+        max-height 300
+        max-scale 0.7
+    }
+}
