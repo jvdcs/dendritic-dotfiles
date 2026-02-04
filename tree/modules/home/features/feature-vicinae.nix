@@ -63,11 +63,11 @@
           client_side_decorations = {
             enabled = true;
             rounding = 10;
-            border_width = 2;
+            border_width = 1;
           };
           size = {
-            width = 900;
-            height = 600;
+            width = 800;
+            height = 500;
           };
           dim_around = true;
           blur.enabled = false;

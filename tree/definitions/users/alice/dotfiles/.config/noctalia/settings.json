@@ -56,7 +56,7 @@
         ],
         "showCapsule": true,
         "showOutline": false,
-        "useSeparateOpacity": true,
+        "useSeparateOpacity": false,
         "widgets": {
             "center": [
                 {
@@ -113,9 +113,9 @@
                     "wheelUpdateText": false
                 },
                 {
-                    "customFont": "",
+                    "customFont": "Adwaita Mono",
                     "formatHorizontal": "HH:mm ddd, MMM dd",
-                    "formatVertical": "HH mm - dd MM",
+                    "formatVertical": "hh:mm AP - ddd MMM dd",
                     "id": "Clock",
                     "tooltipFormat": "HH:mm ddd, MMM dd",
                     "useCustomFont": false,
@@ -198,10 +198,10 @@
                 },
                 {
                     "colorizeDistroLogo": false,
-                    "colorizeSystemIcon": "none",
+                    "colorizeSystemIcon": "primary",
                     "customIconPath": "",
-                    "enableColorization": false,
-                    "icon": "noctalia",
+                    "enableColorization": true,
+                    "icon": "settings-cog",
                     "id": "ControlCenter",
                     "useDistroLogo": false
                 }
@@ -300,6 +300,21 @@
         "enabled": false,
         "gridSnap": false,
         "monitorWidgets": [
+            {
+                "name": "eDP-1",
+                "widgets": [
+                    {
+                        "diskPath": "/",
+                        "id": "SystemStat",
+                        "layout": "bottom",
+                        "roundedCorners": true,
+                        "showBackground": true,
+                        "statType": "CPU",
+                        "x": 150,
+                        "y": 150
+                    }
+                ]
+            }
         ]
     },
     "dock": {
@@ -339,7 +354,7 @@
         "lockScreenCountdownDuration": 10000,
         "radiusRatio": 1,
         "scaleRatio": 1,
-        "screenRadiusRatio": 2,
+        "screenRadiusRatio": 1,
         "shadowDirection": "bottom_right",
         "shadowOffsetX": 2,
         "shadowOffsetY": 3,
@@ -365,7 +380,7 @@
         "firstDayOfWeek": -1,
         "hideWeatherCityName": false,
         "hideWeatherTimezone": false,
-        "name": "Tokyo",
+        "name": "Manila",
         "showCalendarEvents": true,
         "showCalendarWeather": true,
         "showWeekNumberInCalendar": false,
@@ -514,7 +529,7 @@
         "fontFixedScale": 1,
         "networkPanelView": "wifi",
         "panelBackgroundOpacity": 1,
-        "panelsAttachedToBar": false,
+        "panelsAttachedToBar": true,
         "settingsPanelMode": "centered",
         "tooltipsEnabled": true,
         "wifiDetailsViewMode": "grid"
