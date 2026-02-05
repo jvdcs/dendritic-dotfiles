@@ -71,7 +71,7 @@
           };
           dim_around = true;
           blur.enabled = false;
-          compact_mode.enabled = false;
+          compact_mode.enabled = true;
           layer_shell = {
             layer = "top";
             enabled = true;

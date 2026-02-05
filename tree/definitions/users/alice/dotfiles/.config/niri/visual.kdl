@@ -101,7 +101,7 @@ layout {
         // softness 16
         // spread 2
         offset x=0 y=8
-        color "#000000bb"
+        color "#000000cc"
     }
     // gaps 6
     gaps 0
