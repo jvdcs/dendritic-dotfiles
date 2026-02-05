@@ -34,7 +34,7 @@
 
       feature-halloy
 
-      feature-noctalia
+      # feature-noctaliaShell
       feature-vicinae
       feature-zathura
       feature-kitty

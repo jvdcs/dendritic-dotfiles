@@ -68,7 +68,7 @@
       home.packages = with pkgs; [
         kdePackages.kdenlive # video editor
         obs-studio # streaming/recording
-        easyeffects # PipeWire audio effects
+        # easyeffects # PipeWire audio effects
         pinta # simple image editor
         aseprite # pixel editor
         # ardour # digital audio workstation

@@ -14,28 +14,31 @@
     zen-browser-flake.inputs.nixpkgs.follows = "nixpkgs";
     zen-browser-flake.inputs.home-manager.follows = "home-manager";
 
-    claude-code.url = "github:sadjow/claude-code-nix";
-    claude-code.inputs.nixpkgs.follows = "nixpkgs";
-
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    noctalia.url = "github:noctalia-dev/noctalia-shell";
-    noctalia.inputs.nixpkgs.follows = "nixpkgs";
+    noctalia-shell.url = "github:noctalia-dev/noctalia-shell";
+    noctalia-shell.inputs.nixpkgs.follows = "nixpkgs";
 
     emacs-overlay.url = "github:nix-community/emacs-overlay";
     emacs-overlay.inputs.nixpkgs.follows = "nixpkgs";
-
-    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-    spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
-
-    quickshell.url = "github:outfoxxed/quickshell";
-    quickshell.inputs.nixpkgs.follows = "nixpkgs";
 
     vicinae-extensions.url = "github:vicinaehq/extensions";
     vicinae-extensions.inputs.nixpkgs.follows = "nixpkgs";
     vicinae.url = "github:vicinaehq/vicinae";
     vicinae.inputs.nixpkgs.follows = "nixpkgs";
+
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
+
+    claude-code.url = "github:sadjow/claude-code-nix";
+    claude-code.inputs.nixpkgs.follows = "nixpkgs";
+
+    ambxst-shell.url = "github:Axenide/Ambxst";
+    ambxst-shell.inputs.nixpkgs.follows = "nixpkgs";
+
+    quickshell.url = "github:outfoxxed/quickshell";
+    quickshell.inputs.nixpkgs.follows = "nixpkgs";
 
     niri-flake.url = "github:sodiboo/niri-flake";
     niri-flake.inputs.nixpkgs.follows = "nixpkgs";

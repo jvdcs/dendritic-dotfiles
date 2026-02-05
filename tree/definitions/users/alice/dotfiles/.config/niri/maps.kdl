@@ -14,7 +14,7 @@ binds {
 
     Super+Shift+M      repeat=false           { spawn-sh "~/.config/niri/scripts/sh/reload-emacs.sh"; }
     Super+Shift+P      repeat=false           { spawn-sh "~/.config/niri/scripts/sh/color-picker.sh"; }
-    // Super+G            repeat=false           { spawn-sh "~/.config/niri/scripts/sh/steam-wrapper.sh"; }
+    Super+G            repeat=false           { spawn-sh "~/.config/niri/scripts/sh/steam-wrapper.sh"; }
     Super+Y            repeat=false           { spawn-sh "~/.config/niri/scripts/sh/yacal.sh"; }
     Super+Q            repeat=false           { spawn-sh "~/.config/niri/scripts/sh/emacs-scratch.sh"; }
     Super+Shift+Q      repeat=false           { spawn-sh "~/.config/niri/scripts/sh/emacs-open-scratch.sh"; }

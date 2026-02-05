@@ -68,7 +68,7 @@
                     "followFocusedScreen": false,
                     "groupedBorderOpacity": 1,
                     "hideUnoccupied": true,
-                    "iconScale": 0.8,
+                    "iconScale": 0.9,
                     "id": "Workspace",
                     "labelMode": "index+name",
                     "occupiedColor": "secondary",
@@ -113,13 +113,13 @@
                     "wheelUpdateText": false
                 },
                 {
+                    "clockColor": "none",
                     "customFont": "Adwaita Mono",
                     "formatHorizontal": "HH:mm ddd, MMM dd",
                     "formatVertical": "hh:mm AP - ddd MMM dd",
                     "id": "Clock",
                     "tooltipFormat": "HH:mm ddd, MMM dd",
-                    "useCustomFont": false,
-                    "usePrimaryColor": false
+                    "useCustomFont": false
                 },
                 {
                     "compactMode": false,
@@ -161,10 +161,6 @@
             ],
             "right": [
                 {
-                    "displayMode": "onhover",
-                    "id": "Network"
-                },
-                {
                     "blacklist": [
                     ],
                     "colorizeIcons": true,
@@ -188,8 +184,7 @@
                     "hideIfNotDetected": true,
                     "id": "Battery",
                     "showNoctaliaPerformance": false,
-                    "showPowerProfiles": false,
-                    "warningThreshold": 30
+                    "showPowerProfiles": false
                 },
                 {
                     "displayMode": "onhover",
@@ -347,8 +342,10 @@
         "autoStartAuth": false,
         "avatarImage": "/home/alice/.face",
         "boxRadiusRatio": 1,
+        "clockFormat": "hh\\nmm",
+        "clockStyle": "custom",
         "compactLockScreen": false,
-        "dimmerOpacity": 0.5,
+        "dimmerOpacity": 0.7000000000000001,
         "enableLockScreenCountdown": true,
         "enableShadows": true,
         "forceBlackScreenCorners": false,

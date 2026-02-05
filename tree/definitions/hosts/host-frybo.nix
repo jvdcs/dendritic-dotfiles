@@ -48,16 +48,24 @@
       feature-crabHole
       feature-keyd
 
+      # === CONTAINERIZATION ===
       feature-podman
       feature-docker
+      # ===
+
+      # === SHELLS ===
+      feature-noctaliaShell
+      feature-ambxstShell
+      # ===
 
       feature-claudeCode
-      feature-noctalia
       feature-bluetooth
 
+      # === DEs ===
       feature-niri
       feature-hyprland
       feature-cosmicDe
+      # ===
 
       # === STYLIX ===
       feature-stylix
@@ -65,8 +73,8 @@
       setting-stylix-fonts-sleek
       # setting-stylix-fonts-pretty
 
-      # setting-stylix-colors-rosepine
       setting-stylix-colors-trasmus
+      # setting-stylix-colors-rosepine
       # setting-stylix-colors-ashen
       # ===
 
