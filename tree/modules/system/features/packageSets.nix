@@ -248,6 +248,7 @@
     packageSet-systemInfo = {pkgs, ...}: {
       environment.systemPackages = with pkgs; [
         fastfetch # fast system info display
+        pkg-config # info for packages
       ];
     };
 

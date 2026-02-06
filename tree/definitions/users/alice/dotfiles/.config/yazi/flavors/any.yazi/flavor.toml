@@ -100,17 +100,32 @@ desc = { fg = "darkgray" }
 hovered = { bg = "black" }
 footer = { fg = "white", bg = "black" }
 
-[filetype]
-rules = [
-	# Image
-	{ mime = "image/*", fg = "yellow" },
-	# Video
-	{ mime = "{audio,video}/*", fg = "magenta" },
-	# Empty file
-	{ mime = "inode/empty", fg = "cyan" },
-	# Orphan symbolic links
-	{ url = "*", is = "orphan", fg = "red" },
-	# Fallback
-	{ url = "*", fg = "white" },
-	{ url = "*/", fg = "blue" }
+
+# [filetype]
+# rules = [
+# 	# Image
+# 	{ mime = "image/*", fg = "yellow" },
+# 	# Video
+# 	{ mime = "{audio,video}/*", fg = "magenta" },
+# 	# Empty file
+# 	{ mime = "inode/empty", fg = "cyan" },
+# 	# Orphan symbolic links
+# 	{ url = "*", is = "orphan", fg = "red" },
+# 	# Fallback
+# 	{ url = "*", fg = "white" },
+# 	{ url = "*/", fg = "blue" },
+# ]
+
+# [filetype]
+# rules = [
+# 	# 1. Folders first (specific)
+# 	{ url = "*/", fg = "blue" },
+# 	# 2. Everything else (fallback)
+# 	{ url = "*", fg = "white" },
+# ]
+
+[icon]
+prepend_globs = [
+  { url = "*/", text = "󰉋" }, # All folders
+  # { url = "*", text = "󰈔" },  # All files
 ]

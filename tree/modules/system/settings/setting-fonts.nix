@@ -15,6 +15,11 @@
       '';
     };
   in {
+    environment.systemPackages = [
+      pkgs.freetype
+      pkgs.freetype.dev
+    ];
+
     fonts = {
       enableDefaultPackages = true;
       packages = with pkgs; [
