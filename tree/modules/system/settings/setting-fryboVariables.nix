@@ -12,8 +12,8 @@
       XDG_SESSION_TYPE = "wayland";
       MOZ_ENABLE_WAYLAND = "1";
       NIXOS_OZONE_WL = "1";
-      
-      # QT_SCALE_FACTOR = "0.85";
+
+      # QT_SCALE_FACTOR = "0.85"; # vals <1 breaks visuals
 
       LIBVA_DRIVER_NAME = "iHD";
 

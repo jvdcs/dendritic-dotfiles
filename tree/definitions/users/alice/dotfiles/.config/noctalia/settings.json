@@ -68,7 +68,7 @@
                     "followFocusedScreen": false,
                     "groupedBorderOpacity": 1,
                     "hideUnoccupied": true,
-                    "iconScale": 0.9,
+                    "iconScale": 0.7,
                     "id": "Workspace",
                     "labelMode": "index+name",
                     "occupiedColor": "secondary",
@@ -523,7 +523,7 @@
     "ui": {
         "bluetoothDetailsViewMode": "grid",
         "bluetoothHideUnnamedDevices": false,
-        "boxBorderEnabled": false,
+        "boxBorderEnabled": true,
         "fontDefault": "DeepMind Sans Medium",
         "fontDefaultScale": 1,
         "fontFixed": "JetBrainsMono NF",

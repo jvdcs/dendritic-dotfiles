@@ -40,6 +40,8 @@
     quickshell.url = "github:outfoxxed/quickshell";
     quickshell.inputs.nixpkgs.follows = "nixpkgs";
 
+    quadlet-nix.url = "github:SEIAROTg/quadlet-nix";
+
     niri-flake.url = "github:sodiboo/niri-flake";
     niri-flake.inputs.nixpkgs.follows = "nixpkgs";
 

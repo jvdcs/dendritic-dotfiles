@@ -10,13 +10,7 @@
     isoVersion = "25.05";
     imports = with modules.nixos; [
       device-ASUS_Zenbook_14_UX3405MA
-
       user-alice
-
-      misc-hibernateOnLidClose
-      misc-generalServices
-      misc-disableGreeter
-      misc-portals
 
       (helpers.symlink {
         from = "/etc/nixos/tree/definitions/users/alice/dotfiles";
@@ -24,6 +18,14 @@
         user = "alice";
       })
 
+      # === MISCELLANEOUS ===
+      misc-hibernateOnLidClose
+      misc-generalServices
+      misc-disableGreeter
+      misc-portals
+      # ===
+
+      # === SETTINGS ===
       setting-performanceTuning
       setting-fryboVariables
       setting-timezoneLocale
@@ -33,8 +35,8 @@
       setting-console
       setting-fonts
       setting-nix
-
       # setting-cafeInternetFix
+      # ===
 
       feature-geolocation
       feature-homeManager
@@ -44,6 +46,8 @@
       feature-audio
       feature-git
 
+      feature-claudeCode
+      feature-bluetooth
       feature-syncthing
       feature-crabHole
       feature-keyd
@@ -51,6 +55,7 @@
       # === CONTAINERIZATION ===
       feature-podman
       feature-docker
+      # feature-homarr
       # ===
 
       # === SHELLS ===
@@ -58,13 +63,10 @@
       feature-ambxstShell
       # ===
 
-      feature-claudeCode
-      feature-bluetooth
-
       # === DEs ===
       feature-niri
-      feature-hyprland
-      feature-cosmicDe
+      # feature-hyprland
+      # feature-cosmicDe
       # ===
 
       # === STYLIX ===
@@ -78,6 +80,7 @@
       # setting-stylix-colors-ashen
       # ===
 
+      # === PACKAGES ===
       packageSet-systemInfo
       packageSet-systemMonitoring
 
@@ -106,6 +109,7 @@
       packageSet-nixTools
       packageSet-docs
       packageSet-libs
+      # ===
     ];
   };
 }
