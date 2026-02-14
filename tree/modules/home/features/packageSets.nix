@@ -19,7 +19,6 @@
       home.packages = with pkgs; [
         tree-sitter-grammars.tree-sitter-typst # typst syntax tree parser
         tree-sitter # parser generator tool
-        typst-live # live preview for typst
         typst # modern typesetting system
       ];
     };
@@ -73,6 +72,12 @@
         aseprite # pixel editor
         # ardour # digital audio workstation
         # aseprite # pixel art editor
+      ];
+    };
+
+    packageSet-games = {pkgs, ...}: {
+      home.packages = with pkgs; [
+        osu-lazer
       ];
     };
 

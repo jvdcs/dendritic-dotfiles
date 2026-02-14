@@ -7,6 +7,12 @@
         "folders": [
             {
                 "folderUri": "file:///home/alice/sandbox/kinyen"
+            },
+            {
+                "folderUri": "file:///home/alice/sandbox/__python__/neural"
+            },
+            {
+                "folderUri": "file:///home/alice/sandbox/kinyen/neural"
             }
         ],
         "emptyWindows": []
@@ -28,7 +34,9 @@
             "file:///home/alice/files": "__default__profile__",
             "file:///home/alice/RQ2_2022/RQ2_2022": "__default__profile__",
             "file:///home/alice/RQ4/RQ4_2022": "__default__profile__",
-            "file:///home/alice/sandbox/kinyen-OG": "__default__profile__"
+            "file:///home/alice/sandbox/kinyen-OG": "__default__profile__",
+            "file:///home/alice/sandbox/__python__/neural": "__default__profile__",
+            "file:///home/alice/sandbox/kinyen/neural": "__default__profile__"
         },
         "emptyWindows": {}
     },
@@ -57,7 +65,7 @@
             "editorPartMinWidth": 220,
             "titleBarHeight": 30,
             "activityBarWidth": 48,
-            "sideBarWidth": 180,
+            "sideBarWidth": 175,
             "auxiliaryBarWidth": 0,
             "statusBarHeight": 22,
             "windowBorder": false
@@ -65,8 +73,8 @@
     },
     "windowsState": {
         "lastActiveWindow": {
-            "folder": "file:///home/alice/sandbox/kinyen",
-            "backupPath": "/home/alice/.config/Code/Backups/f44a229158b25dbf5af3dd6a65acfb75",
+            "folder": "file:///home/alice/sandbox/__python__/neural",
+            "backupPath": "/home/alice/.config/Code/Backups/071909e73d545b174a8b2778a6b1943b",
             "uiState": {
                 "mode": 1,
                 "x": 0,
@@ -79,7 +87,7 @@
     },
     "windowSplashWorkspaceOverride": {
         "layoutInfo": {
-            "sideBarWidth": 180,
+            "sideBarWidth": 175,
             "auxiliaryBarWidth": 300,
             "workspaces": {
                 "3d81f909cd5a180b1e70da17fbd8454d": {
@@ -139,6 +147,14 @@
                     "auxiliaryBarVisible": false
                 },
                 "5663690500ada5b214904477e02464c4": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "f43f93e66bf67950165bb8d85cbd0b90": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "242646abdc4b8d7c7856054fe5ed3d7b": {
                     "sideBarVisible": true,
                     "auxiliaryBarVisible": false
                 }

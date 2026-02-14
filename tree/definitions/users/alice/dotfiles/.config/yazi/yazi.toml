@@ -32,6 +32,9 @@ edit = [
 [open]
 prepend_rules = [
   { mime = "application/pdf", use = "pdf_viewer" },
+  { mime = "application/epub+zip", use = "pdf_viewer" },
+  { name = "*.epub", use = "pdf_viewer" },
+
   { mime = "image/*", use = "image_viewer" },
   { mime = "video/*", use = "media_viewer" },
   { mime = "audio/*", use = "media_viewer" },

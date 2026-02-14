@@ -19,7 +19,7 @@
       "type": "custom"
     },
     {
-      "key": "│ {#31} user    {#keys}│",
+      "key": "│  {#31} user    {#keys}│",
       "type": "title",
       "format": "{user-name}"
     },
@@ -37,19 +37,19 @@
       "type": "os"
     },
     {
-      "key": "│ {#35} kernel  {#keys}│",
+      "key": "│  {#35} kernel  {#keys}│",
       "type": "kernel"
     },
     {
-      "key": "│ {#36}󰇄 desktop {#keys}│",
-      "type": "de"
+      "key": "│ {#36}󰍹 wm      {#keys}│",
+      "type": "wm"
     },
     {
-      "key": "│ {#31} term    {#keys}│",
+      "key": "│  {#31} term    {#keys}│",
       "type": "terminal"
     },
     {
-      "key": "│ {#32} shell   {#keys}│",
+      "key": "│  {#32} shell   {#keys}│",
       "type": "shell"
     },
     {
@@ -58,25 +58,28 @@
       "showPeCoreCount": true
     },
     {
-      "key": "│ {#34}󰉉 disk    {#keys}│",
+      "key": "│ {#34}󰢮 gpu     {#keys}│",
+      "type": "gpu"
+    },
+    {
+      "key": "│  {#35} memory  {#keys}│",
+      "type": "memory"
+    },
+    {
+      "key": "│ {#36}󰉉 disk    {#keys}│",
       "type": "disk",
       "folders": "/"
     },
     {
-      "key": "│ {#35} memory  {#keys}│",
-      "type": "memory"
-    },
-    {
-      "key": "│ {#36}󰩟 network {#keys}│",
-      "type": "localip",
-      "format": "{ipv4} ({ifname})"
+      "key": "│ {#31}󰏗 pkgs    {#keys}│",
+      "type": "packages"
     },
     {
       "key": "├───────────┤",
       "type": "custom"
     },
     {
-      "key": "│ {#39} colors  {#keys}│",
+      "key": "│  {#39} colors  {#keys}│",
       "type": "colors",
       "symbol": "circle"
     },

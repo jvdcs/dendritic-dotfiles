@@ -51,7 +51,7 @@
             "eDP-1"
         ],
         "outerCorners": true,
-        "position": "right",
+        "position": "left",
         "screenOverrides": [
         ],
         "showCapsule": true,
@@ -345,7 +345,7 @@
         "clockFormat": "hh\\nmm",
         "clockStyle": "custom",
         "compactLockScreen": false,
-        "dimmerOpacity": 0.7000000000000001,
+        "dimmerOpacity": 0.8,
         "enableLockScreenCountdown": true,
         "enableShadows": true,
         "forceBlackScreenCorners": false,

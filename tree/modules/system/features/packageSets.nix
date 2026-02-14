@@ -184,6 +184,7 @@
         iw # wireless device configuration
         wget # download files from web
         inetutils # common network programs, e.g. telnet
+        macchanger # changes mac address
       ];
     };
 
