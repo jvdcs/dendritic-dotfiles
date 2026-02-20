@@ -54,15 +54,9 @@ output "eDP-1" {
     scale 2
     transform "normal"
 }
-overview {
-    // zoom 0.4
-    // backdrop-color "#101010"
-    backdrop-color "#000000"
-}
 layout {
     always-center-single-column
     center-focused-column "never"
-    background-color "transparent"
     default-column-width {
         proportion 0.5
     }

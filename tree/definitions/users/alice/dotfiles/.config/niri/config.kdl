@@ -1,10 +1,9 @@
 spawn-at-startup "xwayland-satellite" 
 spawn-at-startup "keyd-application-mapper" "-d"
 spawn-at-startup "vicinae" "server"
-spawn-at-startup "swww-daemon"
-// spawn-at-startup "waybar"
 
 include "window-rules.kdl"
+include "background.kdl"
 include "visual.kdl"
 include "debug.kdl"
 include "input.kdl"

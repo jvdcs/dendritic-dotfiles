@@ -89,6 +89,7 @@
         obsidian # markdown knowledge base
         # gocryptfs # encrypted filesystem
         newsflash # rss reader
+        caprine # messenger
       ];
     };
   };

@@ -6,13 +6,10 @@
         "workspaces": [],
         "folders": [
             {
-                "folderUri": "file:///home/alice/sandbox/kinyen"
-            },
-            {
-                "folderUri": "file:///home/alice/sandbox/__python__/neural"
-            },
-            {
                 "folderUri": "file:///home/alice/sandbox/kinyen/neural"
+            },
+            {
+                "folderUri": "file:///home/alice/sandbox/kinyen"
             }
         ],
         "emptyWindows": []
@@ -73,8 +70,8 @@
     },
     "windowsState": {
         "lastActiveWindow": {
-            "folder": "file:///home/alice/sandbox/__python__/neural",
-            "backupPath": "/home/alice/.config/Code/Backups/071909e73d545b174a8b2778a6b1943b",
+            "folder": "file:///home/alice/sandbox/kinyen",
+            "backupPath": "/home/alice/.config/Code/Backups/f44a229158b25dbf5af3dd6a65acfb75",
             "uiState": {
                 "mode": 1,
                 "x": 0,
