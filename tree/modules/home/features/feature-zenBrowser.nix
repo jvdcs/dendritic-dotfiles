@@ -1,8 +1,22 @@
 {inputs, ...}: {
   flake.modules.homeManager.feature-zenBrowser = {
+    pkgs,
+    system,
+    ...
+  }: {
     imports = [
-      inputs.zen-browser-flake.homeModules.beta
+      inputs.zen-browser-flake.homeModules.default
     ];
+
+    home.packages = let
+      zenPkg = inputs.zen-browser-flake.packages.${system}.default;
+    in [
+      (pkgs.runCommand "zen-compat" {} ''
+        mkdir -p $out/bin
+        ln -s ${zenPkg}/bin/zen-beta $out/bin/zen
+      '')
+    ];
+
     programs.zen-browser = {
       enable = true;
       profiles.alice = {};

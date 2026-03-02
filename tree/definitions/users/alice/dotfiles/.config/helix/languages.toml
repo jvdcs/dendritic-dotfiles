@@ -22,6 +22,7 @@ config = { exportPdf = "onType", outputPath = "$root/target/$dir/$name", preview
 [[language]]
 name = "rust"
 formatter = { command = "rustfmt" }
+indent = { tab-width = 2, unit = "  " }
 
 # --- python ---
 [[language]]
@@ -56,9 +57,9 @@ settings = { args = [] }
 [language.formatter]
 command = "black"
 args = [
-"-", # stdin
-"--quiet",
-"--line-length=79",
+  "-",                # stdin
+  "--quiet",
+  "--line-length=79",
 ]
 
 # === other shit ===

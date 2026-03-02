@@ -34,7 +34,7 @@ binds {
     Super+N            repeat=false           { spawn-sh "nu ~/.config/niri/scripts/nu/new-kmux.nu"; }
                 
     Super+Shift+B      repeat=false           { spawn-sh "kitty btop"; }
-    Super+B            repeat=false           { spawn-sh "zen"; }
+    Super+B            repeat=false           { spawn-sh "zen-beta"; }
     Super+M            repeat=false           { spawn-sh "emacsclient -c"; }
     Super+V            repeat=false           { spawn-sh "code"; }
 

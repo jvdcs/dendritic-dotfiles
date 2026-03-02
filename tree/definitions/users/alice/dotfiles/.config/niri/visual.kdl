@@ -1,7 +1,21 @@
+// // Enable blur behind the foot terminal.
+// window-rule {
+//     match app-id="^foot$"
+//     background-effect {
+//         blur true
+//     }
+// }
+// // Enable blur behind the fuzzel launcher.
+// layer-rule {
+//     match namespace="^launcher$"
+//     background-effect {
+//         blur true
+//     }
+// }
 animations {
     // Uncomment to turn off all animations.
     // You can also put "off" into each individual animation to disable it.
-    off
+    // off
     // Slow down all animations by this factor. Values below 1 speed them up instead.
     // slowdown 3.0
     // Individual animations.

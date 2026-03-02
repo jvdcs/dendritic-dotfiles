@@ -7,12 +7,13 @@
         "folders": [
             {
                 "folderUri": "file:///home/alice/sandbox/kinyen/neural"
-            },
-            {
-                "folderUri": "file:///home/alice/sandbox/kinyen"
             }
         ],
-        "emptyWindows": []
+        "emptyWindows": [
+            {
+                "backupFolder": "1771735770488"
+            }
+        ]
     },
     "windowControlHeight": 30,
     "profileAssociations": {
@@ -35,7 +36,9 @@
             "file:///home/alice/sandbox/__python__/neural": "__default__profile__",
             "file:///home/alice/sandbox/kinyen/neural": "__default__profile__"
         },
-        "emptyWindows": {}
+        "emptyWindows": {
+            "1771735770488": "__default__profile__"
+        }
     },
     "theme": "vs-dark",
     "themeBackground": "#1a1a19",
@@ -70,8 +73,7 @@
     },
     "windowsState": {
         "lastActiveWindow": {
-            "folder": "file:///home/alice/sandbox/kinyen",
-            "backupPath": "/home/alice/.config/Code/Backups/f44a229158b25dbf5af3dd6a65acfb75",
+            "backupPath": "/home/alice/.config/Code/Backups/1771735770488",
             "uiState": {
                 "mode": 1,
                 "x": 0,

@@ -92,18 +92,18 @@
           (org-display-inline-images))
       (message "No image in Wayland clipboard."))))
 
+(setenv "WAYLAND_DISPLAY" "wayland-1")
+
 (setq
  user-full-name "jvdcs"
  user-mail-address "javedcorreossial@gmail.com"
  shell-file-name "/run/current-system/sw/bin/bash"
  browse-url-browser-function #'browse-url-generic
- browse-url-generic-program "/etc/profiles/per-user/alice/bin/zen")
+ browse-url-generic-program "/etc/profiles/per-user/alice/bin/zen-beta")
 
 (after! treesit
   (add-to-list 'treesit-language-source-alist
     '(typst "https://github.com/uben0/tree-sitter-typst" "master" nil)))
-
-(setq typst-preview-browser "/etc/profiles/per-user/alice/bin/zen")
 
 (setq +file-templates-inhibit t)
 
