@@ -12,7 +12,7 @@ input {
         // dwt
         tap
         natural-scroll
-        accel-speed 0.6
+        accel-speed 0.4
         accel-profile "adaptive"
         scroll-method "two-finger"
     }
