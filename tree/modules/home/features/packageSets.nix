@@ -90,6 +90,7 @@
         # gocryptfs # encrypted filesystem
         newsflash # rss reader
         caprine # messenger
+        lastfm # music tracker
       ];
     };
   };

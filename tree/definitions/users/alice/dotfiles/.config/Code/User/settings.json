@@ -440,5 +440,6 @@
   "python.defaultInterpreterPath": "/home/alice/sandbox/kinyen/.venv",
   "notebook.output.scrolling": true,
   "explorer.confirmDragAndDrop": false,
-  "editor.wordWrap": "on"
+  "editor.wordWrap": "on",
+  "git.openRepositoryInParentFolders": "never"
 }

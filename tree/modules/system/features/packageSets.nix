@@ -13,6 +13,7 @@
         # glsl_analyzer # LSP for GLSL shaders
         # glslls # alternative GLSL language server
         haskell-language-server # LSP for Haskell
+        elan # lean prover
         nixd # LSP for Nix expressions
         taplo # TOML LSP and formatter
         vscode-langservers-extracted # HTML/CSS/JSON/ESLint LSPs

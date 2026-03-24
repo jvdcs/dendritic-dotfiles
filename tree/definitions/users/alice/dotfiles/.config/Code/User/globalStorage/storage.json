@@ -7,13 +7,12 @@
         "folders": [
             {
                 "folderUri": "file:///home/alice/sandbox/kinyen/neural"
+            },
+            {
+                "folderUri": "file:///home/alice/sandbox/lean/tao"
             }
         ],
-        "emptyWindows": [
-            {
-                "backupFolder": "1771735770488"
-            }
-        ]
+        "emptyWindows": []
     },
     "windowControlHeight": 30,
     "profileAssociations": {
@@ -34,11 +33,12 @@
             "file:///home/alice/RQ4/RQ4_2022": "__default__profile__",
             "file:///home/alice/sandbox/kinyen-OG": "__default__profile__",
             "file:///home/alice/sandbox/__python__/neural": "__default__profile__",
-            "file:///home/alice/sandbox/kinyen/neural": "__default__profile__"
+            "file:///home/alice/sandbox/kinyen/neural": "__default__profile__",
+            "file:///home/alice/Peano": "__default__profile__",
+            "file:///home/alice/sandbox/lean/tao": "__default__profile__",
+            "file:///home/alice/sandbox/lean/tao_analysis": "__default__profile__"
         },
-        "emptyWindows": {
-            "1771735770488": "__default__profile__"
-        }
+        "emptyWindows": {}
     },
     "theme": "vs-dark",
     "themeBackground": "#1a1a19",
@@ -65,7 +65,7 @@
             "editorPartMinWidth": 220,
             "titleBarHeight": 30,
             "activityBarWidth": 48,
-            "sideBarWidth": 175,
+            "sideBarWidth": 176,
             "auxiliaryBarWidth": 0,
             "statusBarHeight": 22,
             "windowBorder": false
@@ -73,12 +73,13 @@
     },
     "windowsState": {
         "lastActiveWindow": {
-            "backupPath": "/home/alice/.config/Code/Backups/1771735770488",
+            "folder": "file:///home/alice/sandbox/lean/tao",
+            "backupPath": "/home/alice/.config/Code/Backups/074e778cb2a5e3ec5682b7b3501eb276",
             "uiState": {
                 "mode": 1,
                 "x": 0,
                 "y": 0,
-                "width": 1401,
+                "width": 704,
                 "height": 900
             }
         },
@@ -86,7 +87,7 @@
     },
     "windowSplashWorkspaceOverride": {
         "layoutInfo": {
-            "sideBarWidth": 175,
+            "sideBarWidth": 176,
             "auxiliaryBarWidth": 300,
             "workspaces": {
                 "3d81f909cd5a180b1e70da17fbd8454d": {
@@ -154,6 +155,18 @@
                     "auxiliaryBarVisible": false
                 },
                 "242646abdc4b8d7c7856054fe5ed3d7b": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "9e35c00455e8cf636df03798c4d7e49c": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "f78fc6fbdd3b18110a69437ebd42adbf": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "d2c9c8132c817328c7eb18d0ed6f1193": {
                     "sideBarVisible": true,
                     "auxiliaryBarVisible": false
                 }
