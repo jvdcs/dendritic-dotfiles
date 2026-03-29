@@ -31,7 +31,7 @@
   "editor.scrollbar.vertical": "hidden",
   "editor.scrollbar.horizontal": "hidden",
   // MINIMAP: Kept enabled as requested
-  "editor.minimap.enabled": true,
+  "editor.minimap.enabled": false,
   // --------------------------------------------------------------------------
   // COLOR CUSTOMIZATIONS: THE ULTIMATE LINE KILLER SECTION
   // --------------------------------------------------------------------------
