@@ -38,6 +38,8 @@
       # setting-cafeInternetFix
       # ===
 
+      feature-affinitySuite
+
       feature-geolocation
       feature-homeManager
       feature-networking

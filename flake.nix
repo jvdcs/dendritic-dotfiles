@@ -20,6 +20,9 @@
     noctalia-shell.url = "github:noctalia-dev/noctalia-shell";
     noctalia-shell.inputs.nixpkgs.follows = "nixpkgs";
 
+    affinity.url = "github:mrshmllow/affinity-nix";
+    affinity.inputs.nixpkgs.follows = "nixpkgs";
+
     emacs-overlay.url = "github:nix-community/emacs-overlay";
     emacs-overlay.inputs.nixpkgs.follows = "nixpkgs";
 
