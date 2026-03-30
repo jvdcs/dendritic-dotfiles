@@ -235,6 +235,9 @@
                     "icon": "settings-cog",
                     "id": "ControlCenter",
                     "useDistroLogo": false
+                },
+                {
+                    "id": "plugin:screen-recorder"
                 }
             ]
         }
