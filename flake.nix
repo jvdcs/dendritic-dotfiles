@@ -5,6 +5,9 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
 
+    lean4-nix.url = "github:lenianiva/lean4-nix";
+    lean4-nix.inputs.nixpkgs.follows = "nixpkgs";
+
     determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs-25_11.url = "github:NixOS/nixpkgs/nixos-25.11";

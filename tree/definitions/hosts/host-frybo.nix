@@ -39,6 +39,7 @@
       # ===
 
       feature-affinitySuite
+      feature-asusctl
 
       feature-geolocation
       feature-homeManager
@@ -54,6 +55,10 @@
       feature-crabHole
       feature-keyd
 
+      # === MATH ===
+      feature-lean
+      # === 
+
       # === CONTAINERIZATION ===
       feature-podman
       feature-docker
@@ -62,7 +67,7 @@
 
       # === SHELLS ===
       feature-noctaliaShell
-      feature-ambxstShell
+      # feature-ambxstShell
       # ===
 
       # === DEs ===

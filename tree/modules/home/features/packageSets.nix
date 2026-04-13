@@ -88,9 +88,10 @@
         slack # discord but for the employed
         obsidian # markdown knowledge base
         # gocryptfs # encrypted filesystem
-        newsflash # rss reader
+        # newsflash # rss reader
         caprine # messenger
         lastfm # music tracker
+        google-chrome # chrome
       ];
     };
   };

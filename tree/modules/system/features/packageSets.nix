@@ -13,7 +13,6 @@
         # glsl_analyzer # LSP for GLSL shaders
         # glslls # alternative GLSL language server
         haskell-language-server # LSP for Haskell
-        elan # lean prover
         nixd # LSP for Nix expressions
         taplo # TOML LSP and formatter
         vscode-langservers-extracted # HTML/CSS/JSON/ESLint LSPs
@@ -27,7 +26,7 @@
         alejandra # opinionated Nix code formatter
         jsonfmt # JSON formatter
         kdlfmt # KDL document formatter
-        nodePackages.prettier # multi-language code formatter
+        # nodePackages.prettier # multi-language code formatter
         sqruff # sql formatter
         nufmt # Nushell script formatter
       ];
@@ -44,7 +43,7 @@
       environment.systemPackages = with pkgs; [
         irust # rust repl
         gcc # GNU C/C++ compiler
-        python310 # Python 3.10 interpreter
+        # python310 # Python 3.10 interpreter
         steel # embeddable Scheme interpreter
         (ghc.withPackages (hsPkgs:
           with hsPkgs; [

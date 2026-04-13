@@ -18,6 +18,7 @@
     ];
     imports = with modules.homeManager; [
       setting-disableDefaultHomeFolders
+      setting-zenAsDefaultBrowser
 
       misc-generalServices
 
