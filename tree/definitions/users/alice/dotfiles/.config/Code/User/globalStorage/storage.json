@@ -10,11 +10,14 @@
             },
             {
                 "folderUri": "file:///home/alice/sandbox/lean/tao"
+            },
+            {
+                "folderUri": "file:///home/alice/sandbox/__python__/neural"
             }
         ],
         "emptyWindows": []
     },
-    "windowControlHeight": 43,
+    "windowControlHeight": 30,
     "profileAssociations": {
         "workspaces": {
             "file:///home/alice/sandbox/vscode-jupyter/DLSPEC": "__default__profile__",
@@ -37,7 +40,8 @@
             "file:///home/alice/Peano": "__default__profile__",
             "file:///home/alice/sandbox/lean/tao": "__default__profile__",
             "file:///home/alice/sandbox/lean/tao_analysis": "__default__profile__",
-            "file:///home/alice/sandbox/lean/pure_math_project": "__default__profile__"
+            "file:///home/alice/sandbox/lean/pure_math_project": "__default__profile__",
+            "file:///home/alice/sandbox/__python__/simple": "__default__profile__"
         },
         "emptyWindows": {}
     },
@@ -66,7 +70,7 @@
             "editorPartMinWidth": 220,
             "titleBarHeight": 30,
             "activityBarWidth": 48,
-            "sideBarWidth": 0,
+            "sideBarWidth": 176,
             "auxiliaryBarWidth": 0,
             "statusBarHeight": 22,
             "windowBorder": false
@@ -74,15 +78,14 @@
     },
     "windowsState": {
         "lastActiveWindow": {
-            "folder": "file:///home/alice/sandbox/lean/tao",
-            "backupPath": "/home/alice/.config/Code/Backups/074e778cb2a5e3ec5682b7b3501eb276",
+            "folder": "file:///home/alice/sandbox/__python__/neural",
+            "backupPath": "/home/alice/.config/Code/Backups/071909e73d545b174a8b2778a6b1943b",
             "uiState": {
                 "mode": 1,
                 "x": 0,
                 "y": 0,
-                "width": 704,
-                "height": 900,
-                "zoomLevel": 2
+                "width": 1408,
+                "height": 900
             }
         },
         "openedWindows": []
@@ -173,6 +176,10 @@
                     "auxiliaryBarVisible": false
                 },
                 "bee01fb55ff02942bf63c4e03a04bb4f": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "89119131c2503ff60bf7434e2dafc890": {
                     "sideBarVisible": true,
                     "auxiliaryBarVisible": false
                 }
