@@ -45,8 +45,8 @@
         search_files_in_root = false;
         font = {
           normal = {
-            family = "auto";
-            size = 14;
+            family = "DeepMind Sans Medium";
+            size = 13;
           };
         };
         theme = {
@@ -60,7 +60,7 @@
           };
         };
         launcher_window = {
-          opacity = lib.mkForce 0.75;
+          opacity = lib.mkForce 0.8;
           client_side_decorations = {
             enabled = true;
             rounding = 10;
