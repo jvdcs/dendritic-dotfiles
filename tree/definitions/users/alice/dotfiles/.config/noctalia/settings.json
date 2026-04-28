@@ -408,7 +408,7 @@
     "general": {
         "allowPanelsOnScreenWithoutBar": true,
         "allowPasswordWithFprintd": false,
-        "animationDisabled": true,
+        "animationDisabled": false,
         "animationSpeed": 1,
         "autoStartAuth": false,
         "avatarImage": "/home/alice/.face",
@@ -416,7 +416,7 @@
         "clockFormat": "hh\\nmm",
         "clockStyle": "custom",
         "compactLockScreen": false,
-        "dimmerOpacity": 0.39,
+        "dimmerOpacity": 0.5,
         "enableBlurBehind": false,
         "enableLockScreenCountdown": true,
         "enableLockScreenMediaControls": false,

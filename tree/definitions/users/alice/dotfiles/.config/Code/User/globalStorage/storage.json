@@ -15,7 +15,11 @@
                 "folderUri": "file:///home/alice/sandbox/__python__/neural"
             }
         ],
-        "emptyWindows": []
+        "emptyWindows": [
+            {
+                "backupFolder": "1777406696512"
+            }
+        ]
     },
     "windowControlHeight": 30,
     "profileAssociations": {
@@ -43,7 +47,9 @@
             "file:///home/alice/sandbox/lean/pure_math_project": "__default__profile__",
             "file:///home/alice/sandbox/__python__/simple": "__default__profile__"
         },
-        "emptyWindows": {}
+        "emptyWindows": {
+            "1777406696512": "__default__profile__"
+        }
     },
     "theme": "vs-dark",
     "themeBackground": "#1a1a19",
@@ -70,7 +76,7 @@
             "editorPartMinWidth": 220,
             "titleBarHeight": 30,
             "activityBarWidth": 48,
-            "sideBarWidth": 176,
+            "sideBarWidth": 0,
             "auxiliaryBarWidth": 0,
             "statusBarHeight": 22,
             "windowBorder": false
@@ -78,8 +84,7 @@
     },
     "windowsState": {
         "lastActiveWindow": {
-            "folder": "file:///home/alice/sandbox/__python__/neural",
-            "backupPath": "/home/alice/.config/Code/Backups/071909e73d545b174a8b2778a6b1943b",
+            "backupPath": "/home/alice/.config/Code/Backups/1777406696512",
             "uiState": {
                 "mode": 1,
                 "x": 0,
