@@ -38,6 +38,7 @@
         close_on_focus_loss = true;
         consider_preedit = false;
         pop_to_root_on_close = false;
+        show_results_on_empty_query = true;
         escape_key_behavior = "navigate_back";
         favicon_service = "twenty";
         keybinding = "default";
@@ -59,7 +60,7 @@
           };
         };
         launcher_window = {
-          opacity = lib.mkForce 1;
+          opacity = lib.mkForce 0.7;
           client_side_decorations = {
             enabled = true;
             rounding = 10;
@@ -70,7 +71,7 @@
             height = 500;
           };
           dim_around = true;
-          blur.enabled = false;
+          blur.enabled = true;
           compact_mode.enabled = true;
           layer_shell = {
             layer = "top";

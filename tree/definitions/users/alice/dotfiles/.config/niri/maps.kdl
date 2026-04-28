@@ -99,7 +99,7 @@ binds {
     Super+BracketRight { consume-or-expel-window-right; }
 
     // === WINDOW WIDTH CONTROL ===
-    Super+F           { maximize-column; }
+    Super+F          repeat=false { maximize-column; }
     Super+Ctrl+h      { set-column-width "33.33333333%";}
     Super+Ctrl+j      { set-column-width "50%";}
     Super+Ctrl+k      { set-column-width "66.66666667%";}

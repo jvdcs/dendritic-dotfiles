@@ -6,8 +6,7 @@
 
     programs.niri = {
       enable = true;
-      # package = inputs.niri-flake.packages.${system}.niri-unstable;
-      package = inputs.niri-blur.packages.${system}.default;
+      package = inputs.niri-flake.packages.${system}.niri-unstable;
     };
   };
 }

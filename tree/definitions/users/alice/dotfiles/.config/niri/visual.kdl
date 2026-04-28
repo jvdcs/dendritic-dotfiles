@@ -45,6 +45,11 @@ animations {
 window-rule {
     // geometry-corner-radius 16
     clip-to-geometry true
+    // opacity 1
+    background-effect {
+        blur false
+        xray false
+    }
 }
 cursor {
     xcursor-size 6

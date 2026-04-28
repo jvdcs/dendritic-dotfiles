@@ -406,6 +406,12 @@
   "vim.cursorStylePerMode.visualline": "underline",
   "editor.cursorSurroundingLines": 8,
   "editor.cursorSurroundingLinesStyle": "all",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<A-o>"],
+      "after": ["%", "v", "i", "("]
+    }
+  ],
   "vim.normalModeKeyBindings": [
     {
       "before": [
@@ -437,9 +443,10 @@
     "*.s3db": "${capture}.${extname}-*"
   },
   "security.workspace.trust.untrustedFiles": "open",
-  "python.defaultInterpreterPath": "/home/alice/sandbox/kinyen/.venv",
+  "python.defaultInterpreterPath": "",
   "notebook.output.scrolling": true,
   "explorer.confirmDragAndDrop": false,
   "editor.wordWrap": "on",
-  "git.openRepositoryInParentFolders": "never"
+  "git.openRepositoryInParentFolders": "never",
+  "jupyter.askForKernelRestart": false
 }
