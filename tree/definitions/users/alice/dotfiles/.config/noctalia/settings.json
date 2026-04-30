@@ -72,7 +72,7 @@
         "rightClickFollowMouse": true,
         "screenOverrides": [
         ],
-        "showCapsule": true,
+        "showCapsule": false,
         "showOnWorkspaceSwitch": true,
         "showOutline": false,
         "useSeparateOpacity": false,
@@ -662,7 +662,7 @@
         "fontDefaultScale": 1,
         "fontFixed": "JetBrainsMono NF",
         "fontFixedScale": 1,
-        "panelBackgroundOpacity": 0.6,
+        "panelBackgroundOpacity": 0.7000000000000001,
         "panelsAttachedToBar": true,
         "scrollbarAlwaysVisible": true,
         "settingsPanelMode": "centered",
