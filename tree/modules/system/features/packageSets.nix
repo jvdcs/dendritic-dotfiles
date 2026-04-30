@@ -131,6 +131,7 @@
         unzip # extract ZIP archives
         tig # git helper
         zip # zip
+        superfile # like yazi
       ];
     };
 

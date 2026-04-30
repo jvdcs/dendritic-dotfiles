@@ -1,5 +1,5 @@
 {...}: {
-  flake.modules.homeManager.feature-kitty = {
+  flake.modules.homeManager.feature-kitty = {lib, ...}: {
     programs.kitty = {
       enable = true;
 
