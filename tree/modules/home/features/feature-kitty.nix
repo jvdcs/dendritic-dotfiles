@@ -11,6 +11,8 @@
         modify_font = "cell_height +3px";
         font_size = 11;
 
+        background_opacity = lib.mkForce "0.8";
+        background_blur = lib.mkForce 1;
         cursor_blink_interval = 0;
 
         window_padding_width = 6;

@@ -13,6 +13,15 @@ layer-rule {
     geometry-corner-radius 12
 }
 window-rule {
+    match app-id="kitty*"
+
+    background-effect {
+        blur true
+        xray false
+    }
+}
+
+window-rule {
     match app-id="niri_"
     open-floating true
     default-window-height {

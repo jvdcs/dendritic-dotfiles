@@ -60,7 +60,7 @@
           };
         };
         launcher_window = {
-          opacity = lib.mkForce 0.8;
+          opacity = lib.mkForce 0.7;
           client_side_decorations = {
             enabled = true;
             rounding = 10;
