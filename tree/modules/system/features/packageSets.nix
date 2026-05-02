@@ -197,7 +197,6 @@
 
     packageSet-guiApps = {pkgs, ...}: {
       environment.systemPackages = with pkgs; [
-        # google-chrome # Google web browser
         kitty # GPU-accelerated terminal emulator
         waybar # who doesnt know this
       ];

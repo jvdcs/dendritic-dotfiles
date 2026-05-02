@@ -91,7 +91,6 @@
         # newsflash # rss reader
         caprine # messenger
         lastfm # music tracker
-        google-chrome # chrome
       ];
     };
   };
