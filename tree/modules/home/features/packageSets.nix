@@ -84,6 +84,9 @@
     packageSet-productivity = {pkgs, ...}: {
       home.packages = with pkgs; [
         syncthing # file synchronization
+        rclone
+        rclone-browser
+        rclone-ui
         # qutebrowser # lightweight python-QT browser
         slack # discord but for the employed
         obsidian # markdown knowledge base
