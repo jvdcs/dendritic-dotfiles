@@ -1,4 +1,5 @@
 blur {
+    // off
     passes 4
     // more passes = stronger blur (default: 3)
     // offset 6.0
@@ -9,13 +10,15 @@ blur {
  // color saturation boost (default: 1.5)
 }
 /* Apps: blur them all without xray for a better look */
-window-rule {
-    clip-to-geometry true
-    background-effect {
-        blur true
-        xray false
-    }
-}
+
+// layer-rule {
+//     match namespace="^vicinae$"
+//     background-effect {
+//         blur true
+//         xray false
+//     }
+// }
+
 /* Noctalia: blur everywhere without xray for a better look */
 // layer-rule {
 //     match namespace="^noctalia-(background|launcher-overlay|dock)-.*$"
