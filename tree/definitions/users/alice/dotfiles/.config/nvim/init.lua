@@ -62,7 +62,11 @@ vim.keymap.set('n', '<leader>ps', ':TypstPreviewStop<CR>', { desc = "Preview sto
 
 
 -- Typstar
-require('typstar').setup({ add_undo_breakpoints = true })
+require('typstar').setup({
+  snippets = {
+    exclude = { 'sq' },
+  },
+})
 vim.keymap.set({ "s", "i" }, "<M-j>", "<Cmd>TypstarSmartJump<CR>")
 vim.keymap.set({ "s", "i" }, "<M-k>", "<Cmd>TypstarSmartJumpBack<CR>")
 vim.keymap.set({ "n", "i" }, "<M-t>", "<Cmd>TypstarToggleSnippets<CR>")
@@ -83,6 +87,7 @@ vim.api.nvim_create_autocmd("BufWinLeave", {
     vim.cmd("TypstPreviewStop")
   end,
 })
+
 -- vim.api.nvim_create_autocmd("BufEnter", {
 --   pattern = "*.typ",
 --   callback = function()

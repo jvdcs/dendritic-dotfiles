@@ -2,9 +2,9 @@ local ls   = require("luasnip")
 local s    = ls.snippet
 local i    = ls.insert_node
 local t    = ls.text_node
-local d    = ls.dynamic_node
 local sn   = ls.snippet_node
 local rep  = require("luasnip.extras").rep
+local d    = ls.dynamic_node
 local fmta = require("luasnip.extras.fmt").fmta
 
 -- ── Context ───────────────────────────────────────────────────────────────────
@@ -179,11 +179,16 @@ ls.add_snippets("typst", {
       "",
       "\tgrid: gray.transparentize(70%),",
       "",
-      "\tlq.scatter((0,), (0,), color: black),",
-      "",
-      "\t",
+      "\tlq.scatter(",
+      "\t\t(",
     }),
-    i(1),
+    i(1, "0,"),
+    t({ "),", "\t\t(" }),
+    i(2, "0,"),
+    t({ "),", "\t\tcolor: " }),
+    i(3, "black"),
+    t({ ",", "\t),", "\t" }),
+    i(4),
     t({ "", ")" }),
   }),
 }, { key = "typst-plt" })
