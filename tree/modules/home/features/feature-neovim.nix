@@ -1,8 +1,5 @@
 {...}: {
-  flake.modules.homeManager.feature-neovim = {
-    pkgs,
-    ...
-  }: let
+  flake.modules.homeManager.feature-neovim = {pkgs, ...}: let
     typstar = pkgs.vimUtils.buildVimPlugin {
       name = "typstar";
       src = pkgs.fetchFromGitHub {
@@ -25,6 +22,7 @@
         luasnip
         typst-preview-nvim
         typstar
+        blink-cmp
       ];
     };
 

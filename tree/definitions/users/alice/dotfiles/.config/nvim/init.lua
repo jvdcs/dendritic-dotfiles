@@ -1,3 +1,27 @@
+vim.opt.updatetime = 1
+vim.opt.regexpengine = 0  
+vim.g._ts_force_sync_parsing = true
+
+require("blink.cmp").setup({
+  keymap = {
+    preset = 'none',
+    ['<CR>']      = { 'accept', 'fallback' },   
+    ['\x1ba']     = { 'select_and_accept', 'fallback' }, 
+    ['<C-space>'] = { 'show', 'fallback' },
+    ['<C-e>']     = { 'cancel', 'fallback' },
+    ['<Up>']   = { 'select_prev', 'fallback' },
+    ['<Down>']     = { 'select_next', 'fallback' },
+  },
+  completion = {
+    list = {
+      selection = {
+        preselect = false,   -- nothing selected until you Tab through
+        auto_insert = false,
+      },
+    },
+  },
+})
+
 -- LSP
 vim.lsp.config('tinymist', {})
 vim.lsp.enable('tinymist')
@@ -43,3 +67,13 @@ vim.keymap.set({ "n", "i" }, "<M-t>", "<Cmd>TypstarToggleSnippets<CR>")
 
 -- Load custom snippets
 require("snippets.typst")
+-- vim.opt.completeopt = { "menuone", "noselect", "popup" }
+vim.lsp.enable("tinymist")
+-- vim.api.nvim_create_autocmd("LspAttach", {
+--   callback = function(ev)
+--     local client = vim.lsp.get_client_by_id(ev.data.client_id)
+--     if client:supports_method("textDocument/completion") then
+--       vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+--     end
+--   end,
+-- })
