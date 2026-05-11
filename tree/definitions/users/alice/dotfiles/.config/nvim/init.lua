@@ -2,6 +2,11 @@
 vim.lsp.config('tinymist', {})
 vim.lsp.enable('tinymist')
 
+vim.o.termguicolors = false -- Use 16/256 colors
+vim.cmd('colorscheme default') -- Reset to default to clear other schemes
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" }) -- Transparent background
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+
 -- LuaSnip
 local ls = require("luasnip")
 ls.config.set_config({
