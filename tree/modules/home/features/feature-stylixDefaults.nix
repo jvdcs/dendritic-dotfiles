@@ -5,6 +5,7 @@
         yazi.enable = false;
         vscode.enable = false;
         zen-browser.enable = false;
+        zathura.enable = false;
       };
       cursor = {
         name = "GoogleDot-Black";

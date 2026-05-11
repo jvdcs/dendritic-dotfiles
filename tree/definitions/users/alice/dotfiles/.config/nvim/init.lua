@@ -40,7 +40,7 @@ ls.config.set_config({
 
 vim.keymap.set({ "n", "v" }, "j", "gj", { silent = true })
 
-vim.keymap.set("n", "<C-r>", "<cmd>source $MYVIMRC<CR>")
+-- vim.keymap.set("n", "<C-r>", "<cmd>source $MYVIMRC<CR>")
 
 vim.keymap.set({ "n", "v" }, "k", "gk", { silent = true })
 vim.keymap.set("i", "<M-n>", "\\ <CR>", { silent = true })
@@ -73,17 +73,30 @@ vim.lsp.enable("tinymist")
 vim.api.nvim_create_autocmd("BufEnter", {
   pattern = "*.typ",
   callback = function()
-    local file = vim.api.nvim_buf_get_name(0)
-    local pdf = file:gsub("%.typ$", ".pdf")
-    vim.fn.jobstart({ "typst", "watch", file })
-    vim.defer_fn(function()
-      vim.fn.jobstart({ "zathura", pdf })
-    end, 500)
+    vim.cmd("TypstPreview")
   end,
 })
-vim.api.nvim_create_autocmd({ "TextChanged", "TextChangedI" }, {
+-- close resulting browser window
+vim.api.nvim_create_autocmd("BufWinLeave", {
   pattern = "*.typ",
   callback = function()
-    vim.cmd("silent write")
+    vim.cmd("TypstPreviewStop")
   end,
 })
+-- vim.api.nvim_create_autocmd("BufEnter", {
+--   pattern = "*.typ",
+--   callback = function()
+--     local file = vim.api.nvim_buf_get_name(0)
+--     local pdf = file:gsub("%.typ$", ".pdf")
+--     vim.fn.jobstart({ "typst", "watch", file })
+--     vim.defer_fn(function()
+--       vim.fn.jobstart({ "zathura", pdf })
+--     end, 500)
+--   end,
+-- })
+-- vim.api.nvim_create_autocmd({ "TextChanged", "TextChangedI" }, {
+--   pattern = "*.typ",
+--   callback = function()
+--     vim.cmd("silent write")
+--   end,
+-- })
