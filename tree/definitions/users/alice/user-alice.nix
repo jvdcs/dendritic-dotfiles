@@ -35,6 +35,8 @@
 
       feature-halloy
 
+      feature-neovim
+
       # feature-noctaliaShell
       feature-vicinae
       feature-zathura
