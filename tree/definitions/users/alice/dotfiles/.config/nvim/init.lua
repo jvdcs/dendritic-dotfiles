@@ -9,10 +9,11 @@ ls.config.set_config({
   store_selection_keys = "<Tab>",
 })
 
-
 vim.keymap.set({ "n", "v" }, "j", "gj", { silent = true })
+
 vim.keymap.set({ "n", "v" }, "k", "gk", { silent = true })
-vim.keymap.set("i", "<M-CR>", "\\ <CR>", { silent = true })
+vim.keymap.set("i", "<M-n>", "\\ <CR>", { silent = true })
+vim.opt.clipboard = "unnamedplus"
 
 -- Tab jump fix: MUST map both insert AND select mode
 vim.keymap.set("i", "<Tab>", function()
