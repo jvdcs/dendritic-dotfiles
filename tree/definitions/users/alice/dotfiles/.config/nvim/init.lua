@@ -65,15 +65,13 @@ vim.keymap.set({ "s", "i" }, "<M-j>", "<Cmd>TypstarSmartJump<CR>")
 vim.keymap.set({ "s", "i" }, "<M-k>", "<Cmd>TypstarSmartJumpBack<CR>")
 vim.keymap.set({ "n", "i" }, "<M-t>", "<Cmd>TypstarToggleSnippets<CR>")
 
--- Load custom snippets
 require("snippets.typst")
--- vim.opt.completeopt = { "menuone", "noselect", "popup" }
 vim.lsp.enable("tinymist")
--- vim.api.nvim_create_autocmd("LspAttach", {
---   callback = function(ev)
---     local client = vim.lsp.get_client_by_id(ev.data.client_id)
---     if client:supports_method("textDocument/completion") then
---       vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
---     end
---   end,
--- })
+
+-- autorun TypstPreview on 'nvim file.typ'
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = "*.typ",
+  callback = function()
+    vim.cmd("TypstPreview")
+  end,
+})
