@@ -163,3 +163,27 @@ ls.add_snippets("typst", {
   ms("[",  { t("["), d(1, get_visual), t("]") }),
   ms("{",  { t("{"), d(1, get_visual), t("}") }),
 })
+
+ls.add_snippets("typst", {
+  s({ trig = "plt", snippetType = "autosnippet" }, {
+    t({
+      "#lq.diagram(",
+      "\twidth: 5cm,",
+      "\theight: 5cm,",
+      "\txlim: (0, 3),",
+      "\tylim: (0, 3),",
+      "\txaxis: (tick-distance: 1),",
+      "\tyaxis: (tick-distance: 1),",
+      "\txlabel: $x$,",
+      "\tylabel: $y$,",
+      "",
+      "\tgrid: gray.transparentize(70%),",
+      "",
+      "\tlq.scatter((0,), (0,), color: black),",
+      "",
+      "\t",
+    }),
+    i(1),
+    t({ "", ")" }),
+  }),
+}, { key = "typst-plt" })
