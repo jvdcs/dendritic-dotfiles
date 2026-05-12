@@ -50,7 +50,8 @@ ls.add_snippets("typst", {
   ms("tx",  fmta([[ "<>" <>]], { i(1), i(0) })),
 
   -- ── Math containers (text mode) ────────────────────────────────────────────
-  ts("$",  fmta("$<>$ ", { i(1) })),
+  -- ts("$",  fmta("$<>$ ", { i(1) })),
+  ts("aa",  fmta("$<>$ ", { i(1) })),
   ts("dm",  fmta("$$\n<>\n$$", { i(1) }), { wordTrig = true }),
   ts("fla", fmta("$left\n<>\n$", { i(1) })),
   ts("beg", fmta("#<>[\n  <>\n]", { i(1), i(0) })),

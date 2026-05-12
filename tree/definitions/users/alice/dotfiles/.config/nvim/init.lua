@@ -14,6 +14,7 @@ vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 vim.keymap.set({ "n", "v" }, "j", "gj", { silent = true })
 vim.keymap.set({ "n", "v" }, "k", "gk", { silent = true })
 vim.keymap.set("n", "<C-s>", "<cmd>w<CR>")
+vim.keymap.set("n", "<C-R>", "<cmd>so $MYVIMRC<CR>")
 vim.keymap.set("i", "<M-n>", "\\ <CR>", { silent = true })
 
 -- Delete matching closing bracket with <BS>

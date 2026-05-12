@@ -23,6 +23,7 @@
         typst-preview-nvim
         typstar
         blink-cmp
+        mini-nvim
       ];
     };
 
