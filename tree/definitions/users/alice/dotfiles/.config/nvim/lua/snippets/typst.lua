@@ -7,6 +7,13 @@ local rep  = require("luasnip.extras").rep
 local d    = ls.dynamic_node
 local fmta = require("luasnip.extras.fmt").fmta
 
+-- Select Inside $$ 
+require('mini.ai').setup({
+  custom_textobjects = {
+    ['$'] = require('mini.ai').gen_spec.pair('$', '$', { type = 'non-balanced' }),
+  },
+})
+
 -- ── Context ───────────────────────────────────────────────────────────────────
 local function in_math()
   local node = vim.treesitter.get_node()
