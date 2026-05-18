@@ -133,7 +133,7 @@ require("snippets.typst")
 
 -- ── Typstar 
 require("typstar").setup({
-  snippets = { exclude = { "sq", "dx", "ddx" } },
+  snippets = { exclude = { "sq", "dx", "ddx", "ss" } },
 })
 
 vim.keymap.set({ "s", "i" }, "<M-j>", "<Cmd>TypstarSmartJump<CR>")
