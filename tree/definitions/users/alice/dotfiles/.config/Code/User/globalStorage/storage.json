@@ -13,13 +13,12 @@
             },
             {
                 "folderUri": "file:///home/alice/sandbox/__python__/neural"
+            },
+            {
+                "folderUri": "file:///home/alice/sandbox/__python__/neural/karpathy_micrograd"
             }
         ],
-        "emptyWindows": [
-            {
-                "backupFolder": "1777406696512"
-            }
-        ]
+        "emptyWindows": []
     },
     "windowControlHeight": 30,
     "profileAssociations": {
@@ -45,11 +44,12 @@
             "file:///home/alice/sandbox/lean/tao": "__default__profile__",
             "file:///home/alice/sandbox/lean/tao_analysis": "__default__profile__",
             "file:///home/alice/sandbox/lean/pure_math_project": "__default__profile__",
-            "file:///home/alice/sandbox/__python__/simple": "__default__profile__"
+            "file:///home/alice/sandbox/__python__/simple": "__default__profile__",
+            "file:///home/alice/sandbox/__python__": "__default__profile__",
+            "file:///home/alice/sandbox/__python__/karpathy_micrograd": "__default__profile__",
+            "file:///home/alice/sandbox/__python__/neural/karpathy_micrograd": "__default__profile__"
         },
-        "emptyWindows": {
-            "1777406696512": "__default__profile__"
-        }
+        "emptyWindows": {}
     },
     "theme": "vs-dark",
     "themeBackground": "#1a1a19",
@@ -84,12 +84,13 @@
     },
     "windowsState": {
         "lastActiveWindow": {
-            "backupPath": "/home/alice/.config/Code/Backups/1777406696512",
+            "folder": "file:///home/alice/sandbox/__python__/neural",
+            "backupPath": "/home/alice/.config/Code/Backups/071909e73d545b174a8b2778a6b1943b",
             "uiState": {
                 "mode": 1,
                 "x": 0,
                 "y": 0,
-                "width": 704,
+                "width": 1408,
                 "height": 900
             }
         },
@@ -185,6 +186,10 @@
                     "auxiliaryBarVisible": false
                 },
                 "89119131c2503ff60bf7434e2dafc890": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "e08b051fb202d358c4b32c1c28576510": {
                     "sideBarVisible": true,
                     "auxiliaryBarVisible": false
                 }

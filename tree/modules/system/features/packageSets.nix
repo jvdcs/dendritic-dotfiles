@@ -18,6 +18,8 @@
         vscode-langservers-extracted # HTML/CSS/JSON/ESLint LSPs
         svelte-language-server
         superhtml # HTML LSPs
+        lua-language-server
+        stylua
       ];
     };
 

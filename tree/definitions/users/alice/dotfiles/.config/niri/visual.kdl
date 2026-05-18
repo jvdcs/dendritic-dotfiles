@@ -7,25 +7,7 @@ blur {
     noise 0.1
     // grain overlay (default: 0.02)
     saturation 2
- // color saturation boost (default: 1.5)
 }
-/* Apps: blur them all without xray for a better look */
-
-// layer-rule {
-//     match namespace="^vicinae$"
-//     background-effect {
-//         blur true
-//         xray false
-//     }
-// }
-
-/* Noctalia: blur everywhere without xray for a better look */
-// layer-rule {
-//     match namespace="^noctalia-(background|launcher-overlay|dock)-.*$"
-//     background-effect {
-//         xray false
-//     }
-// }
 animations {
     // Uncomment to turn off all animations.
     // You can also put "off" into each individual animation to disable it.
@@ -121,14 +103,7 @@ layout {
         offset x=0 y=8
         color "#000000cc"
     }
-    // gaps 6
     gaps 0
-    struts {
- // left 12
-        // right 2
- // top 7
-
-    }
 }
 recent-windows {
     // off
@@ -145,7 +120,8 @@ recent-windows {
         max-scale 0.7
     }
 }
- // // Enable blur behind the foot terminal.
+
+// Enable blur behind the foot terminal.
 // window-rule {
 //     match app-id="^foot$"
 //     background-effect {

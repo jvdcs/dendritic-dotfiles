@@ -54,7 +54,7 @@ ls.add_snippets("typst", {
 
   -- ── Spacing ────────────────────────────────────────────────────────────────
   ms("ms",  t("\\; ")),
-  ms("tx",  fmta([[ "<>" <>]], { i(1), i(0) })),
+  ms("ss",  fmta([[ "<>" <>]], { i(1), i(0) })),
 
   -- ── Math containers (text mode) ────────────────────────────────────────────
   -- ts("$",  fmta("$<>$ ", { i(1) })),
@@ -97,6 +97,7 @@ ls.add_snippets("typst", {
   ms("CC", t("CC")),
 
   -- ── Operators ──────────────────────────────────────────────────────────────
+  ms("^",    fmta("^(<>)<>", { i(1), i(0) })),
   ms("sr",   t("^2")),
   ms("cb",   t("^3")),
   ms("rd",   fmta("^(<>)<>", { i(1), i(0) })),
@@ -117,12 +118,12 @@ ls.add_snippets("typst", {
   ms("ooo",  t("oo")),
 
   -- ── Calculus ───────────────────────────────────────────────────────────────
+  ms("dif",   t("dif ")),
   ms("lim",  fmta("lim_(<> ->> <>) <>",               { i(1,"n"), i(2,"oo"), i(0) })),
   ms("sum",  fmta("sum_(<>=<>)^<> <>",                { i(1,"n"), i(2,"1"), i(3,"oo"), i(0) })),
   ms("prod", fmta("product_(<>=<>)^<> <>",            { i(1,"n"), i(2,"1"), i(3,"oo"), i(0) })),
   ms("int",  fmta("integral <> dif <> <>",            { i(1), i(2,"x"), i(0) })),
   ms("dint", fmta("integral_(<>)^(<>) <> dif <> <>",  { i(1,"a"), i(2,"b"), i(3), i(4,"x"), i(0) })),
-  ms("drx",  t("dif / (dif x) ")),
   ms("ddx",  fmta("frac(dif^<> <>, dif x^<>) <>",    { i(1), i(2), rep(1), i(0) })),
   ms("par",  fmta("frac(partial <>, partial <>) <>",  { i(1,"y"), i(2,"x"), i(0) })),
 

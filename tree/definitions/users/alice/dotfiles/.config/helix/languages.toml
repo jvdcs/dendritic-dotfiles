@@ -73,11 +73,6 @@ auto-format = false
 file-types = ["glsl", "mustache"]
 
 [[language]]
-name = "kdl"
-auto-format = false
-formatter = { command = "kdlfmt", args = ["format", "--stdin"] }
-
-[[language]]
 name = "nu"
 auto-format = false
 formatter = { command = "nufmt", args = ["--stdin"] }

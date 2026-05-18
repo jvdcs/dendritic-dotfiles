@@ -24,9 +24,9 @@ binds {
     Super+Shift+S         { spawn-sh "kitty yazi ~/saves/images/screenshots"; }
 
     Super+Space        repeat=false           { spawn-sh "vicinae toggle"; }
-    Super+P            repeat=false           { spawn-sh "vicinae vicinae://extensions/vicinae/clipboard/history"; }
-    Super+Tab          repeat=false           { spawn-sh "vicinae vicinae://extensions/vicinae/wm/switch-windows"; }
-    Super+Semicolon    repeat=false           { spawn-sh "vicinae vicinae://extensions/vicinae/files/search"; }
+    Super+P            repeat=false           { spawn-sh "vicinae vicinae://launch/clipboard/history"; }
+    Super+Tab          repeat=false           { spawn-sh "vicinae vicinae://launch/@knoopx/vicinae-extension-niri-0/windows"; }
+    Super+Semicolon    repeat=false           { spawn-sh "vicinae vicinae://launch/files/search"; }
 
     Super+Shift+Space  repeat=false           { spawn-sh "nu ~/.config/niri/scripts/nu/custom-run.nu"; }
     Super+Shift+N      repeat=false           { spawn-sh "nu ~/.config/niri/scripts/nu/fzf-kmux.nu"; }

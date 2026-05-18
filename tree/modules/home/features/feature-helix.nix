@@ -224,14 +224,6 @@
             file-types = ["glsl" "mustache"];
           }
           {
-            name = "kdl";
-            auto-format = false;
-            formatter = {
-              command = "kdlfmt";
-              args = ["format" "--stdin"];
-            };
-          }
-          {
             name = "nu";
             auto-format = false;
             formatter = {

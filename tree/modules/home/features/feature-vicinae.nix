@@ -1,31 +1,16 @@
 {inputs, ...}: {
   flake.modules.homeManager.feature-vicinae = {
     system,
-    pkgs,
     lib,
     ...
-  }: let
-    opensslInject = pkgs.writeText "inject-openssl.cmake" ''
-      find_package(OpenSSL REQUIRED)
-    '';
-
-    vicinaePatched = inputs.vicinae.packages.${system}.default.overrideAttrs (old: {
-      buildInputs = (old.buildInputs or []) ++ [pkgs.openssl];
-
-      cmakeFlags =
-        (old.cmakeFlags or [])
-        ++ [
-          "-DCMAKE_PROJECT_INCLUDE_BEFORE=${opensslInject}"
-        ];
-    });
-  in {
+  }: {
     imports = [
       inputs.vicinae.homeManagerModules.default
     ];
 
     services.vicinae = {
       enable = true;
-      package = vicinaePatched;
+      package = inputs.vicinae.packages.${system}.default;
       systemd = {
         enable = true;
         autoStart = true;
@@ -41,12 +26,11 @@
         show_results_on_empty_query = true;
         escape_key_behavior = "navigate_back";
         favicon_service = "twenty";
-        keybinding = "default";
         search_files_in_root = false;
         font = {
           normal = {
             family = "DeepMind Sans Medium";
-            size = 13;
+            size = 12;
           };
         };
         theme = {
@@ -60,7 +44,7 @@
           };
         };
         launcher_window = {
-          opacity = lib.mkForce 0.75;
+          opacity = lib.mkForce 1;
           client_side_decorations = {
             enabled = true;
             rounding = 10;

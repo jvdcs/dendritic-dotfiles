@@ -408,7 +408,7 @@
     "general": {
         "allowPanelsOnScreenWithoutBar": true,
         "allowPasswordWithFprintd": false,
-        "animationDisabled": true,
+        "animationDisabled": false,
         "animationSpeed": 1.5,
         "autoStartAuth": false,
         "avatarImage": "/home/alice/.face",

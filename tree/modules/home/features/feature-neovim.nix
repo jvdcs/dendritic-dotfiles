@@ -24,6 +24,7 @@
         typstar
         blink-cmp
         mini-nvim
+        typst-conceal-vim
       ];
     };
 

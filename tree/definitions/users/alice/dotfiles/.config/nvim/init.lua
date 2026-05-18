@@ -1,20 +1,46 @@
--- ── Options ───────────────────────────────────────────────────────────────────
-vim.opt.updatetime  = 1
-vim.opt.regexpengine = 0
-vim.opt.clipboard   = "unnamedplus"
+-- ── Diagnostics
+vim.diagnostic.config({
+  virtual_text = {
+    prefix   = "●",
+    severity = { min = vim.diagnostic.severity.HINT },
+  },
+  signs      = true,
+  underline  = true,
+  update_in_insert = false,
+  severity_sort    = true,
+})
+
+-- Show full diagnostic float when cursor rests on a line
+vim.api.nvim_create_autocmd("CursorHold", {
+  callback = function()
+    vim.diagnostic.open_float(nil, {
+      focus  = false,
+      scope  = "cursor",
+      border = "rounded",
+    })
+  end,
+})
+
+-- LUA LSP
+vim.lsp.config("lua_ls", {})
+vim.lsp.enable("lua_ls")
+-- ── Options 
+
+vim.opt.updatetime           = 1
+vim.opt.regexpengine         = 0
+vim.opt.clipboard            = "unnamedplus"
 vim.g._ts_force_sync_parsing = true
 
--- ── Appearance ────────────────────────────────────────────────────────────────
-vim.o.termguicolors = false
+-- ── Appearance 
+vim.o.termguicolors          = false
 vim.cmd("colorscheme default")
-vim.api.nvim_set_hl(0, "Normal",      { bg = "none" })
+vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
--- ── Keymaps ───────────────────────────────────────────────────────────────────
+-- ── Keymaps 
 vim.keymap.set({ "n", "v" }, "j", "gj", { silent = true })
 vim.keymap.set({ "n", "v" }, "k", "gk", { silent = true })
 vim.keymap.set("n", "<C-s>", "<cmd>w<CR>")
-vim.keymap.set("n", "<C-R>", "<cmd>so $MYVIMRC<CR>")
 vim.keymap.set("i", "<M-n>", "\\ <CR>", { silent = true })
 
 -- Delete matching closing bracket with <BS>
@@ -30,14 +56,14 @@ vim.keymap.set("i", "<BS>", function()
   return "<BS>"
 end, { expr = true, silent = true })
 
--- ── LSP ───────────────────────────────────────────────────────────────────────
+-- ── LSP 
 vim.lsp.config("tinymist", {})
 vim.lsp.enable("tinymist")
 
--- ── Completion (blink.cmp) ────────────────────────────────────────────────────
+-- ── Completion (blink.cmp) 
 require("blink.cmp").setup({
   keymap = {
-    preset = "none",
+    preset        = "none",
     ["<CR>"]      = { "accept", "fallback" },
     ["\x1ba"]     = { "select_and_accept", "fallback" },
     ["<C-space>"] = { "show", "fallback" },
@@ -48,47 +74,76 @@ require("blink.cmp").setup({
   completion = {
     list = {
       selection = {
-        preselect  = false,
+        preselect   = false,
         auto_insert = false,
       },
     },
   },
 })
 
--- ── Snippets (LuaSnip) ────────────────────────────────────────────────────────
-local ls = require("luasnip")
+-- ── Snippets (LuaSnip) 
+ ls = require("luasnip")
 ls.config.set_config({
   enable_autosnippets  = true,
   store_selection_keys = "<Tab>",
 })
 
-vim.keymap.set("i", "<Tab>", function()
+-- Conceal
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "typst",
+  callback = function()
+    vim.opt_local.conceallevel = 2
+  end,
+})
+
+-- Tab: jump in snippet → jump in typstar → else nothing
+vim.keymap.set({ "i", "s" }, "<Tab>", function()
   if ls.expand_or_jumpable() then
     ls.expand_or_jump()
   else
     vim.api.nvim_feedkeys(
-      vim.api.nvim_replace_termcodes("<Tab>", true, false, true), "n", false
+      vim.api.nvim_replace_termcodes("<Cmd>TypstarSmartJump<CR>", true, false, true), "n", false
     )
   end
 end, { silent = true })
-vim.keymap.set("s",        "<Tab>",   function() ls.jump(1)  end, { silent = true })
-vim.keymap.set({"i", "s"}, "<S-Tab>", function() ls.jump(-1) end, { silent = true })
+
+vim.keymap.set({ "i", "s" }, "<S-Tab>", function()
+  if ls.jumpable(-1) then
+    ls.jump(-1)
+  else
+    vim.api.nvim_feedkeys(
+      vim.api.nvim_replace_termcodes("<Cmd>TypstarSmartJumpBack<CR>", true, false, true), "n", false
+    )
+  end
+end, { silent = true })
+-- vim.keymap.set("i", "<Tab>", function()
+--   if ls.expand_or_jumpable() then
+--     ls.expand_or_jump()
+--   else
+--     vim.api.nvim_feedkeys(
+--       vim.api.nvim_replace_termcodes("<Tab>", true, false, true), "n", false
+--     )
+--   end
+-- end, { silent = true })
+
+vim.keymap.set("s", "<Tab>", function() ls.jump(1) end, { silent = true })
+vim.keymap.set({ "i", "s" }, "<S-Tab>", function() ls.jump(-1) end, { silent = true })
 
 require("snippets.typst")
 
--- ── Typstar ───────────────────────────────────────────────────────────────────
+-- ── Typstar 
 require("typstar").setup({
-  snippets = { exclude = { "sq" } },
+  snippets = { exclude = { "sq", "dx", "ddx" } },
 })
 
 vim.keymap.set({ "s", "i" }, "<M-j>", "<Cmd>TypstarSmartJump<CR>")
 vim.keymap.set({ "s", "i" }, "<M-k>", "<Cmd>TypstarSmartJumpBack<CR>")
 vim.keymap.set({ "n", "i" }, "<M-t>", "<Cmd>TypstarToggleSnippets<CR>")
 
--- ── Typst preview ─────────────────────────────────────────────────────────────
-require("typst-preview").setup{}
+-- ── Typst preview 
+require("typst-preview").setup {}
 
-vim.keymap.set("n", "<leader>pv", ":TypstPreview<CR>",     { desc = "Preview toggle" })
+vim.keymap.set("n", "<leader>pv", ":TypstPreview<CR>", { desc = "Preview toggle" })
 vim.keymap.set("n", "<leader>ps", ":TypstPreviewStop<CR>", { desc = "Preview stop" })
 
 vim.api.nvim_create_autocmd("BufEnter", {
