@@ -408,8 +408,15 @@
   "editor.cursorSurroundingLinesStyle": "all",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["<A-o>"],
-      "after": ["%", "v", "i", "("]
+      "before": [
+        "<A-o>"
+      ],
+      "after": [
+        "%",
+        "v",
+        "i",
+        "("
+      ]
     }
   ],
   "vim.normalModeKeyBindings": [
@@ -421,6 +428,13 @@
     }
   ],
   "notebook.lineNumbers": "on",
+  "notebook.cellToolbarLocation": {
+    "default": "hidden",
+    "jupyter-notebook": "hidden"
+  },
+  "notebook.insertToolbarLocation": "hidden",
+  "notebook.showCellStatusBar": "hidden",
+  "notebook.consolidatedOutputButton": true,
   "workbench.list.smoothScrolling": false,
   "terminal.integrated.smoothScrolling": false,
   "editor.stickyScroll.scrollWithEditor": false,

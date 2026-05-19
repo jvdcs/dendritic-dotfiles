@@ -143,9 +143,9 @@ vim.keymap.set({ "n", "i" }, "<M-t>", "<Cmd>TypstarToggleSnippets<CR>")
 -- ── Typst preview 
 require("typst-preview").setup {}
 
+
 vim.keymap.set("n", "<leader>pv", ":TypstPreview<CR>", { desc = "Preview toggle" })
 vim.keymap.set("n", "<leader>ps", ":TypstPreviewStop<CR>", { desc = "Preview stop" })
-
 vim.api.nvim_create_autocmd("BufEnter", {
   pattern  = "*.typ",
   callback = function() vim.cmd("TypstPreview") end,
@@ -153,4 +153,34 @@ vim.api.nvim_create_autocmd("BufEnter", {
 vim.api.nvim_create_autocmd("BufWinLeave", {
   pattern  = "*.typ",
   callback = function() vim.cmd("TypstPreviewStop") end,
+})
+
+-- multicursor
+-- init.lua
+require("lazy").setup({
+  {
+    "jake-stewart/multicursor.nvim",
+    branch = "1.0",
+    config = function()
+      local mc = require("multicursor-nvim")
+      mc.setup()
+
+      local set = vim.keymap.set
+
+      set({ "n", "x" }, "<C-Up>",   function() mc.lineAddCursor(-1) end)
+      set({ "n", "x" }, "<C-Down>", function() mc.lineAddCursor(1) end)
+      set({ "n", "x" }, "<leader>n", function() mc.matchAddCursor(1) end)
+      set({ "n", "x" }, "<leader>N", function() mc.matchAddCursor(-1) end)
+      set({ "n", "x" }, "<leader>A", mc.matchAllAddCursors)
+      set("n", "<C-LeftMouse>", mc.handleMouse)
+
+      set("n", "<Esc>", function()
+        if mc.hasCursors() then
+          mc.clearCursors()
+        else
+          vim.cmd("noh")
+        end
+      end)
+    end,
+  },
 })
