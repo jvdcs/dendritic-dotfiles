@@ -1,4 +1,7 @@
 {
+  // --------------------------------------------------------------------------
+  // FONTS
+  // --------------------------------------------------------------------------
   "chat.editor.fontFamily": "JetBrainsMono Nerd Font",
   "chat.editor.fontSize": 14.0,
   "chat.fontFamily": "DeepMind Sans Medium",
@@ -16,22 +19,122 @@
   "scm.inputFontSize": 14.857142857142858,
   "screencastMode.fontSize": 64.0,
   "terminal.integrated.fontSize": 14.0,
+  // --------------------------------------------------------------------------
+  // WORKBENCH / UI
+  // --------------------------------------------------------------------------
   //   "workbench.colorTheme": "my-stylix",
-  // --------------------------------------------------------------------------
-  // CORE WORKBENCH SETTINGS (FOR MINIMAL UI)
-  // --------------------------------------------------------------------------
   "window.menuBarVisibility": "toggle",
   "window.commandCenter": false,
-  "workbench.layoutControl.enabled": false,
-  "chat.commandCenter.enabled": false,
   "window.titleBarStyle": "custom",
+  "workbench.layoutControl.enabled": false,
+  "workbench.startupEditor": "terminal",
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "workbench.sideBar.location": "right",
+  "workbench.list.smoothScrolling": false,
+  "workbench.editor.titleScrollbarVisibility": "hidden",
+  "chat.commandCenter.enabled": false,
   "update.mode": "none",
+  // --------------------------------------------------------------------------
+  // EDITOR CORE
+  // --------------------------------------------------------------------------
+  "breadcrumbs.enabled": false,
   "editor.renderLineHighlight": "none",
   // SCROLLBARS: Hidden completely to remove the vertical line they represent
   "editor.scrollbar.vertical": "hidden",
   "editor.scrollbar.horizontal": "hidden",
   // MINIMAP: Kept enabled as requested
   "editor.minimap.enabled": false,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": false,
+  "editor.guides.indentation": false,
+  "editor.hover.delay": 100,
+  "editor.hover.hidingDelay": 0,
+  "editor.inlineSuggest.edits.allowCodeShifting": "never",
+  "editor.inlineSuggest.edits.renderSideBySide": "never",
+  "editor.inlineSuggest.enabled": false,
+  "editor.occurrencesHighlight": "off",
+  "editor.selectionHighlight": false,
+  "editor.cursorBlinking": "blink",
+  "editor.cursorSurroundingLines": 8,
+  "editor.cursorSurroundingLinesStyle": "all",
+  // "editor.cursorSmoothCaretAnimation": "on",
+  "editor.stickyScroll.scrollWithEditor": false,
+  "editor.wordWrap": "on",
+  // --------------------------------------------------------------------------
+  // VIM
+  // --------------------------------------------------------------------------
+  "vim.leader": "<space>",
+  "vim.cursorStylePerMode.insert": "line",
+  "vim.cursorStylePerMode.normal": "block",
+  "vim.cursorStylePerMode.replace": "block-outline",
+  "vim.cursorStylePerMode.visual": "underline",
+  "vim.cursorStylePerMode.visualblock": "underline",
+  "vim.cursorStylePerMode.visualline": "underline",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<A-o>"],
+      "after": ["%", "v", "i", "("]
+    },
+      { "before": ["j"], "after": ["g", "j"] },
+      { "before": ["k"], "after": ["g", "k"] },
+    {
+      "before": ["<leader>", "k"],
+      "commands": ["editor.action.showHover"]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+      { "before": ["j"], "after": ["g", "j"] },
+      { "before": ["k"], "after": ["g", "k"] }
+  ],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["U"],
+      "after": [] // or some harmless no-op / custom mapping
+    }
+  ],
+  // --------------------------------------------------------------------------
+  // TERMINAL
+  // --------------------------------------------------------------------------
+  "terminal.integrated.smoothScrolling": false,
+  // --------------------------------------------------------------------------
+  // NOTEBOOK
+  // --------------------------------------------------------------------------
+  "notebook.lineNumbers": "on",
+  "notebook.cellToolbarLocation": {
+    "default": "hidden",
+    "jupyter-notebook": "hidden"
+  },
+  "notebook.insertToolbarLocation": "hidden",
+  "notebook.showCellStatusBar": "hidden",
+  "notebook.consolidatedOutputButton": true,
+  "notebook.scrolling.revealNextCellOnExecute": "firstLine",
+  "notebook.output.scrolling": true,
+  // --------------------------------------------------------------------------
+  // EXPLORER
+  // --------------------------------------------------------------------------
+  "explorer.confirmDragAndDrop": false,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb, bun.lock",
+    "*.sqlite": "${capture}.${extname}-*",
+    "*.db": "${capture}.${extname}-*",
+    "*.sqlite3": "${capture}.${extname}-*",
+    "*.db3": "${capture}.${extname}-*",
+    "*.sdb": "${capture}.${extname}-*",
+    "*.s3db": "${capture}.${extname}-*"
+  },
+  // --------------------------------------------------------------------------
+  // MISC (Git, Python, Jupyter, Security)
+  // --------------------------------------------------------------------------
+  "git.openRepositoryInParentFolders": "never",
+  "python.defaultInterpreterPath": "",
+  "jupyter.askForKernelRestart": false,
+  "output.smartScroll.enabled": false,
+  "security.workspace.trust.untrustedFiles": "open",
   // --------------------------------------------------------------------------
   // COLOR CUSTOMIZATIONS: THE ULTIMATE LINE KILLER SECTION
   // --------------------------------------------------------------------------
@@ -379,88 +482,5 @@
         }
       }
     ]
-  },
-  // --------------------------------------------------------------------------
-  // REMAINING EDITOR/COPILOT SETTINGS
-  // --------------------------------------------------------------------------
-  "breadcrumbs.enabled": false,
-  "editor.bracketPairColorization.enabled": true,
-  "editor.guides.bracketPairs": false,
-  "editor.hover.hidingDelay": 0,
-  "editor.hover.delay": 100,
-  "editor.guides.indentation": false,
-  "workbench.startupEditor": "terminal",
-  "workbench.secondarySideBar.defaultVisibility": "hidden",
-  "workbench.sideBar.location": "right",
-  "editor.inlineSuggest.edits.allowCodeShifting": "never",
-  "editor.inlineSuggest.edits.renderSideBySide": "never",
-  "editor.inlineSuggest.enabled": false,
-  "editor.occurrencesHighlight": "off",
-  "editor.selectionHighlight": false,
-  "editor.cursorBlinking": "phase",
-  "vim.cursorStylePerMode.insert": "line",
-  "vim.cursorStylePerMode.normal": "block",
-  "vim.cursorStylePerMode.replace": "block-outline",
-  "vim.cursorStylePerMode.visual": "underline",
-  "vim.cursorStylePerMode.visualblock": "underline",
-  "vim.cursorStylePerMode.visualline": "underline",
-  "editor.cursorSurroundingLines": 8,
-  "editor.cursorSurroundingLinesStyle": "all",
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": [
-        "<A-o>"
-      ],
-      "after": [
-        "%",
-        "v",
-        "i",
-        "("
-      ]
-    }
-  ],
-  "vim.normalModeKeyBindings": [
-    {
-      "before": [
-        "U"
-      ],
-      "after": [] // or some harmless no-op / custom mapping
-    }
-  ],
-  "notebook.lineNumbers": "on",
-  "notebook.cellToolbarLocation": {
-    "default": "hidden",
-    "jupyter-notebook": "hidden"
-  },
-  "notebook.insertToolbarLocation": "hidden",
-  "notebook.showCellStatusBar": "hidden",
-  "notebook.consolidatedOutputButton": true,
-  "workbench.list.smoothScrolling": false,
-  "terminal.integrated.smoothScrolling": false,
-  "editor.stickyScroll.scrollWithEditor": false,
-  "notebook.scrolling.revealNextCellOnExecute": "firstLine",
-  "output.smartScroll.enabled": false,
-  "workbench.editor.titleScrollbarVisibility": "hidden",
-  "editor.cursorSmoothCaretAnimation": "on",
-  "explorer.fileNesting.patterns": {
-    "*.ts": "${capture}.js",
-    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
-    "*.jsx": "${capture}.js",
-    "*.tsx": "${capture}.ts",
-    "tsconfig.json": "tsconfig.*.json",
-    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb, bun.lock",
-    "*.sqlite": "${capture}.${extname}-*",
-    "*.db": "${capture}.${extname}-*",
-    "*.sqlite3": "${capture}.${extname}-*",
-    "*.db3": "${capture}.${extname}-*",
-    "*.sdb": "${capture}.${extname}-*",
-    "*.s3db": "${capture}.${extname}-*"
-  },
-  "security.workspace.trust.untrustedFiles": "open",
-  "python.defaultInterpreterPath": "",
-  "notebook.output.scrolling": true,
-  "explorer.confirmDragAndDrop": false,
-  "editor.wordWrap": "on",
-  "git.openRepositoryInParentFolders": "never",
-  "jupyter.askForKernelRestart": false
+  }
 }

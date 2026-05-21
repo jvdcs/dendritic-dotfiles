@@ -1298,7 +1298,7 @@
         "when": "inlineChatHasNotebookInline && inlineChatVisible && activeEditor == 'workbench.editor.notebook'"
     },
     {
-        "key": "shift+u",
+        "key": "ctrl+r",
         "command": "extension.vim_ctrl+r"
     },
     {

@@ -155,32 +155,32 @@ vim.api.nvim_create_autocmd("BufWinLeave", {
   callback = function() vim.cmd("TypstPreviewStop") end,
 })
 
--- multicursor
--- init.lua
-require("lazy").setup({
-  {
-    "jake-stewart/multicursor.nvim",
-    branch = "1.0",
-    config = function()
-      local mc = require("multicursor-nvim")
-      mc.setup()
+-- -- multicursor
+-- -- init.lua
+-- require("lazy").setup({
+--   {
+--     "jake-stewart/multicursor.nvim",
+--     branch = "1.0",
+--     config = function()
+--       local mc = require("multicursor-nvim")
+--       mc.setup()
 
-      local set = vim.keymap.set
+--       local set = vim.keymap.set
 
-      set({ "n", "x" }, "<C-Up>",   function() mc.lineAddCursor(-1) end)
-      set({ "n", "x" }, "<C-Down>", function() mc.lineAddCursor(1) end)
-      set({ "n", "x" }, "<leader>n", function() mc.matchAddCursor(1) end)
-      set({ "n", "x" }, "<leader>N", function() mc.matchAddCursor(-1) end)
-      set({ "n", "x" }, "<leader>A", mc.matchAllAddCursors)
-      set("n", "<C-LeftMouse>", mc.handleMouse)
+--       set({ "n", "x" }, "<C-Up>",   function() mc.lineAddCursor(-1) end)
+--       set({ "n", "x" }, "<C-Down>", function() mc.lineAddCursor(1) end)
+--       set({ "n", "x" }, "<leader>n", function() mc.matchAddCursor(1) end)
+--       set({ "n", "x" }, "<leader>N", function() mc.matchAddCursor(-1) end)
+--       set({ "n", "x" }, "<leader>A", mc.matchAllAddCursors)
+--       set("n", "<C-LeftMouse>", mc.handleMouse)
 
-      set("n", "<Esc>", function()
-        if mc.hasCursors() then
-          mc.clearCursors()
-        else
-          vim.cmd("noh")
-        end
-      end)
-    end,
-  },
-})
+--       set("n", "<Esc>", function()
+--         if mc.hasCursors() then
+--           mc.clearCursors()
+--         else
+--           vim.cmd("noh")
+--         end
+--       end)
+--     end,
+--   },
+-- })

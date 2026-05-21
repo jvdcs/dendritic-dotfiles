@@ -25,6 +25,7 @@
         blink-cmp
         mini-nvim
         typst-conceal-vim
+        # lazy-nvim
       ];
     };
 

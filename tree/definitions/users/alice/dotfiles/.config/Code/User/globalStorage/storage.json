@@ -19,9 +19,19 @@
             },
             {
                 "folderUri": "file:///home/alice/sandbox/__python__/neural/makemore"
+            },
+            {
+                "folderUri": "file:///home/alice/sandbox/__python__/neural/old"
+            },
+            {
+                "folderUri": "file:///home/alice/sandbox/__python__/neural/d2l"
             }
         ],
-        "emptyWindows": []
+        "emptyWindows": [
+            {
+                "backupFolder": "1779356772577"
+            }
+        ]
     },
     "windowControlHeight": 30,
     "profileAssociations": {
@@ -51,9 +61,16 @@
             "file:///home/alice/sandbox/__python__": "__default__profile__",
             "file:///home/alice/sandbox/__python__/karpathy_micrograd": "__default__profile__",
             "file:///home/alice/sandbox/__python__/neural/karpathy_micrograd": "__default__profile__",
-            "file:///home/alice/sandbox/__python__/neural/makemore": "__default__profile__"
+            "file:///home/alice/sandbox/__python__/neural/makemore": "__default__profile__",
+            "file:///home/alice/sandbox/__python__/neural/minitorch": "__default__profile__",
+            "file:///home/alice": "__default__profile__",
+            "file:///home/alice/sandbox/__python__/neural/old": "__default__profile__",
+            "file:///home/alice/sandbox/__python__/neural/zero_to_hero": "__default__profile__",
+            "file:///home/alice/sandbox/__python__/neural/d2l": "__default__profile__"
         },
-        "emptyWindows": {}
+        "emptyWindows": {
+            "1779356772577": "__default__profile__"
+        }
     },
     "theme": "vs-dark",
     "themeBackground": "#1a1a19",
@@ -80,7 +97,7 @@
             "editorPartMinWidth": 220,
             "titleBarHeight": 30,
             "activityBarWidth": 48,
-            "sideBarWidth": 0,
+            "sideBarWidth": 170,
             "auxiliaryBarWidth": 0,
             "statusBarHeight": 22,
             "windowBorder": false
@@ -88,8 +105,8 @@
     },
     "windowsState": {
         "lastActiveWindow": {
-            "folder": "file:///home/alice/sandbox/__python__/neural/makemore",
-            "backupPath": "/home/alice/.config/Code/Backups/4ae75ebae251bed05e1eec673c86ac1d",
+            "folder": "file:///home/alice/sandbox/__python__/neural/d2l",
+            "backupPath": "/home/alice/.config/Code/Backups/ef3a9e1cf9be6e605c7a4746b451c042",
             "uiState": {
                 "mode": 1,
                 "x": 0,
@@ -102,7 +119,7 @@
     },
     "windowSplashWorkspaceOverride": {
         "layoutInfo": {
-            "sideBarWidth": 176,
+            "sideBarWidth": 170,
             "auxiliaryBarWidth": 300,
             "workspaces": {
                 "3d81f909cd5a180b1e70da17fbd8454d": {
@@ -199,6 +216,26 @@
                 },
                 "051623f3c825f3f07f1237403ae82a0a": {
                     "sideBarVisible": false,
+                    "auxiliaryBarVisible": false
+                },
+                "6495f6ff6b93a055a7f14dc8b5549208": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "083d50ea397d5c2dd938f4511c3f1133": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "ffe3fb71463e8a2a400b447e95f109e4": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "60818690b2c079a200fff78f6f219ba5": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "b8870d4b1f75fe6eb3cac4e365e88bcc": {
+                    "sideBarVisible": true,
                     "auxiliaryBarVisible": false
                 }
             }
