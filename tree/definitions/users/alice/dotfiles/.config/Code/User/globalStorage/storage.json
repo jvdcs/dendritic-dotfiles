@@ -25,13 +25,12 @@
             },
             {
                 "folderUri": "file:///home/alice/sandbox/__python__/neural/d2l"
+            },
+            {
+                "folderUri": "file:///home/alice/sandbox/__python__/neural/sympy"
             }
         ],
-        "emptyWindows": [
-            {
-                "backupFolder": "1779356772577"
-            }
-        ]
+        "emptyWindows": []
     },
     "windowControlHeight": 30,
     "profileAssociations": {
@@ -66,11 +65,10 @@
             "file:///home/alice": "__default__profile__",
             "file:///home/alice/sandbox/__python__/neural/old": "__default__profile__",
             "file:///home/alice/sandbox/__python__/neural/zero_to_hero": "__default__profile__",
-            "file:///home/alice/sandbox/__python__/neural/d2l": "__default__profile__"
+            "file:///home/alice/sandbox/__python__/neural/d2l": "__default__profile__",
+            "file:///home/alice/sandbox/__python__/neural/sympy": "__default__profile__"
         },
-        "emptyWindows": {
-            "1779356772577": "__default__profile__"
-        }
+        "emptyWindows": {}
     },
     "theme": "vs-dark",
     "themeBackground": "#1a1a19",
@@ -97,7 +95,7 @@
             "editorPartMinWidth": 220,
             "titleBarHeight": 30,
             "activityBarWidth": 48,
-            "sideBarWidth": 170,
+            "sideBarWidth": 176,
             "auxiliaryBarWidth": 0,
             "statusBarHeight": 22,
             "windowBorder": false
@@ -105,8 +103,8 @@
     },
     "windowsState": {
         "lastActiveWindow": {
-            "folder": "file:///home/alice/sandbox/__python__/neural/d2l",
-            "backupPath": "/home/alice/.config/Code/Backups/ef3a9e1cf9be6e605c7a4746b451c042",
+            "folder": "file:///home/alice/sandbox/__python__/neural/sympy",
+            "backupPath": "/home/alice/.config/Code/Backups/f43bc3054039ec4e222cdaf90bc9f0d4",
             "uiState": {
                 "mode": 1,
                 "x": 0,
@@ -119,7 +117,7 @@
     },
     "windowSplashWorkspaceOverride": {
         "layoutInfo": {
-            "sideBarWidth": 170,
+            "sideBarWidth": 176,
             "auxiliaryBarWidth": 300,
             "workspaces": {
                 "3d81f909cd5a180b1e70da17fbd8454d": {
@@ -235,6 +233,10 @@
                     "auxiliaryBarVisible": false
                 },
                 "b8870d4b1f75fe6eb3cac4e365e88bcc": {
+                    "sideBarVisible": false,
+                    "auxiliaryBarVisible": false
+                },
+                "196c19a557f1b2d903e257cbf0858ec8": {
                     "sideBarVisible": true,
                     "auxiliaryBarVisible": false
                 }

@@ -75,16 +75,18 @@
       "before": ["<A-o>"],
       "after": ["%", "v", "i", "("]
     },
-      { "before": ["j"], "after": ["g", "j"] },
-      { "before": ["k"], "after": ["g", "k"] },
+    { "before": ["j"], "after": ["g", "j"] },
+    { "before": ["k"], "after": ["g", "k"] },
+    { "before": ["<tab>"], "after": ["e"] },
     {
       "before": ["<leader>", "k"],
       "commands": ["editor.action.showHover"]
     }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
-      { "before": ["j"], "after": ["g", "j"] },
-      { "before": ["k"], "after": ["g", "k"] }
+    { "before": ["j"], "after": ["g", "j"] },
+    { "before": ["k"], "after": ["g", "k"] },
+    { "before": ["<tab>"], "after": ["e"] }
   ],
   "vim.normalModeKeyBindings": [
     {
