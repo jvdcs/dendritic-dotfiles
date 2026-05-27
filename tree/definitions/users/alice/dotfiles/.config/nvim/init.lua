@@ -1,49 +1,40 @@
--- ── Diagnostics
-vim.diagnostic.config({
-  virtual_text = {
-    prefix   = "●",
-    severity = { min = vim.diagnostic.severity.HINT },
+-- ── Surround
+require("nvim-surround").setup({
+  surrounds = {
+    ["("] = { add = { "(", ")" } },
+    [")"] = { add = { "(", ")" } },
+    ["["] = { add = { "[", "]" } },
+    ["]"] = { add = { "[", "]" } },
+    ["{"] = { add = { "{", "}" } },
+    ["}"] = { add = { "{", "}" } },
   },
-  signs      = true,
-  underline  = true,
-  update_in_insert = false,
-  severity_sort    = true,
 })
 
--- Show full diagnostic float when cursor rests on a line
-vim.api.nvim_create_autocmd("CursorHold", {
-  callback = function()
-    vim.diagnostic.open_float(nil, {
-      focus  = false,
-      scope  = "cursor",
-      border = "rounded",
-    })
-  end,
-})
-
--- LUA LSP
-vim.lsp.config("lua_ls", {})
-vim.lsp.enable("lua_ls")
--- ── Options 
-
+-- ── Options
 vim.opt.updatetime           = 1
 vim.opt.regexpengine         = 0
 vim.opt.clipboard            = "unnamedplus"
 vim.g._ts_force_sync_parsing = true
 
--- ── Appearance 
-vim.o.termguicolors          = false
+-- ── Appearance
+vim.o.termguicolors = false
 vim.cmd("colorscheme default")
-vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+vim.api.nvim_set_hl(0, "Normal",      { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
--- ── Keymaps 
+-- ── Editing
+vim.opt.wrap        = true
+vim.opt.linebreak   = true
+vim.opt.breakindent = true
+vim.opt.showbreak   = "↪ "
+vim.opt.signcolumn  = "yes"
+
+-- ── Keymaps
 vim.keymap.set({ "n", "v" }, "j", "gj", { silent = true })
 vim.keymap.set({ "n", "v" }, "k", "gk", { silent = true })
 vim.keymap.set("n", "<C-s>", "<cmd>w<CR>")
 vim.keymap.set("i", "<M-n>", "\\ <CR>", { silent = true })
 
--- Delete matching closing bracket with <BS>
 vim.keymap.set("i", "<BS>", function()
   local line   = vim.api.nvim_get_current_line()
   local col    = vim.api.nvim_win_get_cursor(0)[2]
@@ -56,11 +47,35 @@ vim.keymap.set("i", "<BS>", function()
   return "<BS>"
 end, { expr = true, silent = true })
 
--- ── LSP 
+-- ── Diagnostics
+vim.diagnostic.config({
+  virtual_text = {
+    prefix   = "●",
+    severity = { min = vim.diagnostic.severity.HINT },
+  },
+  signs            = true,
+  underline        = true,
+  update_in_insert = false,
+  severity_sort    = true,
+})
+
+vim.api.nvim_create_autocmd("CursorHold", {
+  callback = function()
+    vim.diagnostic.open_float(nil, {
+      focus  = false,
+      scope  = "cursor",
+      border = "rounded",
+    })
+  end,
+})
+
+-- ── LSP
+vim.lsp.config("lua_ls",   {})
+vim.lsp.enable("lua_ls")
 vim.lsp.config("tinymist", {})
 vim.lsp.enable("tinymist")
 
--- ── Completion (blink.cmp) 
+-- ── Completion
 require("blink.cmp").setup({
   keymap = {
     preset        = "none",
@@ -81,22 +96,15 @@ require("blink.cmp").setup({
   },
 })
 
--- ── Snippets (LuaSnip) 
- ls = require("luasnip")
+-- ── Snippets
+ls = require("luasnip")
 ls.config.set_config({
   enable_autosnippets  = true,
   store_selection_keys = "<Tab>",
 })
 
--- Conceal
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "typst",
-  callback = function()
-    vim.opt_local.conceallevel = 2
-  end,
-})
+require("snippets.typst")
 
--- Tab: jump in snippet → jump in typstar → else nothing
 vim.keymap.set({ "i", "s" }, "<Tab>", function()
   if ls.expand_or_jumpable() then
     ls.expand_or_jump()
@@ -116,22 +124,11 @@ vim.keymap.set({ "i", "s" }, "<S-Tab>", function()
     )
   end
 end, { silent = true })
--- vim.keymap.set("i", "<Tab>", function()
---   if ls.expand_or_jumpable() then
---     ls.expand_or_jump()
---   else
---     vim.api.nvim_feedkeys(
---       vim.api.nvim_replace_termcodes("<Tab>", true, false, true), "n", false
---     )
---   end
--- end, { silent = true })
 
-vim.keymap.set("s", "<Tab>", function() ls.jump(1) end, { silent = true })
+vim.keymap.set("s", "<Tab>",          function() ls.jump(1)  end, { silent = true })
 vim.keymap.set({ "i", "s" }, "<S-Tab>", function() ls.jump(-1) end, { silent = true })
 
-require("snippets.typst")
-
--- ── Typstar 
+-- ── Typstar
 require("typstar").setup({
   snippets = { exclude = { "sq", "dx", "ddx", "ss" } },
 })
@@ -140,12 +137,12 @@ vim.keymap.set({ "s", "i" }, "<M-j>", "<Cmd>TypstarSmartJump<CR>")
 vim.keymap.set({ "s", "i" }, "<M-k>", "<Cmd>TypstarSmartJumpBack<CR>")
 vim.keymap.set({ "n", "i" }, "<M-t>", "<Cmd>TypstarToggleSnippets<CR>")
 
--- ── Typst preview 
+-- ── Typst preview
 require("typst-preview").setup {}
 
-
-vim.keymap.set("n", "<leader>pv", ":TypstPreview<CR>", { desc = "Preview toggle" })
+vim.keymap.set("n", "<leader>pv", ":TypstPreview<CR>",     { desc = "Preview toggle" })
 vim.keymap.set("n", "<leader>ps", ":TypstPreviewStop<CR>", { desc = "Preview stop" })
+
 vim.api.nvim_create_autocmd("BufEnter", {
   pattern  = "*.typ",
   callback = function() vim.cmd("TypstPreview") end,
@@ -154,33 +151,3 @@ vim.api.nvim_create_autocmd("BufWinLeave", {
   pattern  = "*.typ",
   callback = function() vim.cmd("TypstPreviewStop") end,
 })
-
--- -- multicursor
--- -- init.lua
--- require("lazy").setup({
---   {
---     "jake-stewart/multicursor.nvim",
---     branch = "1.0",
---     config = function()
---       local mc = require("multicursor-nvim")
---       mc.setup()
-
---       local set = vim.keymap.set
-
---       set({ "n", "x" }, "<C-Up>",   function() mc.lineAddCursor(-1) end)
---       set({ "n", "x" }, "<C-Down>", function() mc.lineAddCursor(1) end)
---       set({ "n", "x" }, "<leader>n", function() mc.matchAddCursor(1) end)
---       set({ "n", "x" }, "<leader>N", function() mc.matchAddCursor(-1) end)
---       set({ "n", "x" }, "<leader>A", mc.matchAllAddCursors)
---       set("n", "<C-LeftMouse>", mc.handleMouse)
-
---       set("n", "<Esc>", function()
---         if mc.hasCursors() then
---           mc.clearCursors()
---         else
---           vim.cmd("noh")
---         end
---       end)
---     end,
---   },
--- })
