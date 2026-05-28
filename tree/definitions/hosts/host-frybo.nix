@@ -23,6 +23,7 @@
       misc-generalServices
       misc-disableGreeter
       misc-portals
+      misc-matplotlibCrispDisplay
       # ===
 
       # === SETTINGS ===
