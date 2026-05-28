@@ -1452,5 +1452,9 @@
         "key": "ctrl+right",
         "command": "-cursorWordEndRight",
         "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+x",
+        "command": "-editor.action.clipboardCutAction"
     }
 ]

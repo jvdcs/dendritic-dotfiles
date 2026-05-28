@@ -133,7 +133,7 @@
   // MISC (Git, Python, Jupyter, Security)
   // --------------------------------------------------------------------------
   "git.openRepositoryInParentFolders": "never",
-  "python.defaultInterpreterPath": "",
+  "python.defaultInterpreterPath": "/home/alice/sandbox/__python__/neural/.venv",
   "jupyter.askForKernelRestart": false,
   "output.smartScroll.enabled": false,
   "security.workspace.trust.untrustedFiles": "open",

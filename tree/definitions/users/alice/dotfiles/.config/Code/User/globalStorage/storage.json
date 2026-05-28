@@ -24,10 +24,10 @@
                 "folderUri": "file:///home/alice/sandbox/__python__/neural/old"
             },
             {
-                "folderUri": "file:///home/alice/sandbox/__python__/neural/d2l"
+                "folderUri": "file:///home/alice/sandbox/__python__/neural/sympy"
             },
             {
-                "folderUri": "file:///home/alice/sandbox/__python__/neural/sympy"
+                "folderUri": "file:///home/alice/sandbox/__python__/neural/UDL/udlbook"
             }
         ],
         "emptyWindows": []
@@ -66,7 +66,8 @@
             "file:///home/alice/sandbox/__python__/neural/old": "__default__profile__",
             "file:///home/alice/sandbox/__python__/neural/zero_to_hero": "__default__profile__",
             "file:///home/alice/sandbox/__python__/neural/d2l": "__default__profile__",
-            "file:///home/alice/sandbox/__python__/neural/sympy": "__default__profile__"
+            "file:///home/alice/sandbox/__python__/neural/sympy": "__default__profile__",
+            "file:///home/alice/sandbox/__python__/neural/UDL/udlbook": "__default__profile__"
         },
         "emptyWindows": {}
     },
@@ -103,8 +104,8 @@
     },
     "windowsState": {
         "lastActiveWindow": {
-            "folder": "file:///home/alice/sandbox/__python__/neural/sympy",
-            "backupPath": "/home/alice/.config/Code/Backups/f43bc3054039ec4e222cdaf90bc9f0d4",
+            "folder": "file:///home/alice/sandbox/__python__/neural/UDL/udlbook",
+            "backupPath": "/home/alice/.config/Code/Backups/7c13c1a9955d38c0f68612338aea9f01",
             "uiState": {
                 "mode": 1,
                 "x": 0,
@@ -237,6 +238,10 @@
                     "auxiliaryBarVisible": false
                 },
                 "196c19a557f1b2d903e257cbf0858ec8": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "e05a127eef595aae492da95f48494582": {
                     "sideBarVisible": true,
                     "auxiliaryBarVisible": false
                 }
