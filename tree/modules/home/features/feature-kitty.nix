@@ -21,6 +21,7 @@
       keybindings = {
         "ctrl+u" = "no_op";
         "ctrl+d" = "no_op";
+        "ctrl+shift+r" = "no_op";
         "ctrl+shift+d" = "no_op";
         "ctrl+shift+w" = "no_op";
         "ctrl+shift+u" = "no_op";

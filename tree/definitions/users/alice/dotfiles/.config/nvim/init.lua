@@ -1,3 +1,9 @@
+-- Subword Select
+vim.g.VM_maps = {
+  ["Find Under"]         = "<A-n>",
+  ["Find Subword Under"] = "<A-n>",
+}
+
 -- ── Surround
 require("nvim-surround").setup({
   surrounds = {
