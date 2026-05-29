@@ -24,9 +24,12 @@
         typstar
         blink-cmp
         mini-nvim
-        typst-conceal-vim
+        # typst-conceal-vim
         vim-visual-multi
         nvim-surround
+
+        harpoon2
+        snacks-nvim
         # lazy-nvim
       ];
     };

@@ -28,6 +28,9 @@
             },
             {
                 "folderUri": "file:///home/alice/sandbox/__python__/neural/UDL/udlbook"
+            },
+            {
+                "folderUri": "file:///home/alice/syncthing/_210"
             }
         ],
         "emptyWindows": []
@@ -67,7 +70,8 @@
             "file:///home/alice/sandbox/__python__/neural/zero_to_hero": "__default__profile__",
             "file:///home/alice/sandbox/__python__/neural/d2l": "__default__profile__",
             "file:///home/alice/sandbox/__python__/neural/sympy": "__default__profile__",
-            "file:///home/alice/sandbox/__python__/neural/UDL/udlbook": "__default__profile__"
+            "file:///home/alice/sandbox/__python__/neural/UDL/udlbook": "__default__profile__",
+            "file:///home/alice/syncthing/_210": "__default__profile__"
         },
         "emptyWindows": {}
     },
@@ -104,13 +108,13 @@
     },
     "windowsState": {
         "lastActiveWindow": {
-            "folder": "file:///home/alice/sandbox/__python__/neural/UDL/udlbook",
-            "backupPath": "/home/alice/.config/Code/Backups/7c13c1a9955d38c0f68612338aea9f01",
+            "folder": "file:///home/alice/syncthing/_210",
+            "backupPath": "/home/alice/.config/Code/Backups/fdbcc372ee525e61d7f8ceae14436576",
             "uiState": {
                 "mode": 1,
                 "x": 0,
                 "y": 0,
-                "width": 1408,
+                "width": 704,
                 "height": 900
             }
         },
@@ -242,6 +246,10 @@
                     "auxiliaryBarVisible": false
                 },
                 "e05a127eef595aae492da95f48494582": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "f90422f23cd46b91c29434cfbbbf5e48": {
                     "sideBarVisible": true,
                     "auxiliaryBarVisible": false
                 }

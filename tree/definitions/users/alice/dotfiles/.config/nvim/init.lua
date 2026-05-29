@@ -1,47 +1,47 @@
--- Subword Select
-vim.g.VM_maps = {
-  ["Find Under"]         = "<A-n>",
-  ["Find Subword Under"] = "<A-n>",
-}
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
--- ── Surround
-require("nvim-surround").setup({
-  surrounds = {
-    ["("] = { add = { "(", ")" } },
-    [")"] = { add = { "(", ")" } },
-    ["["] = { add = { "[", "]" } },
-    ["]"] = { add = { "[", "]" } },
-    ["{"] = { add = { "{", "}" } },
-    ["}"] = { add = { "{", "}" } },
-  },
-})
+local map = vim.keymap.set
 
--- ── Options
+-- Options
 vim.opt.updatetime           = 1
 vim.opt.regexpengine         = 0
 vim.opt.clipboard            = "unnamedplus"
 vim.g._ts_force_sync_parsing = true
 
--- ── Appearance
+-- Appearance
 vim.o.termguicolors = false
 vim.cmd("colorscheme default")
 vim.api.nvim_set_hl(0, "Normal",      { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 
--- ── Editing
+-- Editing
 vim.opt.wrap        = true
 vim.opt.linebreak   = true
 vim.opt.breakindent = true
 vim.opt.showbreak   = "↪ "
 vim.opt.signcolumn  = "yes"
 
--- ── Keymaps
-vim.keymap.set({ "n", "v" }, "j", "gj", { silent = true })
-vim.keymap.set({ "n", "v" }, "k", "gk", { silent = true })
-vim.keymap.set("n", "<C-s>", "<cmd>w<CR>")
-vim.keymap.set("i", "<M-n>", "\\ <CR>", { silent = true })
+-- Keymaps
+map("n", "<C-Space>", function()
+  local buf = vim.api.nvim_buf_get_name(0)
+  vim.fn.system(
+    ("tmux new-window -n 'nvim:filepicker' " ..
+      "'~/.config/helix/scripts/tmux-yazi-picker.sh \"%s\"'"):format(buf)
+  )
+end, { silent = true })
 
-vim.keymap.set("i", "<BS>", function()
+map("n", "<leader>wc", "<cmd>bd<CR>",     { silent = true })
+map("n", "<leader>wC", "<cmd>bd!<CR>",    { silent = true })
+map("n", "<leader>wQ", "<cmd>q!<CR>",     { silent = true })
+map("n", "<leader>wd", "<cmd>vsplit<CR>", { silent = true })
+
+map({ "n", "v" }, "j", "gj", { silent = true })
+map({ "n", "v" }, "k", "gk", { silent = true })
+map("n", "<C-s>", "<cmd>w<CR>")
+map("i", "<M-n>", "\\ <CR>", { silent = true })
+
+map("i", "<BS>", function()
   local line   = vim.api.nvim_get_current_line()
   local col    = vim.api.nvim_win_get_cursor(0)[2]
   local before = line:sub(col, col)
@@ -53,7 +53,7 @@ vim.keymap.set("i", "<BS>", function()
   return "<BS>"
 end, { expr = true, silent = true })
 
--- ── Diagnostics
+-- Diagnostics
 vim.diagnostic.config({
   virtual_text = {
     prefix   = "●",
@@ -75,13 +75,13 @@ vim.api.nvim_create_autocmd("CursorHold", {
   end,
 })
 
--- ── LSP
+-- LSP
 vim.lsp.config("lua_ls",   {})
 vim.lsp.enable("lua_ls")
 vim.lsp.config("tinymist", {})
 vim.lsp.enable("tinymist")
 
--- ── Completion
+-- Completion
 require("blink.cmp").setup({
   keymap = {
     preset        = "none",
@@ -90,7 +90,7 @@ require("blink.cmp").setup({
     ["<C-space>"] = { "show", "fallback" },
     ["<C-e>"]     = { "cancel", "fallback" },
     ["<Up>"]      = { "select_prev", "fallback" },
-    ["<Down>"]    = { "select_next", "fallback" },
+    ["<Down>"]     = { "select_next", "fallback" },
   },
   completion = {
     list = {
@@ -102,7 +102,7 @@ require("blink.cmp").setup({
   },
 })
 
--- ── Snippets
+-- Snippets
 ls = require("luasnip")
 ls.config.set_config({
   enable_autosnippets  = true,
@@ -111,7 +111,7 @@ ls.config.set_config({
 
 require("snippets.typst")
 
-vim.keymap.set({ "i", "s" }, "<Tab>", function()
+map({ "i", "s" }, "<Tab>", function()
   if ls.expand_or_jumpable() then
     ls.expand_or_jump()
   else
@@ -121,7 +121,7 @@ vim.keymap.set({ "i", "s" }, "<Tab>", function()
   end
 end, { silent = true })
 
-vim.keymap.set({ "i", "s" }, "<S-Tab>", function()
+map({ "i", "s" }, "<S-Tab>", function()
   if ls.jumpable(-1) then
     ls.jump(-1)
   else
@@ -131,29 +131,115 @@ vim.keymap.set({ "i", "s" }, "<S-Tab>", function()
   end
 end, { silent = true })
 
-vim.keymap.set("s", "<Tab>",          function() ls.jump(1)  end, { silent = true })
-vim.keymap.set({ "i", "s" }, "<S-Tab>", function() ls.jump(-1) end, { silent = true })
+map("s", "<Tab>",          function() ls.jump(1)  end, { silent = true })
+map({ "i", "s" }, "<S-Tab>", function() ls.jump(-1) end, { silent = true })
 
--- ── Typstar
+-- Typstar
 require("typstar").setup({
   snippets = { exclude = { "sq", "dx", "ddx", "ss" } },
 })
 
-vim.keymap.set({ "s", "i" }, "<M-j>", "<Cmd>TypstarSmartJump<CR>")
-vim.keymap.set({ "s", "i" }, "<M-k>", "<Cmd>TypstarSmartJumpBack<CR>")
-vim.keymap.set({ "n", "i" }, "<M-t>", "<Cmd>TypstarToggleSnippets<CR>")
+map({ "s", "i" }, "<M-j>", "<Cmd>TypstarSmartJump<CR>")
+map({ "s", "i" }, "<M-k>", "<Cmd>TypstarSmartJumpBack<CR>")
+map({ "n", "i" }, "<M-t>", "<Cmd>TypstarToggleSnippets<CR>")
 
--- ── Typst preview
+-- Typst Preview
 require("typst-preview").setup {}
 
-vim.keymap.set("n", "<leader>pv", ":TypstPreview<CR>",     { desc = "Preview toggle" })
-vim.keymap.set("n", "<leader>ps", ":TypstPreviewStop<CR>", { desc = "Preview stop" })
+map("n", "<leader>pv", ":TypstPreview<CR>",     { desc = "Preview toggle" })
+map("n", "<leader>ps", ":TypstPreviewStop<CR>", { desc = "Preview stop" })
 
+-- Helper to check if any window in the current tab is an open Snacks picker
+local function is_snacks_picker_open()
+  for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
+    local buf = vim.api.nvim_win_get_buf(win)
+    local ft = vim.bo[buf].filetype
+    if ft == "snacks_picker_list" or ft == "snacks_picker_input" then
+      return true
+    end
+  end
+  return false
+end
+
+-- Safely launch only once per buffer when entering
 vim.api.nvim_create_autocmd("BufEnter", {
   pattern  = "*.typ",
-  callback = function() vim.cmd("TypstPreview") end,
+  callback = function(args) 
+    vim.schedule(function()
+      -- Ensure we haven't quickly switched to another buffer before schedule fires
+      if vim.api.nvim_get_current_buf() ~= args.buf then return end
+
+      -- Gate 1: Prevent endless instance spam if it's already active
+      if vim.b[args.buf].typst_preview_active then return end
+
+      -- Gate 2: Ignore if a snacks picker layout is visible anywhere in this tab
+      if is_snacks_picker_open() then return end
+
+      -- Gate 3: Standard window/buffer safety check (floating windows, scratch buffers)
+      if vim.api.nvim_win_get_config(0).relative ~= "" or vim.bo.buftype ~= "" then return end
+
+      -- Mark as active and launch
+      vim.b[args.buf].typst_preview_active = true
+      vim.cmd("TypstPreview") 
+    end)
+  end,
 })
-vim.api.nvim_create_autocmd("BufWinLeave", {
+
+-- Only kill the preview when the buffer is actually deleted, not just hidden
+vim.api.nvim_create_autocmd("BufDelete", {
   pattern  = "*.typ",
-  callback = function() vim.cmd("TypstPreviewStop") end,
+  callback = function(args) 
+    -- Reset the state flag just in case the buffer is revived later
+    if vim.b[args.buf] then
+      vim.b[args.buf].typst_preview_active = false
+    end
+    
+    -- Gate 1: Don't kill the background preview if scrolling past files in picker
+    if is_snacks_picker_open() then return end
+
+    vim.cmd("TypstPreviewStop") 
+  end,
 })
+
+-- Surround
+require("nvim-surround").setup({
+  surrounds = {
+    ["("] = { add = { "(", ")" } },
+    [")"] = { add = { "(", ")" } },
+    ["["] = { add = { "[", "]" } },
+    ["]"] = { add = { "[", "]" } },
+    ["{"] = { add = { "{", "}" } },
+    ["}"] = { add = { "{", "}" } },
+  },
+})
+
+-- Subword Select
+vim.g.VM_maps = {
+  ["Find Under"]         = "<A-n>",
+  ["Find Subword Under"] = "<A-n>",
+}
+
+-- Harpoon
+local harpoon = require("harpoon")
+harpoon:setup()
+
+map("n", "<leader>a", function() 
+  harpoon:list():add()
+  print("Harpooned: " .. vim.api.nvim_buf_get_name(0))
+end, { desc = "Harpoon Add" })
+
+map("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "Harpoon Menu" })
+
+-- Changed to leader to preserve Dvorak home-row while keeping C-s for saving
+map("n", "<leader>h", function() harpoon:list():select(1) end, { desc = "Harpoon Slot 1" })
+map("n", "<leader>t", function() harpoon:list():select(2) end, { desc = "Harpoon Slot 2" })
+map("n", "<leader>n", function() harpoon:list():select(3) end, { desc = "Harpoon Slot 3" })
+map("n", "<leader>s", function() harpoon:list():select(4) end, { desc = "Harpoon Slot 4" })
+
+-- Snacks
+require("snacks").setup({
+  picker = { enabled = true },
+})
+
+map("n", "<leader>b", function() Snacks.picker.buffers() end, { desc = "Find Buffers" })
+map("n", "<leader>f", function() Snacks.picker.smart() end, { desc = "Smart Find Files" })
