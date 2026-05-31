@@ -8,7 +8,14 @@ require('mini.ai').setup({
 })
 
 -- Typstar
-require("typstar").setup({ snippets = { exclude = { "sq", "dx", "ddx", "ss" } } })
+require("typstar").setup({
+  snippets = {
+    exclude = {
+      "sq", "dx", "ddx", "ss", "int", "dint"
+    }
+  }
+})
+
 map({ "s", "i" }, "<M-j>", "<Cmd>TypstarSmartJump<CR>")
 map({ "s", "i" }, "<M-k>", "<Cmd>TypstarSmartJumpBack<CR>")
 map({ "n", "i" }, "<M-t>", "<Cmd>TypstarToggleSnippets<CR>")

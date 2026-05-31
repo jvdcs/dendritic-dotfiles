@@ -28,9 +28,6 @@
             },
             {
                 "folderUri": "file:///home/alice/sandbox/__python__/neural/UDL/udlbook"
-            },
-            {
-                "folderUri": "file:///home/alice/syncthing/_210"
             }
         ],
         "emptyWindows": []
@@ -108,13 +105,13 @@
     },
     "windowsState": {
         "lastActiveWindow": {
-            "folder": "file:///home/alice/syncthing/_210",
-            "backupPath": "/home/alice/.config/Code/Backups/fdbcc372ee525e61d7f8ceae14436576",
+            "folder": "file:///home/alice/sandbox/__python__/neural/UDL/udlbook",
+            "backupPath": "/home/alice/.config/Code/Backups/7c13c1a9955d38c0f68612338aea9f01",
             "uiState": {
                 "mode": 1,
                 "x": 0,
                 "y": 0,
-                "width": 704,
+                "width": 1408,
                 "height": 900
             }
         },
