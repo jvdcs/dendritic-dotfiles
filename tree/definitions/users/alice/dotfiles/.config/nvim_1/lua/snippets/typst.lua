@@ -6,48 +6,32 @@ local sn   = ls.snippet_node
 local rep  = require("luasnip.extras").rep
 local d    = ls.dynamic_node
 local fmta = require("luasnip.extras.fmt").fmta
-local map  = vim.keymap.set
 
--- LuaSnip Setup
-ls.config.set_config({
-  enable_autosnippets  = true,
-  store_selection_keys = "<Tab>",
+-- Cursor
+vim.opt.guicursor = {
+  "n:block",   -- normal: block cursor
+  "i:ver25",   -- insert: bar cursor (vertical, 25% width)
+  "v:hor20",   -- select/visual: underline cursor (horizontal, 20% height)
+}
+
+-- Mini.ai
+require('mini.ai').setup({
+  custom_textobjects = {
+    ['$'] = require('mini.ai').gen_spec.pair('$', '$', { type = 'non-balanced' }),
+  },
 })
-
--- LuaSnip Jump Keymaps
-map({ "i", "s" }, "<Tab>", function()
-  if ls.expand_or_jumpable() then
-    ls.expand_or_jump()
-  else
-    vim.api.nvim_feedkeys(
-      vim.api.nvim_replace_termcodes("<Cmd>TypstarSmartJump<CR>", true, false, true), "n", false
-    )
-  end
-end, { silent = true })
-
-map({ "i", "s" }, "<S-Tab>", function()
-  if ls.jumpable(-1) then
-    ls.jump(-1)
-  else
-    vim.api.nvim_feedkeys(
-      vim.api.nvim_replace_termcodes("<Cmd>TypstarSmartJumpBack<CR>", true, false, true), "n", false
-    )
-  end
-end, { silent = true })
 
 -- Context
 local MATH_NODES = {
   ["math"]             = true,
   ["equation"]         = true,
 }
-
 local IGNORE_NODES = {
   ["string"]           = true,
   ["string_content"]   = true,
   ["line_comment"]     = true,
   ["block_comment"]    = true,
 }
-
 local function in_math()
   local node = vim.treesitter.get_node()
   while node do
@@ -66,15 +50,22 @@ local function get_visual(_, parent)
 end
 
 local function not_before_char()
+  -- Get current column and line
   local col = vim.api.nvim_win_get_cursor(0)[2]
   local line = vim.api.nvim_get_current_line()
+  
+  -- Grab the character immediately after the cursor
   local next_char = line:sub(col + 1, col + 1)
   
+  -- Only trigger the snippet if the next character is empty (end of line), 
+  -- a space, or a closing bracket/quote. 
+  -- If it is a letter/number, return false so it doesn't expand.
   if next_char == "" then return true end
   return next_char:match("[%s%)%]%}\"']") ~= nil
 end
 
 -- Factories
+
 local function ms(trig, nodes, opts)
   return s(vim.tbl_extend("force", {
     trig = trig, snippetType = "autosnippet",
@@ -89,8 +80,10 @@ local function ts(trig, nodes, opts)
   }, opts or {}), nodes)
 end
 
--- Math & Text Snippets
+-- Snippets
+
 ls.add_snippets("typst", {
+
   -- CUSTOM FUNCTIONS
   ts("spc", fmta("#h(<>fr)<>", { i(1), i(0) })),
   ts("rf", fmta("#ref(<>)<>", { i(1), i(0) })),
@@ -103,7 +96,7 @@ ls.add_snippets("typst", {
   -- Containers
   ts("aa",    fmta("$<>$",          { i(1) })),
   ts("ee",    fmta("_<>_<>",          { i(1), i(0) })),
-  ts("dm",    fmta("$$\n<>\n$$",      { i(1) }), { wordTrig = true }),
+  ts("dm",    fmta("$$\n<>\n$$",     { i(1) }), { wordTrig = true }),
   ts("fla",   fmta("$left\n<>\n$",   { i(1) })),
   ts("beg",   fmta("#<>[\n  <>\n]",  { i(1), i(0) })),
   ts("align", fmta("$ \n<>\n $",     { i(1) })),
@@ -166,7 +159,7 @@ ls.add_snippets("typst", {
   ms("prod", fmta("product_(<>=<>)^<> <>",           { i(1,"n"), i(2,"1"), i(3,"oo"), i(0) })),
   ms("int",  fmta("integral <> dif <> <>",           { i(1), i(2,"x"), i(0) })),
   ms("dint", fmta("integral_(<>)^(<>) <> dif <> <>", { i(1,"a"), i(2,"b"), i(3), i(4,"x"), i(0) })),
-  ms("ddx",  fmta("frac(dif^<> <>, dif x^<>) <>",    { i(1), i(2), rep(1), i(0) })),
+  ms("ddx",  fmta("frac(dif^<> <>, dif x^<>) <>",   { i(1), i(2), rep(1), i(0) })),
   ms("par",  fmta("frac(partial <>, partial <>) <>", { i(1,"y"), i(2,"x"), i(0) })),
 
   -- Trig
@@ -211,13 +204,15 @@ ls.add_snippets("typst", {
   ms("abs",   fmta("abs(<>) <>",            { i(1), i(0) })),
 
   -- Wrappers
+  -- Wrappers
   ts("(", { t("("), d(1, get_visual), t(")"), i(0) }, { condition = not_before_char }),
   ts("[", { t("["), d(1, get_visual), t("]"), i(0) }, { condition = not_before_char }),
   ts("{", { t("{"), d(1, get_visual), t("}"), i(0) }, { condition = not_before_char }),
   ts('"', { t('"'), d(1, get_visual), t('"'), i(0) }, { condition = not_before_char }),
 })
 
--- Plot Snippet
+-- Plot
+
 ls.add_snippets("typst", {
   s({ trig = "plt", snippetType = "autosnippet" }, {
     t({
@@ -247,7 +242,7 @@ ls.add_snippets("typst", {
   }),
 }, { key = "typst-plt" })
 
--- Proof Snippet
+-- Proof
 ls.add_snippets("typst", {
   s({ trig = "prf", snippetType = "autosnippet", wordTrig = true }, {
     t("_"), i(1, "1.1a"), t({ "_", "", "#proof(premises: " }), i(2, "2"), t({ ")[", "" }),
