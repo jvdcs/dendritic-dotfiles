@@ -1,8 +1,19 @@
 local map = vim.keymap.set
 
 map("n", "<C-Space>", function()
-  local buf = vim.api.nvim_buf_get_name(0)
-  vim.fn.system(("tmux new-window -n 'nvim:filepicker' '~/.config/helix/scripts/tmux-yazi-picker.sh \"%s\"'"):format(buf))
+  local buf = vim.fn.shellescape(vim.api.nvim_buf_get_name(0))
+  
+  local script = string.format([[
+    file=$(yazi %s --chooser-file=/dev/stdout)
+    if [ -n "$file" ]; then
+      tmux last-window
+      tmux send-keys Escape
+      tmux send-keys ":edit $(printf %%q "$file")" Enter
+    fi
+  ]], buf)
+
+  -- 'sh', '-c' forces tmux to parse the multi-line string as a proper shell script
+  vim.fn.system({'tmux', 'new-window', '-n', 'filepicker', 'sh', '-c', script})
 end, { silent = true })
 
 map("n", "<A-r>", "<cmd>source $MYVIMRC<CR>", { desc = "Reload Config", silent = true })

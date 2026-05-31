@@ -30,7 +30,7 @@ map("n", "<leader>s", function() harpoon:list():select(4) end)
 -- Snacks
 require("snacks").setup({ picker = { enabled = true } })
 map("n", "<leader>b", function() Snacks.picker.buffers() end, { desc = "Find Buffers" })
-map("n", "<leader>f", function() Snacks.picker.explorer() end, { desc = "Smart Find Files" })
+map("n", "<leader>f", function() Snacks.picker.smart() end, { desc = "Smart Find Files" })
 
 -- Text-Object
 require('mini.ai').setup({

@@ -93,20 +93,20 @@ end
 ls.add_snippets("typst", {
   -- CUSTOM FUNCTIONS
   ts("spc", fmta("#h(<>fr)<>", { i(1), i(0) })),
-  ts("rf", fmta("#ref(<>)<>", { i(1), i(0) })),
-  ts("nc", fmta("#anc(<>)<>", { i(1), i(0) })),
+  ts("rf", fmta("#ref(<>)<>",  { i(1), i(0) })),
+  ts("nc", fmta("#anc(<>)<>",  { i(1), i(0) })),
 
   -- Spacing
   ms("ms", t("\\; ")),
   ms("ss", fmta([["<>"<>]], { i(1), i(0) })),
 
   -- Containers
-  ts("aa",    fmta("$<>$",          { i(1) })),
+  ts("aa",    fmta("$<>$",            { i(1) })),
   ts("ee",    fmta("_<>_<>",          { i(1), i(0) })),
   ts("dm",    fmta("$$\n<>\n$$",      { i(1) }), { wordTrig = true }),
-  ts("fla",   fmta("$left\n<>\n$",   { i(1) })),
-  ts("beg",   fmta("#<>[\n  <>\n]",  { i(1), i(0) })),
-  ts("align", fmta("$ \n<>\n $",     { i(1) })),
+  ts("fla",   fmta("$left\n<>\n$",    { i(1) })),
+  ts("beg",   fmta("#<>[\n  <>\n]",   { i(1), i(0) })),
+  ts("align", fmta("$ \n<>\n $",      { i(1) })),
 
   -- Matrices
   ms("pmat", fmta("mat(\n  <>\n)",               { i(1) })),
@@ -246,21 +246,3 @@ ls.add_snippets("typst", {
     t({ "", ")" }),
   }),
 }, { key = "typst-plt" })
-
--- Proof Snippet
-ls.add_snippets("typst", {
-  s({ trig = "prf", snippetType = "autosnippet", wordTrig = true }, {
-    t("_"), i(1, "1.1a"), t({ "_", "", "#proof(premises: " }), i(2, "2"), t({ ")[", "" }),
-
-    t("  + #strong[$"), i(3, "premise 1"), t("$] #sl(<a1>)"),
-    t({ "", "  + #strong[$" }), i(4, "premise 2 slash therefore conclusion"), t("$] #sl(<a2>)"),
-
-    t({ "", "  + $" }), i(5, "step 1"), t("$ #h(1fr) "), i(6, "Rule"), t(" ("), i(7, "@a2"), t(") #sl(<a3>)"),
-    t({ "", "  + $" }), i(8, "step 2"), t("$ #h(1fr) "), i(9, "Rule"), t(" ("), i(10, "@a3"), t(") #sl(<a4>)"),
-    t({ "", "  + $" }), i(11, "step 3"), t("$ #h(1fr) "), i(12, "Rule"), t(" ("), i(13, "@a4"), t(") #sl(<a5>)"),
-
-    t({ "", "  + $" }), i(14, "conclusion"), t("$ #h(1fr) "), i(15, "Rule"), t(" ("), i(0, "@a3 -- @a5"), t(")"),
-
-    t({ "", "", "  $ square $", "]" }),
-  }),
-}, { key = "typst-prf" })
