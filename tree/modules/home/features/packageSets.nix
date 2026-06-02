@@ -20,6 +20,7 @@
         tree-sitter-grammars.tree-sitter-typst # typst syntax tree parser
         tree-sitter # parser generator tool
         typst # modern typesetting system
+        typstyle # typst formatter
       ];
     };
 

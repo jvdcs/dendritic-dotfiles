@@ -93,8 +93,8 @@ end
 ls.add_snippets("typst", {
   -- CUSTOM FUNCTIONS
   ts("spc", fmta("#h(<>fr)<>", { i(1), i(0) })),
-  ts("rf", fmta("#ref(<>)<>",  { i(1), i(0) })),
-  ts("nc", fmta("#anc(<>)<>",  { i(1), i(0) })),
+  ts("-rf", fmta("#ref(<>)<>",  { i(1), i(0) })),
+  ts("-nc", fmta("#anc(<>)<>",  { i(1), i(0) })),
 
   -- Spacing
   ms("ms", t("\\; ")),
