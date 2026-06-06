@@ -1,5 +1,5 @@
 blur {
-    // off
+    off
     passes 4
     // more passes = stronger blur (default: 3)
     // offset 6.0

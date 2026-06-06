@@ -126,11 +126,12 @@ ls.add_snippets("typst", {
   ms("te",    t("exists ")),
   ms("st",    t("\" s.t. \"")),
   ms("notin", t("notin ")),
-  ms("sub=",  t("subseteq")),
-  ms("sup=",  t("supseteq")),
+  ms("sub",  t("subset")),
+  ms("sup",  t("supset")),
+  ms("sor",  t("union")),
+  ms("sand",  t("inter")),
   ms("eset",  t("emptyset")),
   ms("set",   fmta("{ <> }<>", { i(1), i(0) })),
-  ms("orr",   t("union")),
   ms("\\\\\\",t("setminus")),
 
   -- Sets
@@ -140,11 +141,8 @@ ls.add_snippets("typst", {
 
   -- Operators
   ms("^",    fmta("^(<>)<>",        { i(1), i(0) })),
-  ms("sr",   t("^2")),
-  ms("cb",   t("^3")),
-  ms("rd",   fmta("^(<>)<>",        { i(1), i(0) })),
   ms("_",    fmta("_(<>)<>",        { i(1), i(0) })),
-  ms("sq",   fmta("sqrt(<>)<>",     { i(1), i(0) })),
+  ms("sqrt",   fmta("sqrt(<>)<>",     { i(1), i(0) })),
   ms("//",   fmta("frac(<>, <>)<>", { i(1), i(2), i(0) })),
   ms("ee",   fmta("e^(<>)<>",       { i(1), i(0) })),
   ms("invs", t("^(-1)")),

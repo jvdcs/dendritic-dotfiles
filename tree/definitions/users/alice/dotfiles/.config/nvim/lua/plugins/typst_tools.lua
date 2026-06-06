@@ -11,7 +11,11 @@ require('mini.ai').setup({
 require("typstar").setup({
   snippets = {
     exclude = {
-      "sq", "dx", "ddx", "ss", "int", "dint"
+      "sq", "dx", "ddx", "ss", "int", "dint",
+      "sp", "su", "ub", "sub"
+    },
+    visual_disable_postfix = {
+      "ub" 
     }
   }
 })
