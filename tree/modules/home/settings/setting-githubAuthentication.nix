@@ -1,11 +1,12 @@
 {
   flake.modules.homeManager.setting-githubAuthentication = {
-    home.sessionVariables = {
-      SSH_ASKPASS_REQUIRE = "never";
-    };
+    services.ssh-agent.enable = true;
 
     programs.ssh = {
       enable = true;
+      # tell SSH to automatically add unlocked key agent
+      addKeysToAgent = "yes"; 
+      
       matchBlocks."github.com" = {
         extraOptions = {
           StrictHostKeyChecking = "accept-new";
