@@ -34,7 +34,7 @@
       feature-yazi
       feature-mpd
 
-      feature-halloy
+      # feature-halloy
 
       feature-neovim
 
