@@ -1,31 +1,10 @@
 {
     "telemetry.sqmId": "",
     "telemetry.machineId": "9be20d06f744084ad8f52a98268513f62b7da159e7156f06dd86a8cc2131e591",
-    "telemetry.devDeviceId": "a6aafc18-6c10-466b-9f29-4dd71ed9c115",
+    "telemetry.devDeviceId": "f141a8d3-14ec-411a-8662-458e2359bf6a",
     "backupWorkspaces": {
         "workspaces": [],
         "folders": [
-            {
-                "folderUri": "file:///home/alice/sandbox/kinyen/neural"
-            },
-            {
-                "folderUri": "file:///home/alice/sandbox/lean/tao"
-            },
-            {
-                "folderUri": "file:///home/alice/sandbox/__python__/neural"
-            },
-            {
-                "folderUri": "file:///home/alice/sandbox/__python__/neural/karpathy_micrograd"
-            },
-            {
-                "folderUri": "file:///home/alice/sandbox/__python__/neural/makemore"
-            },
-            {
-                "folderUri": "file:///home/alice/sandbox/__python__/neural/old"
-            },
-            {
-                "folderUri": "file:///home/alice/sandbox/__python__/neural/sympy"
-            },
             {
                 "folderUri": "file:///home/alice/sandbox/__python__/neural/UDL/udlbook"
             }
@@ -97,7 +76,7 @@
             "editorPartMinWidth": 220,
             "titleBarHeight": 30,
             "activityBarWidth": 48,
-            "sideBarWidth": 176,
+            "sideBarWidth": 170,
             "auxiliaryBarWidth": 0,
             "statusBarHeight": 22,
             "windowBorder": false
@@ -111,7 +90,7 @@
                 "mode": 1,
                 "x": 0,
                 "y": 0,
-                "width": 704,
+                "width": 1408,
                 "height": 900,
                 "zoomLevel": 1
             }
@@ -120,8 +99,8 @@
     },
     "windowSplashWorkspaceOverride": {
         "layoutInfo": {
-            "sideBarWidth": 176,
-            "auxiliaryBarWidth": 300,
+            "sideBarWidth": 170,
+            "auxiliaryBarWidth": 170,
             "workspaces": {
                 "3d81f909cd5a180b1e70da17fbd8454d": {
                     "sideBarVisible": true,
@@ -248,6 +227,10 @@
                     "auxiliaryBarVisible": false
                 },
                 "f90422f23cd46b91c29434cfbbbf5e48": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "9504d3ae2d3633fca2c61f52183cbea3": {
                     "sideBarVisible": true,
                     "auxiliaryBarVisible": false
                 }

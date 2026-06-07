@@ -1,9 +1,11 @@
-spawn-at-startup "swww-daemon"
-spawn-at-startup "swww-daemon" "--namespace" "backdrop"
+spawn-at-startup "awww-daemon"
+spawn-at-startup "awww-daemon" "--namespace" "backdrop"
+
 layer-rule {
-    match namespace="^swww-daemonbackdrop$"
+    match namespace="backdrop"
     place-within-backdrop true
 }
+
 layout {
     background-color "transparent"
 }

@@ -208,7 +208,7 @@
       programs.xwayland.enable = true;
       environment.systemPackages = with pkgs; [
         slurp # select screen region interactively
-        swww # animated wallpaper daemon
+        awww # animated wallpaper daemon
         wf-recorder # screen recorder for Wayland
       ];
     };

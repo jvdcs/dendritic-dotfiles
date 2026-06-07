@@ -120,18 +120,3 @@ recent-windows {
         max-scale 0.7
     }
 }
-
-// Enable blur behind the foot terminal.
-// window-rule {
-//     match app-id="^foot$"
-//     background-effect {
-//         blur true
-//     }
-// }
-// // Enable blur behind the fuzzel launcher.
-// layer-rule {
-//     match namespace="^launcher$"
-//     background-effect {
-//         blur true
-//     }
-// }

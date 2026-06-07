@@ -6,39 +6,32 @@
     pkgs,
     ...
   }: {
-    imports = [
-      (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+    imports =
+      [ (modulesPath + "/hardware/cpu/intel-npu.nix")
+        (modulesPath + "/installer/scan/not-detected.nix")
+      ];
 
-    boot.initrd.availableKernelModules = ["xhci_pci" "thunderbolt" "vmd" "nvme" "uas" "sd_mod"];
-    boot.initrd.kernelModules = [];
-    boot.kernelModules = ["kvm-intel"];
-    boot.extraModulePackages = [];
+    boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "vmd" "nvme" ];
+    boot.initrd.kernelModules = [ ];
+    boot.kernelModules = [ "kvm-intel" ];
+    boot.extraModulePackages = [ ];
 
-    fileSystems."/" = {
-      device = "/dev/disk/by-uuid/5406f0c6-4e69-4bfc-9a09-35a00d63c111";
-      fsType = "ext4";
-    };
+    fileSystems."/" =
+      { device = "/dev/disk/by-uuid/9e3817fa-fddc-4e7d-aeae-cfd6dae89f41";
+        fsType = "ext4";
+      };
 
-    fileSystems."/nix" = {
-      device = "/dev/disk/by-uuid/6d3d6195-f5ba-454b-adc3-319ad0f7658e";
-      fsType = "ext4";
-    };
+    fileSystems."/boot" =
+      { device = "/dev/disk/by-uuid/9B3C-C5DF";
+        fsType = "vfat";
+        options = [ "fmask=0022" "dmask=0022" ];
+      };
 
-    fileSystems."/home" = {
-      device = "/dev/disk/by-uuid/2227fe24-e533-4b7f-87c1-a33b54319bbb";
-      fsType = "ext4";
-    };
+    swapDevices = [ ];
 
-    fileSystems."/boot" = {
-      device = "/dev/disk/by-uuid/9265-6582";
-      fsType = "vfat";
-      options = ["fmask=0022" "dmask=0022"];
-    };
-
-    swapDevices = [
-      {device = "/dev/disk/by-uuid/6e598378-d19a-4ce0-87cc-0380f4947517";}
-    ];
+    nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+    hardware.cpu.intel.npu.enable = true;
+    hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
     # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
     # (the default) this is the recommended approach. When using systemd-networkd it's
@@ -46,9 +39,6 @@
     # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
     networking.useDHCP = lib.mkDefault true;
     # networking.interfaces.wlo1.useDHCP = lib.mkDefault true;
-
-    nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-    hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
     hardware = {
       enableAllFirmware = true;
