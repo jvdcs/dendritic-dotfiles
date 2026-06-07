@@ -7,6 +7,7 @@
       spicePkgs = inputs.spicetify-nix.legacyPackages.${system};
     in {
       enable = true;
+      wayland = true; # force native Wayland (ozone) flags
       enabledExtensions = with spicePkgs.extensions; [
         adblock
       ];
