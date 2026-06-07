@@ -69,6 +69,11 @@
         process-manager
         niri
         nix
+
+        bluetooth
+        wifi-commander
+
+        github
       ];
     };
   };
