@@ -27,6 +27,7 @@
       # ===
 
       # === SETTINGS ===
+      setting-disableNiriSessionWarning
       setting-performanceTuning
       setting-fryboVariables
       setting-timezoneLocale
