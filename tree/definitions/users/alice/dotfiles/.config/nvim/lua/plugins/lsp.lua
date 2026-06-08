@@ -1,7 +1,10 @@
 -- Diagnostics
 vim.diagnostic.config({
   virtual_text = { prefix = "●", severity = { min = vim.diagnostic.severity.HINT } },
-  signs = true, underline = true, update_in_insert = false, severity_sort = true,
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+  severity_sort = true,
 })
 
 -- LSP Servers
@@ -14,12 +17,12 @@ vim.lsp.enable("tinymist")
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
     local opts = { buffer = args.buf, silent = true }
-    vim.keymap.set("n", "<leader>k", vim.lsp.buf.hover,          opts)
-    vim.keymap.set("n", "<leader>d", vim.lsp.buf.definition,       opts)
-    vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename,           opts)
-    vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action,      opts)
-    vim.keymap.set("n", "[d",        vim.diagnostic.goto_prev,     opts)
-    vim.keymap.set("n", "]d",        vim.diagnostic.goto_next,     opts)
+    vim.keymap.set("n", "<leader>k", vim.lsp.buf.hover, opts)
+    vim.keymap.set("n", "<leader>d", vim.lsp.buf.definition, opts)
+    vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, opts)
+    vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action, opts)
+    vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
+    vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
   end,
 })
 
