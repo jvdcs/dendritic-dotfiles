@@ -18,8 +18,9 @@
         vscode-langservers-extracted # HTML/CSS/JSON/ESLint LSPs
         svelte-language-server
         superhtml # HTML LSPs
-        lua-language-server
-        stylua
+        lua-language-server # lua lsp
+        luajitPackages.jsregexp # idfk but lua
+        stylua # lua formatter
       ];
     };
 

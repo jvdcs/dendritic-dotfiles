@@ -13,7 +13,7 @@ animations {
     // You can also put "off" into each individual animation to disable it.
     off
     // Slow down all animations by this factor. Values below 1 speed them up instead.
-    slowdown 0.8
+    slowdown 0.7
     // Individual animations.
     workspace-switch {
         spring damping-ratio=1.0 stiffness=1000 epsilon=0.0001

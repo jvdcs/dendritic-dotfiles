@@ -12,10 +12,10 @@
       doCheck = false;
     };
 
-    # Build the neovim config (plugins → packpath, no RC file)
     neovimConfig = pkgs.neovimUtils.makeNeovimConfig {
       viAlias = true;
       vimAlias = true;
+      extraLuaPackages = ps: [ps.jsregexp]; # <-- wires jsregexp into LUA_CPATH
       plugins = with pkgs.vimPlugins; [
         nvim-lspconfig
         nvim-treesitter.withAllGrammars
@@ -24,17 +24,13 @@
         typstar
         blink-cmp
         mini-nvim
-        # typst-conceal-vim
         vim-visual-multi
         nvim-surround
-
         harpoon2
         snacks-nvim
-        # lazy-nvim
       ];
     };
 
-    # wrapRc = false: don't pass -u to nvim, so it reads ~/.config/nvim/init.lua naturally
     neovim-custom = pkgs.wrapNeovimUnstable pkgs.neovim-unwrapped (neovimConfig
       // {
         wrapRc = false;
@@ -44,7 +40,7 @@
       neovim-custom
       tinymist
       typst
-      luajitPackages.jsregexp
+      # luajitPackages.jsregexp  <-- removed, handled by extraLuaPackages above
     ];
   };
 }

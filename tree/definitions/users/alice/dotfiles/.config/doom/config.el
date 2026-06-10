@@ -72,6 +72,9 @@
 
 (global-hl-line-mode -1)
 (global-so-long-mode 1)
+(remove-hook 'doom-first-buffer-hook #'global-hl-line-mode)
+(advice-add #'global-hl-line-mode :override #'ignore)
+(advice-add #'hl-line-mode :override #'ignore)
 
 (defun my/insert-clipboard-image (filename)
   "Paste PNG from clipboard into ./images/, insert Org link."
