@@ -12,7 +12,9 @@ require("typstar").setup({
   snippets = {
     exclude = {
       "sq", "dx", "ddx", "ss", "int", "dint",
-      "sp", "su", "ub", "sub"
+      "sp", "su", "ub", "sub",
+      "le", "gt",
+      "_",
     },
     visual_disable_postfix = {
       "ub" 

@@ -46,7 +46,8 @@
       environment.systemPackages = with pkgs; [
         irust # rust repl
         gcc # GNU C/C++ compiler
-        # python310 # Python 3.10 interpreter
+        cargo # rust
+        python310 # Python 3.10 interpreter
         steel # embeddable Scheme interpreter
         (ghc.withPackages (hsPkgs:
           with hsPkgs; [

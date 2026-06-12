@@ -38,7 +38,7 @@ end, { silent = true })
 -- Context
 local MATH_NODES = {
   ["math"]             = true,
-  ["equation"]         = true,
+  ["formula"]         = true,
 }
 
 local IGNORE_NODES = {
