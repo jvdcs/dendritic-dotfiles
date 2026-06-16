@@ -71,6 +71,26 @@ local function ts(trig, nodes, opts)
   }, opts or {}), nodes)
 end
 
+local function generate_cells(args)
+  -- args[1][1] is the text you typed into the first insert node (columns)
+  local cols = tonumber(args[1][1]) or 1
+  if cols < 1 then cols = 1 end -- Fallback just in case
+
+  local nodes = {}
+  for j = 1, cols do
+    table.insert(nodes, t("["))
+    table.insert(nodes, i(j))  -- Creates a new jumpable node for each cell
+    table.insert(nodes, t("]"))
+    
+    if j <= cols then
+      table.insert(nodes, t(", "))
+    end
+  end
+  
+  -- Return a snippet_node containing all our generated cells
+  return sn(nil, nodes)
+end
+
 -- ==========================================
 -- 4. SNIPPETS DEFINITIONS
 -- ==========================================
@@ -196,31 +216,14 @@ ls.add_snippets("typst", {
   ts('"', { t('"'), d(1, get_visual), t('"'), i(0) }),
 
   -- Plot
-  s({ trig = "plt", snippetType = "autosnippet" }, {
-    t({
-      "#lq.diagram(",
-      "\twidth: 5cm,",
-      "\theight: 5cm,",
-      "\txlim: (0, 3),",
-      "\tylim: (0, 3),",
-      "\txaxis: (tick-distance: 1),",
-      "\tyaxis: (tick-distance: 1),",
-      "\txlabel: $x$,",
-      "\tylabel: $y$,",
-      "",
-      "\tgrid: gray.transparentize(70%),",
-      "",
-      "\tlq.scatter(",
-      "\t\t(",
-    }),
-    i(1, "0,"),
-    t({ "),", "\t\t(" }),
-    i(2, "0,"),
-    t({ "),", "\t\tcolor: " }),
-    i(3, "black"),
-    t({ ",", "\t),", "\t" }),
-    i(4),
-    t({ "", ")" }),
-  }),
+  s({ trig = "grid", snippetType = "autosnippet" }, fmta([[
+#g(columns: <>, alignment: (<>),
+  <>
+)
+  ]], {
+    i(1, "2"), -- Node 1: Columns (defaults to 2)
+    i(2, "left"), -- Node 2: Alignment
+    d(3, generate_cells, {1}), -- Node 3: Dynamically generated cells based on Node 1
+  })),
 
 }, { key = "typst" })
