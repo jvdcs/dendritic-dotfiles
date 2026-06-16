@@ -1,3 +1,6 @@
+-- ==========================================
+-- 2. LUASNIP SETUP & KEYMAPS
+-- ==========================================
 local ls   = require("luasnip")
 local s    = ls.snippet
 local i    = ls.insert_node
@@ -30,6 +33,9 @@ map({ "i", "s" }, "<S-Tab>", function()
   end
 end, { silent = true })
 
+-- ==========================================
+-- 3. HELPER FUNCTIONS
+-- ==========================================
 local function in_math()
   local cur = vim.api.nvim_win_get_cursor(0)
   local lines = vim.api.nvim_buf_get_lines(0, 0, cur[1], false)
@@ -46,12 +52,6 @@ local function get_visual(_, parent)
     return sn(nil, i(1, parent.snippet.env.LS_SELECT_RAW))
   end
   return sn(nil, i(1))
-end
-
-local function not_before_char()
-  local col  = vim.api.nvim_win_get_cursor(0)[2]
-  local next = vim.api.nvim_get_current_line():sub(col + 1, col + 1)
-  return next == "" or next:match("[%s%)%]%}\"']") ~= nil
 end
 
 local function ms(trig, nodes, opts)
@@ -71,12 +71,13 @@ local function ts(trig, nodes, opts)
   }, opts or {}), nodes)
 end
 
+-- ==========================================
+-- 4. SNIPPETS DEFINITIONS
+-- ==========================================
 ls.add_snippets("typst", {
 
   -- CUSTOM FUNCTIONS
-  ts("spc", fmta("#h(<>fr)<>", { i(1), i(0) })),
-  ts("-rf", fmta("#ref(<>)<>", { i(1), i(0) })),
-  ts("-nc", fmta("#anc(<>)<>", { i(1), i(0) })),
+  ts("spc", fmta("#h(<>)<>", { i(1), i(0) })),
 
   -- Spacing
   ms("ms", t("\\; ")),
@@ -84,6 +85,7 @@ ls.add_snippets("typst", {
 
   -- Containers
   ts("aa", fmta("$<>$", { i(1) })),
+  ts("bb", fmta("*<>*", { i(1) })),
   ts("ee", fmta("_<>_<>", { i(1), i(0) })),
 
   -- Matrices
@@ -187,7 +189,7 @@ ls.add_snippets("typst", {
   ms("norm", fmta("norm(<>) <>", { i(1), i(0) })),
   ms("abs", fmta("abs(<>) <>", { i(1), i(0) })),
 
-  -- Wrappers
+  -- WRAPPERS (Restored so Tab out works everywhere)
   ts("(", { t("("), d(1, get_visual), t(")"), i(0) }),
   ts("[", { t("["), d(1, get_visual), t("]"), i(0) }),
   ts("{", { t("{"), d(1, get_visual), t("}"), i(0) }),

@@ -28,6 +28,7 @@
         nvim-surround
         harpoon2
         snacks-nvim
+        nvim-autopairs
       ];
     };
 

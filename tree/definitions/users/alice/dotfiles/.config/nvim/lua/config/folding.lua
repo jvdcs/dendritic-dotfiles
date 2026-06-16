@@ -14,12 +14,11 @@ vim.opt.foldcolumn     = "0"
 vim.opt.foldenable     = true
 vim.opt.foldopen = ""
 
+vim.keymap.set("n", "<Tab>", "za", { silent = true })
 vim.keymap.set("n", "<S-Tab>", function()
-  local line = vim.fn.line(".")
-  if vim.fn.foldlevel(line) == 0 then return end
-  if vim.fn.foldclosed(line) ~= -1 then
-    vim.cmd("normal! zo")
+  if vim.wo.foldlevel == 0 then
+    vim.cmd("setlocal foldlevel=99")
   else
-    vim.cmd("normal! zc")
+    vim.cmd("setlocal foldlevel=0")
   end
-end, { desc = "Toggle fold under cursor" })
+end, { silent = true })
