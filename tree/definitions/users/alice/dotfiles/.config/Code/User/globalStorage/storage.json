@@ -11,7 +11,7 @@
         ],
         "emptyWindows": []
     },
-    "windowControlHeight": 30,
+    "windowControlHeight": 36,
     "profileAssociations": {
         "workspaces": {
             "file:///home/alice/sandbox/vscode-jupyter/DLSPEC": "__default__profile__",
@@ -92,7 +92,8 @@
                 "x": 0,
                 "y": 0,
                 "width": 1408,
-                "height": 900
+                "height": 900,
+                "zoomLevel": 1
             }
         },
         "openedWindows": []
