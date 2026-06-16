@@ -31,7 +31,8 @@ vim.opt.signcolumn = "yes" -- Keeps the buffer from shifting left/right
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
 vim.opt.foldenable = true
-vim.opt.foldmethod = "manual" 
+-- vim.opt.foldmethod = "manual" -- problematic
+vim.opt.foldmethod = "expr" 
 
 -- 3. Setup UFO
 local status_ok, ufo = pcall(require, "ufo")
