@@ -47,7 +47,7 @@
         irust # rust repl
         gcc # GNU C/C++ compiler
         cargo # rust
-        python310 # Python 3.10 interpreter
+        python3 # Python 3.10 interpreter
         steel # embeddable Scheme interpreter
         (ghc.withPackages (hsPkgs:
           with hsPkgs; [

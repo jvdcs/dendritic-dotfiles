@@ -31,6 +31,7 @@
         # monospace
         monolisa
         julia-mono
+        ioskeley-mono.normal-NF
         nerd-fonts.space-mono
         nerd-fonts.jetbrains-mono
         nerd-fonts.symbols-only
@@ -41,7 +42,9 @@
         noto-fonts-color-emoji
         # newadd
         times-newer-roman
-      ];
+      ]
+      # ++ builtins.attrValues pkgs.ioskeley-mono
+      ;
 
       fontconfig = {
         enable = true;
@@ -59,7 +62,8 @@
         defaultFonts = {
           serif = ["Eczar"];
           sansSerif = ["DeepMind Sans Medium"];
-          monospace = ["JetBrainsMono Nerd Font"];
+          monospace = ["IoskeleyMono Nerd Font"];
+          # monospace = ["JetBrainsMono Nerd Font"];
           emoji = ["Noto Color Emoji"];
         };
       };

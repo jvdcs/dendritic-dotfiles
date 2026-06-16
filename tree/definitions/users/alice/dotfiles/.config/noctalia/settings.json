@@ -254,9 +254,6 @@
                     "icon": "settings-cog",
                     "id": "ControlCenter",
                     "useDistroLogo": false
-                },
-                {
-                    "id": "plugin:privacy-indicator"
                 }
             ]
         }
@@ -412,7 +409,7 @@
         "allowPanelsOnScreenWithoutBar": true,
         "allowPasswordWithFprintd": false,
         "animationDisabled": false,
-        "animationSpeed": 1,
+        "animationSpeed": 2,
         "autoStartAuth": false,
         "avatarImage": "/home/alice/.face",
         "boxRadiusRatio": 1,

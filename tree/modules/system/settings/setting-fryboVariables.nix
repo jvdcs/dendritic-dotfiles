@@ -14,6 +14,7 @@
       NIXOS_OZONE_WL = "1";
 
       # QT_SCALE_FACTOR = "0.85"; # vals <1 breaks visuals
+      # QT_FONT_DPI = "96"; # added to fix vicinae font size, might be better to set individually
 
       LIBVA_DRIVER_NAME = "iHD";
 

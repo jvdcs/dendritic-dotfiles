@@ -16,6 +16,7 @@
         autoStart = true;
         environment = {
           USE_LAYER_SHELL = 1;
+          # QT_FONT_DPI = "96";
         };
       };
       settings = {

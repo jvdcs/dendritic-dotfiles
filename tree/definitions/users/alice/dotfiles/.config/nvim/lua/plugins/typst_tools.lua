@@ -14,10 +14,10 @@ require("typstar").setup({
       "sq", "dx", "ddx", "ss", "int", "dint",
       "sp", "su", "ub", "sub",
       "le", "gt",
-      "_", "sum"
+      "_", "sum", "div", "sqrt", "iv", "vi", "fo", "for", "st"
     },
     visual_disable_postfix = {
-      "ub" 
+      "ub", "iv", "st"
     }
   }
 })
