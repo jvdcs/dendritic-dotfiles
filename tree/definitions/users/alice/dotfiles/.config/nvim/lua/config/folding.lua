@@ -12,6 +12,7 @@ vim.opt.foldlevel      = 99
 vim.opt.foldlevelstart = 99
 vim.opt.foldcolumn     = "0"
 vim.opt.foldenable     = true
+vim.opt.foldopen = ""
 
 vim.keymap.set("n", "<S-Tab>", function()
   local line = vim.fn.line(".")

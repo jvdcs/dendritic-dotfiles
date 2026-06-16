@@ -1,9 +1,8 @@
-; ; extends
-
-; ;; Fold bullet lists (-)
-; (bullet_list) @fold
-; (bullet_list_item) @fold
-
-; ;; Fold numbered lists (+)
-; (enum_list) @fold
-; (enum_list_item) @fold
+[
+  (heading)
+  (block)
+  (math)
+  (raw_blck)
+  (item)
+  (term)
+] @fold

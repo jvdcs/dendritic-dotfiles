@@ -1,8 +1,12 @@
+vim.opt.ruler = true
+vim.opt.statusline = "%= %f %="
+
 -- ============================================================
 -- Custom colorscheme (ported exactly from Helix theme)
 -- Must have termguicolors for hex colors to work
 -- ============================================================
 vim.opt.termguicolors = true
+
 
 local c = {
   bg      = "#1a1a19",
