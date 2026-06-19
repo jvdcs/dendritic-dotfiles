@@ -99,38 +99,27 @@ ls.add_snippets("typst", {
   -- CUSTOM FUNCTIONS
   ts("spc", fmta("#h(<>)<>", { i(1), i(0) })),
 
-  -- Spacing
-  ms("ms", t("\\; ")),
-  ms("ss", fmta([["<>"<>]], { i(1), i(0) })),
-
   -- Containers
+  ms("ss", fmta([["<>"<>]], { i(1), i(0) })),
   ts("aa", fmta("$<>$", { i(1) })),
   ts("bb", fmta("*<>*", { i(1) })),
-  ts("ee", fmta("_<>_<>", { i(1), i(0) })),
-
-  -- Matrices
-  ms("pmat", fmta("mat(\n  <>\n)", { i(1) })),
-  ms("bmat", fmta([[mat(delim: "[", \n  <>\n)]], { i(1) })),
-  ms("cas", fmta("cases(\n  <>\n)", { i(1) })),
+  ms("ee", fmta("_<>_<>", { i(1), i(0) })),
 
   -- Logic
-  ms("thus", t("therefore ")),
-  ms("qed", t("& square")),
-  ms("=>", t("=> ")),
+  ms("=>", t("=>")),
   ms("=v", t("arrow.b.double ")),
   ms("=<", t("<=")),
   ms("iff", t("<=>")),
   ms("->", t("->")),
   ms("!>", t("|->")),
-  ms("fa", t("forall ")),
-  ms("te", t("exists ")),
-  ms("notin", t("notin ")),
+  ms("fa", t("forall")),
+  ms("te", t("exists")),
+  ms("notin", t("notin")),
   ms("sub", t("subset")),
   ms("sup", t("supset")),
   ms("sor", t("union")),
   ms("sand", t("inter")),
   ms("eset", t("emptyset")),
-  ms("set", fmta("{ <> }<>", { i(1), i(0) })),
   ms("\\\\\\", t("setminus")),
 
   -- Sets
@@ -146,17 +135,7 @@ ls.add_snippets("typst", {
   ms("//", fmta("frac(<>, <>)<>", { i(1, "a"), i(2, "b"), i(0) })),
   ms("ee", fmta("e^(<>)<>", { i(1), i(0) })),
   ms("eq", fmta("<> &= <> \\ \n<>", { i(1, "a"), i(2, "b"), i(0) })),
-  ms("invs", t("^(-1)")),
-  ms("xx", t("times ")),
-  ms("**", t("dot ")),
   ms("===", t("equiv")),
-  ms("!=", t("!= ")),
-  ms(">=", t(">= ")),
-  ms("<=", t("<= ")),
-  ms("simm", t("sim ")),
-  ms("...", t("...")),
-  ms("c..", t("dots.c")),
-  ms("ooo", t("oo")),
 
   -- Calculus
   ms("dif", t("dif ")),
@@ -165,49 +144,8 @@ ls.add_snippets("typst", {
   ms("prod", fmta("product_(<>=<>)^<> <>", { i(1, "n"), i(2, "1"), i(3, "oo"), i(0) })),
   ms("int", fmta("integral <> dif <> <>", { i(1), i(2, "x"), i(0) })),
   ms("dint", fmta("integral_(<>)^(<>) <> dif <> <>", { i(1, "a"), i(2, "b"), i(3), i(4, "x"), i(0) })),
-  ms("ddx", fmta("frac(dif^<> <>, dif x^<>) <>", { i(1), i(2), rep(1), i(0) })),
+  ms("der", fmta("frac(dif <>, dif <>)<>", { i(1), i(2), i(3) })),
   ms("par", fmta("frac(partial <>, partial <>) <>", { i(1, "y"), i(2, "x"), i(0) })),
-
-  -- Trig
-  ms("sin", t("sin ")), ms("cos", t("cos ")),
-  ms("tan", t("tan ")), ms("cot", t("cot ")),
-  ms("sec", t("sec ")), ms("csc", t("csc ")),
-  ms("asin", t("arcsin ")), ms("acos", t("arccos ")),
-  ms("atan", t("arctan ")), ms("sinh", t("sinh ")),
-  ms("cosh", t("cosh ")), ms("tanh", t("tanh ")),
-  ms("coth", t("coth ")),
-  ms("asinh", t("op(\"arsinh\") ")),
-  ms("acosh", t("op(\"arcosh\") ")),
-  ms("atanh", t("op(\"artanh\") ")),
-  ms("ln", t("ln ")),
-  ms("log", t("log ")),
-  ms("exp", t("exp ")),
-
-  -- Greek
-  ms("@a", t("alpha ")), ms("@b", t("beta ")),
-  ms("@g", t("gamma ")), ms("@G", t("Gamma ")),
-  ms("@d", t("delta ")), ms("@D", t("Delta ")),
-  ms("@e", t("epsilon ")), ms(":e", t("epsilon.alt ")),
-  ms("@z", t("zeta ")), ms("@h", t("eta ")),
-  ms("@t", t("theta ")), ms("@T", t("Theta ")),
-  ms(":t", t("theta.alt ")),
-  ms("@i", t("iota ")), ms("@k", t("kappa ")),
-  ms("@l", t("lambda ")), ms("@L", t("Lambda ")),
-  ms("@m", t("mu ")), ms("@n", t("nu ")),
-  ms("@p", t("pi ")), ms("@r", t("rho ")),
-  ms("@s", t("sigma ")), ms("@S", t("Sigma ")),
-  ms("@u", t("upsilon ")), ms("@U", t("Upsilon ")),
-  ms("@f", t("phi ")),
-  ms("@o", t("omega ")), ms("@O", t("Omega ")),
-
-  -- Accents
-  ms("cal", fmta("cal(<>)<>", { i(1), i(0) })),
-  ms("bar", fmta("bar(<>)<>", { i(1), i(0) })),
-  ms("tilde", fmta("tilde(<>)<>", { i(1), i(0) })),
-  ms("vec", fmta("vec(<>)<>", { i(1), i(0) })),
-  ms("avg", fmta("angle.l <> angle.r <>", { i(1), i(0) })),
-  ms("norm", fmta("norm(<>) <>", { i(1), i(0) })),
-  ms("abs", fmta("abs(<>) <>", { i(1), i(0) })),
 
   -- WRAPPERS (Restored so Tab out works everywhere)
   ts("(", { t("("), d(1, get_visual), t(")"), i(0) }),
@@ -221,7 +159,7 @@ ls.add_snippets("typst", {
   <>
 )
   ]], {
-    i(1, "2"), -- Node 1: Columns (defaults to 2)
+    i(1, "1"), -- Node 1: Columns (defaults to 2)
     i(2, "left"), -- Node 2: Alignment
     d(3, generate_cells, {1}), -- Node 3: Dynamically generated cells based on Node 1
   })),

@@ -26,7 +26,7 @@ binds {
     Super+Space        repeat=false           { spawn-sh "vicinae toggle"; }
     Super+P            repeat=false           { spawn-sh "vicinae vicinae://launch/clipboard/history"; }
     Super+Tab          repeat=false           { spawn-sh "vicinae vicinae://launch/@knoopx/vicinae-extension-niri-0/windows"; }
-    Super+Semicolon    repeat=false           { spawn-sh "vicinae vicinae://launch/files/search"; }
+    Super+Slash        repeat=false           { spawn-sh "vicinae vicinae://launch/files/search"; }
 
     Super+Shift+Space  repeat=false           { spawn-sh "nu ~/.config/niri/scripts/nu/custom-run.nu"; }
     Super+Shift+N      repeat=false           { spawn-sh "nu ~/.config/niri/scripts/nu/fzf-kmux.nu"; }
@@ -42,20 +42,20 @@ binds {
     Super+C            repeat=false           { close-window; }
 
     // === NAVIGATION ===
-    Super+H            allow-inhibiting=false { focus-column-left; }
-    Super+K            allow-inhibiting=false { focus-workspace-up; }
-    Super+J            allow-inhibiting=false { focus-workspace-down; }
-    Super+L            allow-inhibiting=false { focus-column-right; }
-    Super+Shift+H      allow-inhibiting=false { move-column-left; }
-    Super+Shift+J      allow-inhibiting=false { move-column-to-workspace-down; }
-    Super+Shift+K      allow-inhibiting=false { move-column-to-workspace-up; }
-    Super+Shift+L      allow-inhibiting=false { move-column-right; }
+    Super+H            repeat=false allow-inhibiting=false { focus-column-left; }
+    Super+K            repeat=false allow-inhibiting=false { focus-workspace-up; }
+    Super+J            repeat=false allow-inhibiting=false { focus-workspace-down; }
+    Super+L            repeat=false allow-inhibiting=false { focus-column-right; }
+    Super+Shift+H      repeat=false allow-inhibiting=false { move-column-left; }
+    Super+Shift+J      repeat=false allow-inhibiting=false { move-column-to-workspace-down; }
+    Super+Shift+K      repeat=false allow-inhibiting=false { move-column-to-workspace-up; }
+    Super+Shift+L      repeat=false allow-inhibiting=false { move-column-right; }
     //
-    Super+D               { focus-window-down; }
-    Super+U               { focus-window-up; }
-    Super+Shift+U         { move-workspace-up; }
-    Super+Shift+D         { move-workspace-down; }
-    Super+Shift+V         { toggle-window-floating; }
+    Super+D             repeat=false  { focus-window-down; }
+    Super+U             repeat=false  { focus-window-up; }
+    Super+Shift+U       repeat=false  { move-workspace-up; }
+    Super+Shift+D       repeat=false  { move-workspace-down; }
+    Super+Shift+V       repeat=false  { toggle-window-floating; }
     //
     // Super+Shift+G         { focus-column-last; }
     // Super+G               { focus-column-first; }

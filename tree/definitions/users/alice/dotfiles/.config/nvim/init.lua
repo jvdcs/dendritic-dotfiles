@@ -30,6 +30,7 @@ else
   require("plugins.lsp")
   require("plugins.editor")
   require("plugins.typst_tools")
+  require("plugins.autopairs")
 
   require("snippets.typst")
 end

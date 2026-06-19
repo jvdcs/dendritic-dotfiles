@@ -9,7 +9,11 @@
                 "folderUri": "file:///home/alice/sandbox/__python__/neural/UDL"
             }
         ],
-        "emptyWindows": []
+        "emptyWindows": [
+            {
+                "backupFolder": "1781732664613"
+            }
+        ]
     },
     "windowControlHeight": 36,
     "profileAssociations": {
@@ -50,7 +54,9 @@
             "file:///home/alice/syncthing/_210": "__default__profile__",
             "file:///home/alice/sandbox/__python__/neural/UDL": "__default__profile__"
         },
-        "emptyWindows": {}
+        "emptyWindows": {
+            "1781732664613": "__default__profile__"
+        }
     },
     "theme": "vs-dark",
     "themeBackground": "#1a1a19",
@@ -91,7 +97,7 @@
                 "mode": 1,
                 "x": 0,
                 "y": 0,
-                "width": 1408,
+                "width": 704,
                 "height": 900,
                 "zoomLevel": 1
             }

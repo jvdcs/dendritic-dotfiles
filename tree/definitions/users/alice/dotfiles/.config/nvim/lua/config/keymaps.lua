@@ -1,5 +1,8 @@
 local map = vim.keymap.set
 
+vim.keymap.set("x", "<", "<gv", { desc = "Indent left and keep selection" })
+vim.keymap.set("x", ">", ">gv", { desc = "Indent right and keep selection" })
+
 map("n", "<C-Space>", function()
   local buf = vim.fn.shellescape(vim.api.nvim_buf_get_name(0))
   
