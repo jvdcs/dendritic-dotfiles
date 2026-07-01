@@ -61,6 +61,9 @@
         asciiquarium-transparent # aquarium in terminal
         unoconv # document format converter
         lynx # text-based web browser
+        djvulibre # djvu converter
+        calibre # various library converter stuff
+        djvu2pdf # the name
       ];
     };
 
