@@ -154,7 +154,7 @@ ls.add_snippets("typst", {
   ts('"', { t('"'), d(1, get_visual), t('"'), i(0) }),
 
   -- Plot
-  s({ trig = "grid", snippetType = "autosnippet" }, fmta([[
+  s({ trig = "fgrid", snippetType = "autosnippet" }, fmta([[
 #g(columns: <>, alignment: (<>),
   <>
 )

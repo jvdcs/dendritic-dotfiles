@@ -64,6 +64,7 @@
         djvulibre # djvu converter
         calibre # various library converter stuff
         djvu2pdf # the name
+        poppler-utils # includes a pdf to image converter
       ];
     };
 
