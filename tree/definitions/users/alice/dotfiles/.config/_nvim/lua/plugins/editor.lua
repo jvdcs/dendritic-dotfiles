@@ -11,10 +11,10 @@ require("nvim-surround").setup({
 
 -- Subword Select
 vim.g.VM_maps = {
-  ["Find Under"]         = "<A-n>",
-  ["Find Subword Under"] = "<A-n>",
-  ["Find Next"]          = "<A-n>",
-  ["Find Prev"]          = "<A-N>",
+  ["Find Under"]         = "<A-n>", 
+  ["Find Subword Under"] = "<A-n>", 
+  ["Find Next"]          = "<A-n>", 
+  ["Find Prev"]          = "<A-N>", 
 }
 
 -- Harpoon
@@ -31,3 +31,10 @@ map("n", "<leader>s", function() harpoon:list():select(4) end)
 require("snacks").setup({ picker = { enabled = true } })
 map("n", "<leader>b", function() Snacks.picker.buffers() end, { desc = "Find Buffers" })
 map("n", "<leader>f", function() Snacks.picker.smart() end, { desc = "Smart Find Files" })
+
+-- Text-Object
+require('mini.ai').setup({
+  custom_textobjects = {
+    ['$'] = require('mini.ai').gen_spec.pair('$', '$', { type = 'non-balanced' }),
+  },
+})

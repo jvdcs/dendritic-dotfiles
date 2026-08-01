@@ -6,9 +6,9 @@ yazi "$buffer_name" --chooser-file="$tmpfile"
 if [[ -s "$tmpfile" ]]; then
     tmux last-window
     tmux send-keys Escape
-    tmux send-keys ":open %sh{tr '\n' ' ' < $tmpfile; rm -f $tmpfile}"
+    tmux send-keys ":open "
+    tmux set-buffer -- "$(tr '\n' ' ' < "$tmpfile")"
+    tmux paste-buffer -p -d
     tmux send-keys Enter
-else
-    rm -f "$tmpfile"
-    tmux kill-window -t fx
 fi
+rm -f "$tmpfile"

@@ -1,5 +1,5 @@
-{
-  "nodes": {
+:open %sh{tr '\n' ' ' < /tmp/tmp.p7TgVH9dkX; rm -f /tmp/tmp.p7TgVH9dkX}{
+  "nodes": {:open %sh{tr '\n' ' ' < /tmp/tmp.H1qckttpHX; rm -f /tmp/tmp.H1qckttpHX:open %sh{tr '\n' ' ' < /tmp/tmp.9OrVEJnUWe; rm -f /tmp/tmp.9OrVEJnUWe:open %sh{tr '\n' ' ' < /tmp/tmp.ylabYkq5Rv; rm -f /tmp/tmp.ylabYkq5Rv}}}
     "affinity": {
       "inputs": {
         "elemental-wine-source": "elemental-wine-source",
