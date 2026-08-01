@@ -30,6 +30,8 @@
         snacks-nvim
         nvim-autopairs
         nvim-cmp
+        indent-blankline-nvim-lua
+        indent-blankline-nvim
 
         promise-async
         nvim-ufo
