@@ -32,6 +32,7 @@
         nvim-cmp
         indent-blankline-nvim-lua
         indent-blankline-nvim
+        conform-nvim
 
         promise-async
         nvim-ufo

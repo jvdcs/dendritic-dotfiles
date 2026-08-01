@@ -33,6 +33,7 @@ else
   require("plugins.completion")
   require("plugins.editor")
   require("plugins.autopairs")
+  require("plugins.formatting")
 
   require("lang.typst")
   require("lang.typst.snippets")
