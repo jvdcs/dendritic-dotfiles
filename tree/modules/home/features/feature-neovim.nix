@@ -29,6 +29,7 @@
         harpoon2
         snacks-nvim
         nvim-autopairs
+        nvim-cmp
 
         promise-async
         nvim-ufo

@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
-
 buffer_name="$1"
-paths=$(yazi "$buffer_name" --chooser-file=/dev/stdout)
+tmpfile=$(mktemp)
+yazi "$buffer_name" --chooser-file="$tmpfile"
 
-if [[ -n "$paths" ]]; then
+if [[ -s "$tmpfile" ]]; then
     tmux last-window
     tmux send-keys Escape
-    tmux send-keys ":execute 'o ' . fnameescape('$paths')"
+    tmux send-keys ":open %sh{tr '\n' ' ' < $tmpfile; rm -f $tmpfile}"
     tmux send-keys Enter
 else
+    rm -f "$tmpfile"
     tmux kill-window -t fx
 fi
