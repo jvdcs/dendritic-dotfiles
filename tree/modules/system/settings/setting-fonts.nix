@@ -26,6 +26,7 @@
         # serif
         texlivePackages.eczar
         cm_unicode
+        ibm-plex
         # sans serif
         dm-sans
         # monospace
