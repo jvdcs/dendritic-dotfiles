@@ -20,13 +20,13 @@
         tree-sitter-grammars.tree-sitter-typst # typst syntax tree parser
         tree-sitter # parser generator tool
         typst # modern typesetting system
+        tinymist # typst language server
         typstyle # typst formatter
       ];
     };
 
     packageSet-lsps = {pkgs, ...}: {
       home.packages = with pkgs; [
-        tinymist # typst language server
         marksman # markdown lsp
         markdown-oxide
       ];

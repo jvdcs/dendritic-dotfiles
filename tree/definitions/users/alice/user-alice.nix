@@ -34,8 +34,6 @@
       feature-yazi
       feature-mpd
 
-      # feature-halloy
-
       feature-neovim
 
       # feature-noctaliaShell

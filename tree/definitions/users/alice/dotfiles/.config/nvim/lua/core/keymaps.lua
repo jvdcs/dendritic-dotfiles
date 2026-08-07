@@ -20,8 +20,6 @@ map("n", "<C-Space>", function()
   vim.fn.system({'tmux', 'new-window', '-n', 'filepicker', 'sh', '-c', script})
 end, { silent = true })
 
-map("n", "<A-r>", "<cmd>source $MYVIMRC<CR>", { desc = "Reload Config", silent = true })
-
 map("n", "<leader>wc", "<cmd>bd<CR>",     { silent = true })
 map("n", "<leader>wC", "<cmd>bd!<CR>",    { silent = true })
 map("n", "<leader>wQ", "<cmd>q!<CR>",     { silent = true })

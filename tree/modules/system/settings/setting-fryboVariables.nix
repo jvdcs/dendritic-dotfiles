@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.setting-fryboVariables = {
+  flake.modules.nixos.setting-fryboVariables = {lib, ...}: {
     environment.sessionVariables = {
       PATH = [
         "$HOME/.emacs.d/bin"
