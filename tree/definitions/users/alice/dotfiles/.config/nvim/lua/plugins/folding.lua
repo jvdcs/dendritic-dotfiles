@@ -10,7 +10,8 @@ require('packer').startup(function(use)
 end)
 
 vim.keymap.set('n', '<Tab>', function() require('fold-cycle').open() end, { silent = true })
-vim.keymap.set('n', '<S-Tab>', function() require('fold-cycle').toggle_all() end, { silent = true })
+vim.keymap.set('n', '<S-Tab>', function() require('fold-cycle').close() end, { silent = true })
+vim.keymap.set('n', 'za', function() require('fold-cycle').toggle_all() end, { silent = true })
 
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
