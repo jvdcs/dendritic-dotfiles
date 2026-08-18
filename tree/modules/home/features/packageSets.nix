@@ -97,6 +97,7 @@
         obsidian # markdown knowledge base
         # gocryptfs # encrypted filesystem
         # newsflash # rss reader
+        google-chrome
         caprine # messenger
         lastfm # music tracker
       ];

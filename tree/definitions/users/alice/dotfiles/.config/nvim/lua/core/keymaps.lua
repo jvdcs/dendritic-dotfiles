@@ -1,6 +1,11 @@
 local map = vim.keymap.set
 
+vim.keymap.set('n', 'Z', '<Nop>', { silent = true })
+vim.keymap.set('n', 'ZZ', '<Nop>', { silent = true })
+vim.keymap.set('n', 'ZQ', '<Nop>', { silent = true })
+
 vim.keymap.set("x", "<", "<gv", { desc = "Indent left and keep selection" })
+vim.keymap.set("c", "<", "<gv", { desc = "Indent left and keep selection" })
 vim.keymap.set("x", ">", ">gv", { desc = "Indent right and keep selection" })
 
 -- Yazi file picker (spawns a tmux window, hands the chosen path back to :edit)
