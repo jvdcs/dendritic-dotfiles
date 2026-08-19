@@ -68,7 +68,8 @@
       # ===
 
       # === SHELLS ===
-      feature-noctaliaShell
+      # feature-noctaliaShell
+      feature-noctaliaShellV5
       # feature-ambxstShell
       # ===
 

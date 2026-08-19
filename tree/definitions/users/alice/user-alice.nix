@@ -36,7 +36,6 @@
 
       feature-neovim
 
-      # feature-noctaliaShell
       feature-vicinae
       feature-zathura
       feature-kitty

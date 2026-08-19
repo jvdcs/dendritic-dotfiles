@@ -23,6 +23,9 @@
     noctalia-shell.url = "github:noctalia-dev/noctalia-shell";
     noctalia-shell.inputs.nixpkgs.follows = "nixpkgs";
 
+    noctalia-shell-v5.url = "github:noctalia-dev/noctalia";
+    noctalia-shell-v5.inputs.nixpkgs.follows = "nixpkgs";
+
     affinity.url = "github:mrshmllow/affinity-nix";
     affinity.inputs.nixpkgs.follows = "nixpkgs";
 

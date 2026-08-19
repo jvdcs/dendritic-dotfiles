@@ -171,7 +171,7 @@
         esptool # flash ESP8266/ESP32 microcontrollers
         evtest # input device event testing
         keyd # key remapping daemon
-        xorg.xrandr # configure display outputs
+        xrandr # configure display outputs
       ];
     };
 

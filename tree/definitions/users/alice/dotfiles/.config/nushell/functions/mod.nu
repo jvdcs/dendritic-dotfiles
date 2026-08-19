@@ -40,7 +40,7 @@ export def p [msg: string] {
 export def e [] {
   let here = (pwd)
   z /etc/nixos/
-  nvim ./
+  hx ./
   z $here
 }
 
