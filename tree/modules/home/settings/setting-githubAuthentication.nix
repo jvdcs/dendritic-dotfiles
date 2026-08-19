@@ -4,9 +4,7 @@
 
     programs.ssh = {
       enable = true;
-      # tell SSH to automatically add unlocked key agent
-      addKeysToAgent = "yes"; 
-      
+      settings."*".AddKeysToAgent = "yes"; # tell SSH to automatically add unlocked key agent
       matchBlocks."github.com" = {
         extraOptions = {
           StrictHostKeyChecking = "accept-new";

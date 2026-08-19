@@ -2,7 +2,7 @@
   flake.modules.nixos = {
     packageSet-fromFlake = {system, ...}: {
       environment.systemPackages = with inputs; [
-        quickshell.packages.${system}.default
+        # quickshell.packages.${system}.default
       ];
     };
 
@@ -257,9 +257,9 @@
       ];
     };
 
-    packageSet-libs = {pkgs, ...}: {
+    packageSet-qtLibs = {pkgs, ...}: {
       environment.systemPackages = with pkgs; [
-        libsForQt5.qt5.qtgraphicaleffects # Qt5 visual effects module
+        qt5.qtgraphicaleffects # Qt5 visual effects module
         ncurses # terminal UI library
         qt6.qt5compat # Qt5 compatibility for Qt6
         qt6.qtdeclarative # Qt6 QML engine

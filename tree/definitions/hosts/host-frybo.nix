@@ -40,7 +40,7 @@
       # setting-cafeInternetFix
       # ===
 
-      feature-affinitySuite
+      # feature-affinitySuite
       feature-asusctl
 
       feature-geolocation
@@ -118,7 +118,7 @@
       packageSet-linters
       packageSet-nixTools
       packageSet-docs
-      packageSet-libs
+      # packageSet-qtLibs
       # ===
     ];
   };

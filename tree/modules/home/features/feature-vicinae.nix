@@ -71,7 +71,7 @@
         niri
         nix
 
-        bluetooth
+        # bluetooth
         wifi-commander
 
         github

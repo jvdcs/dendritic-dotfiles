@@ -42,16 +42,19 @@
     claude-code.url = "github:sadjow/claude-code-nix";
     claude-code.inputs.nixpkgs.follows = "nixpkgs";
 
-    ambxst-shell.url = "github:Axenide/Ambxst";
-    ambxst-shell.inputs.nixpkgs.follows = "nixpkgs";
+    # ambxst-shell.url = "github:Axenide/Ambxst";
+    # ambxst-shell.inputs.nixpkgs.follows = "nixpkgs";
 
-    quickshell.url = "github:outfoxxed/quickshell";
-    quickshell.inputs.nixpkgs.follows = "nixpkgs";
+    # quickshell.url = "github:outfoxxed/quickshell";
+    # quickshell.inputs.nixpkgs.follows = "nixpkgs";
 
     quadlet-nix.url = "github:SEIAROTg/quadlet-nix";
 
-    niri-flake.url = "github:sodiboo/niri-flake";
-    niri-flake.inputs.nixpkgs.follows = "nixpkgs";
+    # niri-flake.url = "github:sodiboo/niri-flake";
+    # niri-flake.inputs.nixpkgs.follows = "nixpkgs";
+
+    niri-src.url = "github:niri-wm/niri";
+    niri-src.inputs.nixpkgs.follows = "nixpkgs";
 
     stylix.url = "github:nix-community/stylix";
     stylix.inputs.nixpkgs.follows = "nixpkgs";
