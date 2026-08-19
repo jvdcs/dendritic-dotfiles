@@ -5,33 +5,33 @@ sort_reverse = true
 sort_dir_first = true
 show_hidden = false
 ratio = [1, 2, 3]
-linemode = "mtime"
+linemode = "size_and_mtime" # WARN: relies on init.lua
 
 [preview]
 image_delay = 20
 
 [opener]
 pdf_viewer = [
-  { run = 'sioyek --new-instance "$@"', block = false, desc = "Sioyek", for = "unix", orphan = true },
-  { run = 'zen "$@"', block = true, desc = "Zen", for = "unix" },
+  { run = 'sioyek --new-instance %s', block = false, desc = "Sioyek", for = "unix", orphan = true },
+  { run = 'zen %s', block = true, desc = "Zen", for = "unix" },
 ]
 image_viewer = [
-  { run = 'swayimg "$@" $(find "$(dirname "$@")" -maxdepth 1 -type f | sort)', block = false, desc = "Swayimg", for = "unix", orphan = true },
-  { run = 'zen "$@"', block = true, desc = "Zen", for = "unix" },
-  { run = 'pinta "$@"', block = true, desc = "Pinta", for = "unix" },
-  { run = 'aseprite "$@"', block = true, desc = "Aseprite", for = "unix" },
+  { run = "sh -c 'swayimg \"$1\" \"$2\"/*' -- %s1 %d1", block = false, desc = "Swayimg", for = "unix", orphan = true },
+  { run = 'zen %s', block = true, desc = "Zen", for = "unix" },
+  { run = 'pinta %s', block = true, desc = "Pinta", for = "unix" },
+  { run = 'aseprite %s', block = true, desc = "Aseprite", for = "unix" },
 ]
 media_viewer = [
-  { run = 'mpv "$@"', block = false, desc = "Mpv", for = "unix", orphan = true },
-  { run = 'zen "$@"', block = true, desc = "Zen", for = "unix" },
+  { run = 'mpv %s', block = false, desc = "Mpv", for = "unix", orphan = true },
+  { run = 'zen %s', block = true, desc = "Zen", for = "unix" },
 ]
 edit = [
-  { run = 'hx "$@"', block = true, desc = "Helix", for = "unix" },
-  { run = 'nvim "$@"', block = true, desc = "Neovim", for = "unix" },
-  { run = 'zen "$@"', block = true, desc = "Zen", for = "unix" },
-  { run = 'code "$@"', block = false, desc = "Vscode", for = "unix", orphan = true },
-  { run = 'emacsclient -c "$@"', block = false, desc = "Emacs", for = "unix", orphan = true },
-  { run = 'swayimg "$@" "$(dirname "$@")"/*', block = false, desc = "Swayimg", for = "unix", orphan = true },
+  { run = 'hx %s', block = true, desc = "Helix", for = "unix" },
+  { run = 'nvim %s', block = true, desc = "Neovim", for = "unix" },
+  { run = 'zen %s', block = true, desc = "Zen", for = "unix" },
+  { run = 'code %s', block = false, desc = "Vscode", for = "unix", orphan = true },
+  { run = 'emacsclient -c %s', block = false, desc = "Emacs", for = "unix", orphan = true },
+  { run = "sh -c 'swayimg \"$1\" \"$2\"/*' -- %s1 %d1", block = false, desc = "Swayimg", for = "unix", orphan = true },
 ]
 
 [open]

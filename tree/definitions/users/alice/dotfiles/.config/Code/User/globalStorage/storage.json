@@ -48,7 +48,8 @@
             "file:///home/alice/sandbox/__python__/neural/sympy": "__default__profile__",
             "file:///home/alice/sandbox/__python__/neural/UDL/udlbook": "__default__profile__",
             "file:///home/alice/syncthing/_210": "__default__profile__",
-            "file:///home/alice/sandbox/__python__/neural/UDL": "__default__profile__"
+            "file:///home/alice/sandbox/__python__/neural/UDL": "__default__profile__",
+            "file:///etc/nixos/tree/modules": "__default__profile__"
         },
         "emptyWindows": {}
     },
@@ -67,6 +68,10 @@
             "activityBarBorder": "rgba(0, 0, 0, 0)",
             "sideBarBackground": "#222221",
             "sideBarBorder": "rgba(0, 0, 0, 0)",
+            "panelBackground": "#191a1b",
+            "editorGroupBorder": "rgba(0, 0, 0, 0)",
+            "agentsPanelBackground": "#191a1b",
+            "agentsPanelBorder": "#2a2b2c",
             "statusBarBackground": "#222221",
             "statusBarBorder": "rgba(0, 0, 0, 0)",
             "statusBarNoFolderBackground": "#222221",
@@ -76,11 +81,32 @@
             "sideBarSide": "right",
             "editorPartMinWidth": 220,
             "titleBarHeight": 30,
-            "activityBarWidth": 48,
-            "sideBarWidth": 176,
+            "activityBarWidth": 44,
+            "sideBarWidth": 179,
             "auxiliaryBarWidth": 0,
-            "statusBarHeight": 22,
-            "windowBorder": false
+            "statusBarHeight": 32,
+            "windowBorder": false,
+            "modernUI": true,
+            "partBounds": {
+                "sideBar": {
+                    "top": 34,
+                    "left": 1181,
+                    "width": 173,
+                    "height": 827
+                },
+                "panel": {
+                    "top": 589,
+                    "left": 8,
+                    "width": 1167,
+                    "height": 275
+                },
+                "editor": {
+                    "top": 34,
+                    "left": 8,
+                    "width": 1167,
+                    "height": 549
+                }
+            }
         }
     },
     "windowsState": {
@@ -89,9 +115,9 @@
             "backupPath": "/home/alice/.config/Code/Backups/06b739b22a4006a29f62f49cd2443959",
             "uiState": {
                 "mode": 1,
-                "x": 0,
-                "y": 0,
-                "width": 704,
+                "x": 16,
+                "y": 10,
+                "width": 1400,
                 "height": 900
             }
         },
@@ -99,7 +125,7 @@
     },
     "windowSplashWorkspaceOverride": {
         "layoutInfo": {
-            "sideBarWidth": 176,
+            "sideBarWidth": 179,
             "auxiliaryBarWidth": 170,
             "workspaces": {
                 "3d81f909cd5a180b1e70da17fbd8454d": {
@@ -237,8 +263,22 @@
                 "9fabdc67b8468196fdb0ec1fff67d75d": {
                     "sideBarVisible": true,
                     "auxiliaryBarVisible": false
+                },
+                "d565a1e91b758993828136a1c2c56841": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "434838b99e626b6f3582ac4aefccd7a7": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
                 }
             }
         }
-    }
+    },
+    "userDataProfiles": [
+        {
+            "location": "builtin/agents",
+            "name": "Agents"
+        }
+    ]
 }
