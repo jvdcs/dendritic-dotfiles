@@ -13,7 +13,8 @@
         fallback = true
       '';
       settings = {
-        max-jobs = 12;
+        max-jobs = 10;
+        cores = 4;
         auto-optimise-store = true;
         substituters = [
           "https://nix-community.cachix.org"

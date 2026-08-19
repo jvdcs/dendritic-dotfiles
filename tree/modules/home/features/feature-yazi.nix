@@ -24,7 +24,7 @@
           ouch
 
           smart-filter
-          starship
+          # starship
           chmod
           piper
           ;
