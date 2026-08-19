@@ -3,13 +3,14 @@
     services.ssh-agent.enable = true;
 
     programs.ssh = {
+      enableDefaultConfig = false;
       enable = true;
       settings."*".AddKeysToAgent = "yes"; # tell SSH to automatically add unlocked key agent
-      matchBlocks."github.com" = {
-        extraOptions = {
-          StrictHostKeyChecking = "accept-new";
-        };
-      };
+      # settings."github.com" = {
+      #   extraOptions = {
+      #     StrictHostKeyChecking = "accept-new";
+      #   };
+      # };
     };
   };
 }

@@ -8,7 +8,7 @@
       inputs.vicinae.homeManagerModules.default
     ];
 
-    services.vicinae = {
+    programs.vicinae = {
       enable = true;
       package = inputs.vicinae.packages.${system}.default;
       systemd = {
@@ -71,7 +71,6 @@
         niri
         nix
 
-        # bluetooth
         wifi-commander
 
         github

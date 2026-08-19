@@ -1,12 +1,14 @@
 {...}: {
   flake.modules.homeManager.feature-btop = {
+    stylix.targets.btop.enable = false;
     programs.btop = {
       enable = true;
 
       settings = {
+        color_theme = "TTY";
         theme_background = false;
         truecolor = true;
-        force_tty = false;
+        # force_tty = true;
 
         # Presets
         presets = "cpu:1:default,proc:0:default cpu:0:default,mem:0:default,net:0:default cpu:0:block,net:0:tty";
