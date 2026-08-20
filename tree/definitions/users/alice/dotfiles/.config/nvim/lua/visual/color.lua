@@ -111,6 +111,28 @@ local groups = {
   -- WhichKey UI & Background
   WhichKeyNormal = { bg = c.gray01 }, -- Float background (v3+)
   WhichKeyBorder = { link = "FloatBorder" },     -- Inherits your FloatBorder styling
+
+  -- nvim-notify UI
+  NotifyBackground = { bg = c.bg },
+  NotifyERRORBorder = { link = "FloatBorder" },
+  NotifyERRORIcon = { fg = c.red },
+  NotifyERRORTitle = { fg = c.red, italic = true },
+  
+  NotifyWARNBorder = { link = "FloatBorder" },
+  NotifyWARNIcon = { fg = c.yellow },
+  NotifyWARNTitle = { fg = c.yellow, italic = true },
+  
+  NotifyINFOBorder = { link = "FloatBorder" },
+  NotifyINFOIcon = { fg = c.blue },
+  NotifyINFOTitle = { fg = c.blue, italic = true },
+  
+  NotifyDEBUGBorder = { link = "FloatBorder" },
+  NotifyDEBUGIcon = { fg = c.gray05 },
+  NotifyDEBUGTitle = { fg = c.gray05, italic = true },
+  
+  NotifyTRACEBorder = { link = "FloatBorder" },
+  NotifyTRACEIcon = { fg = c.magenta },
+  NotifyTRACETitle = { fg = c.magenta, italic = true },
 }
 
 for name, hl in pairs(groups) do
