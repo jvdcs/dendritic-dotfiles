@@ -6,10 +6,11 @@ vim.pack.add({
 
 require("telescope").setup({
   defaults = {
+    path_display = { "filename_first" }, -- Moves filename to front (bright) and puts directory after it (dimmed)
     -- layout_strategy = "horizontal", -- Options: "horizontal", "vertical", "center", "cursor"
     -- sorting_strategy = "ascending", -- Puts the search prompt at the top
     -- prompt_prefix = "🔍 ",
-    -- selection_caret = "❯ ",
+    selection_caret = "❯ ",
   },
   pickers = {
     help_tags = {

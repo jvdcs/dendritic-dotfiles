@@ -22,6 +22,7 @@ vim.keymap.set("n", "<C-s>", "<cmd>write<CR>", { desc = "[s]ave file" })
 
 vim.keymap.set("n", "<leader>b", "<cmd>Telescope buffers<CR>", { desc = "[b]uffer list" })
 vim.keymap.set("n", "<leader>h", "<cmd>Telescope help_tags<CR>", { desc = "[h]elp tags" })
+vim.keymap.set("n", "<leader>/", "<cmd>Telescope live_grep<CR>", { desc = "grep" })
 vim.keymap.set("n", "<leader>f", "<cmd>Telescope find_files<CR>", { desc = "[f]ind files" })
 vim.keymap.set("n", "<leader>sh", "<cmd>Telescope highlights<CR>", { desc = "[s]earch highlights" })
 

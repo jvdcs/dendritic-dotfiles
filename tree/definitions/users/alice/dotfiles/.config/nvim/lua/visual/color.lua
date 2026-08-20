@@ -108,6 +108,13 @@ local groups = {
   TelescopeResultsBorder = { link = "FloatBorder" },
   TelescopePreviewBorder = { link = "FloatBorder" },
 
+  TelescopeMatching = { fg = c.green, bold = true }, -- Matched characters in search results
+  TelescopeSelection = { fg = c.fg, bg = c.gray02 },  -- Active row highlight (optional)
+  TelescopeSelectionCaret = { fg = c.green },        -- Pointer character highlight (optional)
+
+  TelescopeResultsDirectory = { fg = c.gray05 }, -- Dims the path (e.g. lua/config/)
+  TelescopeResultsFileName = { fg = c.fg },      -- Keeps trailing filename bright
+
   -- WhichKey UI & Background
   WhichKeyNormal = { bg = c.gray01 }, -- Float background (v3+)
   WhichKeyBorder = { link = "FloatBorder" },     -- Inherits your FloatBorder styling
