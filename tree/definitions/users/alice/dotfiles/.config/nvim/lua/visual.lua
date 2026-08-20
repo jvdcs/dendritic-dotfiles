@@ -123,6 +123,7 @@ local term = {
   c.gray03, c.red, c.green, c.yellow, c.blue, c.magenta, c.cyan, c.fg,
   c.gray05, c.red, c.green, c.yellow, c.blue, c.magenta, c.cyan, c.fg,
 }
-for i, hex in ipairs(term) do
-  vim.g["terminal_color_" .. (i - 1)] = hex
-end
+
+-- for i, hex in ipairs(term) do
+--   vim.g["terminal_color_" .. (i - 1)] = hex
+-- end

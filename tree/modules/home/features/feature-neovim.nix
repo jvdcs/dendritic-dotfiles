@@ -48,6 +48,7 @@
 #     ];
 #   };
 # }
+
 {...}: {
   flake.modules.homeManager.feature-neovim = {pkgs, ...}: {
     home.packages = with pkgs; [

@@ -18,6 +18,10 @@ prepend_keymap = [
   ], run = "cd /etc/nixos", desc = "/etc/nixos" },
   { on = [
     "g",
+    "C",
+  ], run = "cd /etc/nixos/tree/definitions/users/alice/dotfiles/.config", desc = "/etc/nixos/tree/definitions/users/alice/dotfiles/.config" },
+  { on = [
+    "g",
     "s",
   ], run = "cd ~/syncthing/school", desc = "~/syncthing/school" },
   { on = [
