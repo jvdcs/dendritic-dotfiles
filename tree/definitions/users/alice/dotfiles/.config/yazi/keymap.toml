@@ -26,6 +26,8 @@ prepend_keymap = [
   ], run = "cd ~/sandbox", desc = "~/sandbox" },
 
   # MY DEFAULTS
+  { on = [ "<Tab>" ], run = "back",    desc = "Go back to previous directory" },
+  { on = [ "<C-o>" ], run = "forward", desc = "Go forward to next directory" },
   { on = [
     "q",
   ], run = "tab_switch --relative -1", desc = "previous tab" },
