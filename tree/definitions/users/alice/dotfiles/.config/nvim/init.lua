@@ -1,0 +1,7 @@
+require("visual")
+require("maps")
+require("defaults")
+require("plugins.oil")
+require("plugins.which-key")
+require("plugins.telescope")
+require("plugins.nvim-web-devicons")
