@@ -1,8 +1,7 @@
 require("visual")
-require("maps")
 require("defaults")
-require("hooks.oil")
-require("hooks.on-opening-file")
+require("maps")
+
 require("plugins.oil")
 require("plugins.yazi")
 require("plugins.which-key")

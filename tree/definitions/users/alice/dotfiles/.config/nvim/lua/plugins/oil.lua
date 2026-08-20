@@ -1,7 +1,7 @@
 vim.pack.add({"https://github.com/stevearc/oil.nvim"})
 
 require("oil").setup({
-  -- default_file_explorer = true, -- Replaces Neovim's default netrw explorer
+  default_file_explorer = false, -- Replaces Neovim's default netrw explorer
   -- skip_confirm_for_simple_edits = false, -- Set true to instantly apply file changes on save without asking
   -- view_options = {
   --   show_hidden = false,        -- Toggle hidden files (can also press 'gH' while inside Oil)

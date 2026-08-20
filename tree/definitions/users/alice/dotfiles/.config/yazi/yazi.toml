@@ -26,8 +26,8 @@ media_viewer = [
   { run = 'zen %s', block = true, desc = "Zen", for = "unix" },
 ]
 edit = [
-  { run = 'hx %s', block = true, desc = "Helix", for = "unix" },
   { run = 'nvim %s', block = true, desc = "Neovim", for = "unix" },
+  { run = 'hx %s', block = true, desc = "Helix", for = "unix" },
   { run = 'zen %s', block = true, desc = "Zen", for = "unix" },
   { run = 'code %s', block = false, desc = "Vscode", for = "unix", orphan = true },
   { run = 'emacsclient -c %s', block = false, desc = "Emacs", for = "unix", orphan = true },
