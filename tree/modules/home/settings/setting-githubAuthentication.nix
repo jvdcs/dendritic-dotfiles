@@ -6,11 +6,6 @@
       enableDefaultConfig = false;
       enable = true;
       settings."*".AddKeysToAgent = "yes"; # tell SSH to automatically add unlocked key agent
-      # settings."github.com" = {
-      #   extraOptions = {
-      #     StrictHostKeyChecking = "accept-new";
-      #   };
-      # };
     };
   };
 }
