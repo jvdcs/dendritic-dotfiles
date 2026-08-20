@@ -10,7 +10,7 @@ require("noice").setup({
     hover = {
       border = {
         style = "rounded",
-        padding = { 1, 2 }, -- 1 line top/bottom, 2 spaces left/right
+        padding = { 2, 2 }, -- 1 line top/bottom, 2 spaces left/right
       },
     },
   },

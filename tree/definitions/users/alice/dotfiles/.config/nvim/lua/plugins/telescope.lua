@@ -11,6 +11,11 @@ require("telescope").setup({
     -- sorting_strategy = "ascending", -- Puts the search prompt at the top
     -- prompt_prefix = "🔍 ",
     selection_caret = "❯ ",
+    mappings = {
+      i = {
+        ["<Esc>"] = require("telescope.actions").close, -- Single Esc immediately closes prompt
+      },
+    },
   },
   pickers = {
     help_tags = {
