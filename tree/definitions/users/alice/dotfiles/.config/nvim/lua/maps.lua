@@ -13,8 +13,8 @@ vim.keymap.set("n", "<leader>wL", "<C-w>L", { desc = "[w]indow move far right" }
 vim.keymap.set("n", "<leader>ww", "<C-w>p", { desc = "[w]indow previous" })
 
 -- Window Splitting
-vim.keymap.set("n", "<leader>ws", "<C-w>s", { desc = "[w]indow split horizontal" })
-vim.keymap.set("n", "<leader>wv", "<C-w>v", { desc = "[w]indow split vertical" })
+vim.keymap.set("n", "<leader>ws", "<C-w>s", { desc = "[w]indow split down" })
+vim.keymap.set("n", "<leader>wd", "<C-w>v", { desc = "[w]indow split left" })
 vim.keymap.set("n", "<leader>wq", "<C-w>c", { desc = "[w]indow close" })
 
 vim.keymap.set("n", "<leader>r", "<cmd>restart<CR>", { desc = "[r]estart nvim" })
