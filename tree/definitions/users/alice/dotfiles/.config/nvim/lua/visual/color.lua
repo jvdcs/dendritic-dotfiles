@@ -133,6 +133,17 @@ local groups = {
   NotifyTRACEBorder = { link = "FloatBorder" },
   NotifyTRACEIcon = { fg = c.magenta },
   NotifyTRACETitle = { fg = c.magenta, italic = true },
+
+  -- Folding (Native Neovim & nvim-ufo)
+  Folded = { fg = c.gray05, bg = c.gray01 }, -- The folded text and its background
+  FoldColumn = { fg = c.gray04 },            -- The gutter where the fold arrows sit
+  
+  UfoFoldedFg = { fg = c.gray05 },           -- UFO specific text color
+  UfoFoldedBg = { bg = c.gray01 },           -- UFO specific background color
+  UfoFoldedEllipsis = { fg = c.blue },       -- The "..." indicating hidden lines
+  
+  UfoPreviewNormal = { link = "NormalFloat" },
+  UfoPreviewBorder = { link = "FloatBorder" },
 }
 
 for name, hl in pairs(groups) do

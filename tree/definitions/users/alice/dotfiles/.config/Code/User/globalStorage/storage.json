@@ -7,6 +7,9 @@
         "folders": [
             {
                 "folderUri": "file:///home/alice/sandbox/__python__/neural/UDL"
+            },
+            {
+                "folderUri": "file:///home/alice"
             }
         ],
         "emptyWindows": []
@@ -82,7 +85,7 @@
             "editorPartMinWidth": 220,
             "titleBarHeight": 30,
             "activityBarWidth": 44,
-            "sideBarWidth": 179,
+            "sideBarWidth": 180,
             "auxiliaryBarWidth": 0,
             "statusBarHeight": 32,
             "windowBorder": false,
@@ -90,42 +93,36 @@
             "partBounds": {
                 "sideBar": {
                     "top": 34,
-                    "left": 1181,
-                    "width": 173,
-                    "height": 827
-                },
-                "panel": {
-                    "top": 589,
-                    "left": 8,
-                    "width": 1167,
-                    "height": 275
+                    "left": 1220,
+                    "width": 174,
+                    "height": 800
                 },
                 "editor": {
                     "top": 34,
                     "left": 8,
-                    "width": 1167,
-                    "height": 549
+                    "width": 1206,
+                    "height": 800
                 }
             }
         }
     },
     "windowsState": {
         "lastActiveWindow": {
-            "folder": "file:///home/alice/sandbox/__python__/neural/UDL",
-            "backupPath": "/home/alice/.config/Code/Backups/06b739b22a4006a29f62f49cd2443959",
+            "folder": "file:///home/alice",
+            "backupPath": "/home/alice/.config/Code/Backups/7a7d5c529e389d2801a8a479d9ef603a",
             "uiState": {
                 "mode": 1,
                 "x": 16,
                 "y": 10,
-                "width": 1400,
-                "height": 900
+                "width": 1440,
+                "height": 870
             }
         },
         "openedWindows": []
     },
     "windowSplashWorkspaceOverride": {
         "layoutInfo": {
-            "sideBarWidth": 179,
+            "sideBarWidth": 180,
             "auxiliaryBarWidth": 170,
             "workspaces": {
                 "3d81f909cd5a180b1e70da17fbd8454d": {
@@ -269,6 +266,10 @@
                     "auxiliaryBarVisible": false
                 },
                 "434838b99e626b6f3582ac4aefccd7a7": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
+                },
+                "2003637b7e05e8f71156a0d66f1f1b2c": {
                     "sideBarVisible": true,
                     "auxiliaryBarVisible": false
                 }
