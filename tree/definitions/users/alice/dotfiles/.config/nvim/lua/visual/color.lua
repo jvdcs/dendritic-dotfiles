@@ -179,6 +179,11 @@ local groups = {
   GitSignsChangedelete = { fg = c.magenta },
   GitSignsTopdelete = { fg = c.red },
   GitSignsUntracked = { fg = c.cyan },
+
+  -- Noice
+  NoiceCmdlinePopupBorder = { fg = c.gray03 },
+  NoiceCmdlinePopupTitle = { fg = c.fg },
+  NoiceCmdlinePopupTitleCmdline = { fg = c.fg },
 }
 
 for name, hl in pairs(groups) do

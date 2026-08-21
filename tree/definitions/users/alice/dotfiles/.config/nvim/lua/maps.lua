@@ -51,11 +51,12 @@ local function toggle_all_folds()
   end
   all_folds_closed = not all_folds_closed
 end
-S("n", "<C-a>", toggle_all_folds, { desc = "Toggle all folds" })
+S("n", "<C-f>", toggle_all_folds, { desc = "Toggle all folds" })
 
--- S("n", "zr", function() require("ufo").openFoldsExceptKinds({ "comment", "region" }) end, { desc = "Open folds except kinds" })
--- S("n", "zm", function() require("ufo").closeFoldsWith(1) end, { desc = "Close folds down to level 1" })
--- S("n", "zK", function() require("ufo").peekFoldedLinesUnderCursor() end, { desc = "Peek fold preview under cursor" })
--- S("n", "[f", function() require("ufo").goPreviousStartFold() end, { desc = "Go to start of previous fold" })
--- S("n", "[z", function() require("ufo").goPreviousClosedFold() end, { desc = "Go to previous closed fold" })
--- S("n", "]z", function() require("ufo").goNextClosedFold() end, { desc = "Go to next closed fold" })
+-- Map <Alt-j> and <Alt-k> to navigate down and up in command-line suggestions
+vim.keymap.set("c", "<Down>", "<C-n>", { desc = "Next command line suggestion" })
+vim.keymap.set("c", "<Up>", "<C-p>", { desc = "Previous command line suggestion" })
+
+vim.opt.wildmenu = true            -- Enable command-line completion menu
+vim.opt.wildoptions = "pum"        -- Display suggestions as a vertical popup menu
+vim.opt.wildmode = "full"          -- Command completion mode behavior
