@@ -17,3 +17,6 @@ require("plugins.telescope")
 require("plugins.multicursor")
 require("plugins.nvim-ufo")
 require("plugins.nvim-treesitter")
+
+require("plugins.gitsigns")
+require("plugins.nvim-autopairs")

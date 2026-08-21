@@ -7,7 +7,7 @@ vim.g.colors_name = "helix-port"
 
 local c = {
   bg = "#1a1a19",
-  fg = "#d1d1d1", 
+  fg = "#d1d1d1",
   gray01 = "#222221",
   gray02 = "#2a2a29",
   gray03 = "#323231",
@@ -171,6 +171,14 @@ local groups = {
   DropBarMenuHoverEntry  = { fg = c.bg, bg = c.fg },              -- The row background
   DropBarMenuHoverSymbol = { fg = c.bg, bg = c.fg, bold = true }, -- The text
   DropBarMenuHoverIcon   = { fg = c.bg, bg = c.fg },              -- The icon (Nix, Git, etc.)
+
+  -- Gitsigns
+  GitSignsAdd = { fg = c.green },
+  GitSignsChange = { fg = c.magenta },
+  GitSignsDelete = { fg = c.red },
+  GitSignsChangedelete = { fg = c.magenta },
+  GitSignsTopdelete = { fg = c.red },
+  GitSignsUntracked = { fg = c.cyan },
 }
 
 for name, hl in pairs(groups) do

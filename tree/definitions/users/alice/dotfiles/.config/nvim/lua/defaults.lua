@@ -5,7 +5,6 @@ vim.opt.wrap = true          -- Enable line wrapping
 vim.opt.breakindent = true   -- Maintain indent level on wrapped lines
 vim.opt.linebreak = true     -- Break lines at words rather than hard boundaries
 vim.opt.showbreak   = "↪ "
-vim.opt.signcolumn  = "yes"
 
 -- Cursor
 vim.opt.guicursor = {
@@ -20,7 +19,6 @@ vim.opt.softtabstop = 2  -- Number of spaces that a <Tab> counts for while perfo
 vim.opt.expandtab = true -- Convert tabs to spaces
 
 vim.opt.number = true         -- Enable absolute line numbers
-vim.opt.signcolumn = "number"    -- Keep the sign gutter permanently open next to the numbers
 vim.g.have_nerd_font = true
 vim.opt.mouse = 'a' -- enable mouse stuff 
 

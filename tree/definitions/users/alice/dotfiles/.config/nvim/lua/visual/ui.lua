@@ -1,3 +1,7 @@
+vim.o.number = true
+vim.o.relativenumber = true
+vim.o.signcolumn = "yes"
+
 vim.diagnostic.config({
   signs = {
     text = {
@@ -6,30 +10,24 @@ vim.diagnostic.config({
       [vim.diagnostic.severity.INFO]  = "",
       [vim.diagnostic.severity.HINT]  = "",
     },
-    numhl = {
-      [vim.diagnostic.severity.ERROR] = "DiagnosticError",
-      [vim.diagnostic.severity.WARN]  = "DiagnosticWarn",
-      [vim.diagnostic.severity.INFO]  = "DiagnosticInfo",
-      [vim.diagnostic.severity.HINT]  = "DiagnosticHint",
-    },
   },
 })
 
-vim.o.number = true
-vim.o.relativenumber = true
+-- Map severity integers (1-4) directly to highlight groups
+local diag_hl = { "DiagnosticError", "DiagnosticWarn", "DiagnosticInfo", "DiagnosticHint" }
 
 _G.diagnostic_statuscol = function()
-  local lnum = vim.v.lnum
-  -- Fetch diagnostics on current line (convert 1-indexed lnum to 0-indexed)
+  local lnum, relnum = vim.v.lnum, vim.v.relnum
   local diags = vim.diagnostic.get(0, { lnum = lnum - 1 })
 
-  if #diags > 0 then
-    return lnum -- Display absolute line number on diagnostic lines
-  end
+  -- 1. Number: Absolute if it has diagnostics or is the current line, else relative
+  local num = (#diags > 0 or relnum == 0) and lnum or relnum
 
-  -- Default relative number (or absolute number on the active cursor line)
-  return vim.v.relnum == 0 and lnum or vim.v.relnum
+  -- 2. Highlight: Diagnostic Color -> CursorLine Color -> Default Color
+  local hl = #diags > 0 and diag_hl[diags[1].severity] or (relnum == 0 and "CursorLineNr" or "LineNr")
+
+  -- 3. String formatting: Right-align, apply color, number, reset color, space, sign column
+  return string.format("%%=%%#%s#%d%%* %%s", hl, num)
 end
 
--- %= right-aligns, %s includes signs, %{} runs our Lua function
-vim.o.statuscolumn = "%=%s %{%v:lua.diagnostic_statuscol()%} "
+vim.o.statuscolumn = "%!v:lua.diagnostic_statuscol()"
