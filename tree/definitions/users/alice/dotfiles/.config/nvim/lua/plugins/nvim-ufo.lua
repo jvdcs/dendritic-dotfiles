@@ -18,5 +18,3 @@ require("ufo").setup({
   end
 })
 
-vim.keymap.set("n", "<C-h>", require("ufo").toggleAllFolds, { desc = "Open all folds" })
-vim.keymap.set("n", "<C-l>", require("ufo").closeAllFolds, { desc = "Close all folds" })

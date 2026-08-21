@@ -1,8 +1,11 @@
-vim.o.updatetime = 250
-
 vim.diagnostic.config({
-  virtual_lines = {
-    current_line = true, -- Renders diagnostic directly under active cursor line inside editor
+  -- Completely disables multiline buffer-shifting lines
+  virtual_lines = false,
+
+  -- Displays diagnostics on the SAME line at the far right
+  virtual_text = {
+    current_line = true, -- Only shows diagnostic for the active cursor line
+    prefix = "■ ",        -- Clean glyph preceding the diagnostic text
+    spacing = 1,         -- Gap between the end of your code and the message
   },
-  virtual_text = false,  -- Keeps end-of-line clutter turned off
 })

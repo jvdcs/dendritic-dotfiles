@@ -1,29 +1,61 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+local S = vim.keymap.set
 -- Window Navigation
-vim.keymap.set("n", "<leader>wh", "<C-w>h", { desc = "[w]indow left" })
-vim.keymap.set("n", "<leader>wj", "<C-w>j", { desc = "[w]indow down" })
-vim.keymap.set("n", "<leader>wk", "<C-w>k", { desc = "[w]indow up" })
-vim.keymap.set("n", "<leader>wl", "<C-w>l", { desc = "[w]indow right" })
-vim.keymap.set("n", "<leader>wH", "<C-w>H", { desc = "[w]indow move far left" })
-vim.keymap.set("n", "<leader>wJ", "<C-w>J", { desc = "[w]indow move far down" })
-vim.keymap.set("n", "<leader>wK", "<C-w>K", { desc = "[w]indow move far up" })
-vim.keymap.set("n", "<leader>wL", "<C-w>L", { desc = "[w]indow move far right" })
-vim.keymap.set("n", "<leader>ww", "<C-w>p", { desc = "[w]indow previous" })
+S("n", "<leader>wh", "<C-w>h", { desc = "[w]indow left" })
+S("n", "<leader>wj", "<C-w>j", { desc = "[w]indow down" })
+S("n", "<leader>wk", "<C-w>k", { desc = "[w]indow up" })
+S("n", "<leader>wl", "<C-w>l", { desc = "[w]indow right" })
+S("n", "<leader>wH", "<C-w>H", { desc = "[w]indow move left" })
+S("n", "<leader>wJ", "<C-w>J", { desc = "[w]indow move down" })
+S("n", "<leader>wK", "<C-w>K", { desc = "[w]indow move up" })
+S("n", "<leader>wL", "<C-w>L", { desc = "[w]indow move right" })
+S("n", "<leader>ww", "<C-w>p", { desc = "[w]indow previous" })
 
 -- Window Splitting
-vim.keymap.set("n", "<leader>ws", "<C-w>s", { desc = "[w]indow split down" })
-vim.keymap.set("n", "<leader>wd", "<C-w>v", { desc = "[w]indow split left" })
-vim.keymap.set("n", "<leader>wq", "<C-w>c", { desc = "[w]indow close" })
+S("n", "<leader>ws", "<C-w>s", { desc = "[w]indow split down" })
+S("n", "<leader>wd", "<C-w>v", { desc = "[w]indow split left" })
+S("n", "<leader>wq", "<C-w>c", { desc = "[w]indow close" })
 
-vim.keymap.set("n", "<leader>r", "<cmd>restart<CR>", { desc = "[r]estart nvim" })
-vim.keymap.set("n", "<C-s>", "<cmd>write<CR>", { desc = "[s]ave file" })
+S("n", "<leader>r", "<cmd>restart<CR>", { desc = "[r]estart nvim" })
+S("n", "<C-s>", "<cmd>write<CR>", { desc = "[s]ave file" })
 
-vim.keymap.set("n", "<leader>b", "<cmd>Telescope buffers<CR>", { desc = "[b]uffer list" })
-vim.keymap.set("n", "<leader>h", "<cmd>Telescope help_tags<CR>", { desc = "[h]elp tags" })
-vim.keymap.set("n", "<leader>/", "<cmd>Telescope live_grep<CR>", { desc = "grep" })
-vim.keymap.set("n", "<leader>f", "<cmd>Telescope find_files<CR>", { desc = "[f]ind files" })
-vim.keymap.set("n", "<leader>sh", "<cmd>Telescope highlights<CR>", { desc = "[s]earch highlights" })
+S("n", "<leader>b", "<cmd>Telescope buffers<CR>", { desc = "[b]uffer list" })
+S("n", "<leader>h", "<cmd>Telescope help_tags<CR>", { desc = "[h]elp tags" })
+S("n", "<leader>/", "<cmd>Telescope live_grep<CR>", { desc = "grep" })
+S("n", "<leader>f", "<cmd>Telescope find_files<CR>", { desc = "[f]ind files" })
+S("n", "<leader>sh", "<cmd>Telescope highlights<CR>", { desc = "[s]earch highlights" })
 
-vim.keymap.set("n", "-", "<cmd>Oil --preview<CR>", { desc = "[-] open parent directory" })
+S("n", "-", "<cmd>Oil --preview<CR>", { desc = "[-] open parent directory" })
+
+S("n", "<C-c>", function()
+  require("dropbar.api").pick()
+end, { desc = "Pick breadcrumb context" })
+
+S("n", "<leader>cd", "<cmd>cd %:p:h<CR>", { desc = "CD to buffer" })
+S("n", "<leader>cl", "<cmd>lcd %:p:h<CR>", { desc = "LCD to buffer" })
+
+S({ "n", "v" }, "<C-space>", "<cmd>Yazi<cr>", { desc = "Open yazi at current file" })
+
+-- UFO Folding API (Uncomment and assign keys as needed)
+S("n", "<C-h>", "zc", { desc = "Close current fold" })
+S("n", "<C-l>", "zo", { desc = "Open current fold" })
+
+local all_folds_closed = false
+local function toggle_all_folds()
+  if all_folds_closed then
+    require("ufo").openAllFolds()
+  else
+    require("ufo").closeAllFolds()
+  end
+  all_folds_closed = not all_folds_closed
+end
+S("n", "<C-a>", toggle_all_folds, { desc = "Toggle all folds" })
+
+-- S("n", "zr", function() require("ufo").openFoldsExceptKinds({ "comment", "region" }) end, { desc = "Open folds except kinds" })
+-- S("n", "zm", function() require("ufo").closeFoldsWith(1) end, { desc = "Close folds down to level 1" })
+-- S("n", "zK", function() require("ufo").peekFoldedLinesUnderCursor() end, { desc = "Peek fold preview under cursor" })
+-- S("n", "[f", function() require("ufo").goPreviousStartFold() end, { desc = "Go to start of previous fold" })
+-- S("n", "[z", function() require("ufo").goPreviousClosedFold() end, { desc = "Go to previous closed fold" })
+-- S("n", "]z", function() require("ufo").goNextClosedFold() end, { desc = "Go to next closed fold" })

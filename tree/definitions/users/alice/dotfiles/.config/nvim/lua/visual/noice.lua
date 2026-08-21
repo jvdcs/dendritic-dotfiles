@@ -5,12 +5,11 @@ vim.pack.add({
 })
 
 require("noice").setup({
-  -- PADDING
   views = {
     hover = {
       border = {
         style = "rounded",
-        padding = { 2, 2 }, -- 1 line top/bottom, 2 spaces left/right
+        padding = { 1, 2 }, -- 1 line top/bottom, 2 spaces left/right
       },
     },
   },

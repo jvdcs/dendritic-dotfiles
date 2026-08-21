@@ -15,10 +15,6 @@ vim.diagnostic.config({
   },
 })
 
--- ============================================================================
--- RELATIVE LINE NUMBERS (ABSOLUTE ON DIAGNOSTIC LINES)
--- ============================================================================
-
 vim.o.number = true
 vim.o.relativenumber = true
 

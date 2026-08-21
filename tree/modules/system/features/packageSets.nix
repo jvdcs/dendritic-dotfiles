@@ -46,6 +46,7 @@
       environment.systemPackages = with pkgs; [
         irust # rust repl
         gcc # GNU C/C++ compiler
+        gnumake # for make!
         cargo # rust
         python3 # Python 3.10 interpreter
         steel # embeddable Scheme interpreter

@@ -23,9 +23,9 @@ local c = {
 }
 
 local groups = {
-  -- editor chrome. Normal stays transparent, matching the source theme's
-  -- ui.background (fg only, no bg given). Floats/menus get a solid bg
-  -- anyway -- a see-through completion popup is unreadable in practice.
+  MyHeirlinePill = { bg = c.gray02 },
+  MyHeirlineBg = { bg = c.bg },
+
   Normal = { fg = c.fg },
   NormalFloat = { fg = c.gray04, bg = c.bg },
   FloatBorder = { fg = c.gray03, bg = c.bg },
@@ -87,10 +87,10 @@ local groups = {
   Error = { fg = c.red, italic = true },
 
   -- treesitter captures that diverge from what they'd otherwise inherit
-  ["@variable"] = { fg = c.blue, underline = false },
-  ["@variable.builtin"] = { fg = c.blue, italic = true },
-  ["@variable.parameter"] = { fg = c.fg, italic = true },
-  ["@variable.member"] = { fg = c.blue },
+  ["@variable"] = { fg = c.fg, underline = false },
+  ["@variable.builtin"] = { fg = c.fg, italic = true },
+  ["@variable.parameter"] = { fg = c.blue, italic = true },
+  ["@variable.member"] = { fg = c.fg },
   ["@module"] = { fg = c.fg, underline = true },
   ["@function.macro"] = { fg = c.green, italic = true },
   ["@punctuation.bracket"] = { fg = c.gray04 },
@@ -121,7 +121,7 @@ local groups = {
   TelescopePreviewTitle = { fg = c.fg },
 
   -- WhichKey UI & Background
-  WhichKeyNormal = { bg = c.gray01 }, -- Float background (v3+)
+  WhichKeyNormal = { bg = c.bg }, -- Float background (v3+)
   WhichKeyBorder = { link = "FloatBorder" },     -- Inherits your FloatBorder styling
 
   -- nvim-notify UI
@@ -129,19 +129,19 @@ local groups = {
   NotifyERRORBorder = { link = "FloatBorder" },
   NotifyERRORIcon = { fg = c.red },
   NotifyERRORTitle = { fg = c.red, italic = true },
-  
+
   NotifyWARNBorder = { link = "FloatBorder" },
   NotifyWARNIcon = { fg = c.yellow },
   NotifyWARNTitle = { fg = c.yellow, italic = true },
-  
+
   NotifyINFOBorder = { link = "FloatBorder" },
   NotifyINFOIcon = { fg = c.blue },
   NotifyINFOTitle = { fg = c.blue, italic = true },
-  
+
   NotifyDEBUGBorder = { link = "FloatBorder" },
   NotifyDEBUGIcon = { fg = c.gray05 },
   NotifyDEBUGTitle = { fg = c.gray05, italic = true },
-  
+
   NotifyTRACEBorder = { link = "FloatBorder" },
   NotifyTRACEIcon = { fg = c.magenta },
   NotifyTRACETitle = { fg = c.magenta, italic = true },
@@ -149,26 +149,47 @@ local groups = {
   -- Folding (Native Neovim & nvim-ufo)
   Folded = { fg = c.gray05, bg = c.gray01 }, -- The folded text and its background
   FoldColumn = { fg = c.gray04 },            -- The gutter where the fold arrows sit
-  
+
   UfoFoldedFg = { fg = c.gray05 },           -- UFO specific text color
   UfoFoldedBg = { bg = c.gray01 },           -- UFO specific background color
   UfoFoldedEllipsis = { fg = c.blue },       -- The "..." indicating hidden lines
-  
   UfoPreviewNormal = { link = "NormalFloat" },
   UfoPreviewBorder = { link = "FloatBorder" },
+
+  -- Native Neovim Winbar (inherited by dropbar)
+  WinBar = { link = "Normal" },
+  WinBarNC = { link = "Normal" },
+
+  -- DropBar
+  DropBarMenuNormalFloat    = { fg = c.fg, bg = c.gray01 },                   -- Background & text of the dropdown popup
+  DropBarMenuCurrentContext = { fg = c.fg, bg = c.gray03, bold = true },
+  DropBarMenuHover          = { fg = c.fg, bg = c.gray02, bold = true },
+  DropBarMenuSbar           = { bg = c.gray02 },                          -- Dropdown scrollbar track
+  DropBarMenuThumb          = { bg = c.gray04 },                          -- Dropdown scrollbar thumb
+
+  -- Forces the entire row, including the web-devicon, to invert colors on selection
+  DropBarMenuHoverEntry  = { fg = c.bg, bg = c.fg },              -- The row background
+  DropBarMenuHoverSymbol = { fg = c.bg, bg = c.fg, bold = true }, -- The text
+  DropBarMenuHoverIcon   = { fg = c.bg, bg = c.fg },              -- The icon (Nix, Git, etc.)
 }
 
 for name, hl in pairs(groups) do
   vim.api.nvim_set_hl(0, name, hl)
 end
 
--- terminal ANSI colors, so :terminal / fzf / any terminal-based tool
--- matches the editor instead of the terminal's own theme
-local term = {
-  c.gray03, c.red, c.green, c.yellow, c.blue, c.magenta, c.cyan, c.fg,
-  c.gray05, c.red, c.green, c.yellow, c.blue, c.magenta, c.cyan, c.fg,
-}
+-- Dynamically color all devicons using your exact theme palette
+vim.pack.add({
+  "https://github.com/nvim-tree/nvim-web-devicons",
+  "https://github.com/rachartier/tiny-devicons-auto-colors.nvim",
+})
 
--- for i, hex in ipairs(term) do
---   vim.g["terminal_color_" .. (i - 1)] = hex
--- end
+local devicons_ok, devicons = pcall(require, "nvim-web-devicons")
+local tiny_ok, tiny_devicons = pcall(require, "tiny-devicons-auto-colors")
+
+if devicons_ok and tiny_ok then
+  devicons.setup()
+  tiny_devicons.setup({
+    colors = { c.blue, c.cyan, c.green, c.yellow, c.red, c.magenta },
+    cache = { enabled = true },
+  })
+end

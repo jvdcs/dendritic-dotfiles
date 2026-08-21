@@ -19,12 +19,20 @@ require("telescope").setup({
   },
   pickers = {
     help_tags = {
-      show_version = true, -- Show Neovim version info in help tags preview
+      show_version = true,          -- Show Neovim version info in help tags preview
     },
     buffers = {
       ignore_current_buffer = true, -- Don't show the file you are already looking at
       sort_mru = true,              -- Sort by most recently used buffers
-    }
+    },
+    find_files = {
+      hidden = true,                -- Includes dotfiles (.env, .gitignore, etc.)
+    },
+    live_grep = {
+      additional_args = function()
+        return { "--hidden" }       -- Passes --hidden flag to ripgrep
+      end,
+    },
   },
   extensions = {
     ["zf-native"] = {
@@ -42,4 +50,14 @@ require("telescope").setup({
   }
 })
 
-require("telescope").load_extension("zf-native")
+pcall(require('telescope').load_extension, 'fzf')
+
+local builtin = require("telescope.builtin")
+local utils = require("telescope.utils")
+vim.keymap.set("n", "<leader>F", function()
+  builtin.find_files({ cwd = utils.buffer_dir() })
+end, { desc = "Find files in current buffer dir" })
+vim.keymap.set("n", "<leader>?", function()
+  builtin.live_grep({ cwd = utils.buffer_dir() })
+end, { desc = "Live grep in current buffer dir" })
+
