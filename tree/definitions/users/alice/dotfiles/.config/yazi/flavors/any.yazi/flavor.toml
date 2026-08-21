@@ -4,13 +4,13 @@ cwd = { fg = "white" }
 hovered = { fg = "white", bg = "black" }
 preview_hovered = {}
 # Find
-find_keyword = { fg = "yellow" }
-find_position = { fg = "darkgray" }
+find_keyword = { fg = "white", underline = true }
+find_position = { fg = "black", bg = "white" }
 # Marker
 marker_copied = { fg = "green", bg = "green" }
 marker_cut = { fg = "lightred", bg = "lightred" }
 marker_marked = { fg = "cyan", bg = "cyan" }
-marker_selected = { fg = "cyan", bg = "cyan" }
+marker_selected = { fg = "white", bg = "white" }
 # Count
 count_copied = { fg = "green" }
 count_cut = { fg = "lightred" }
@@ -22,7 +22,7 @@ border_style = { fg = "darkgray" }
 [tabs]
 active = { fg = "white", bg = "darkgray" }
 inactive = { fg = "darkgray", bg = "black" }
-sep_inner = { open = "", close = "" }
+sep_inner = { open = "", close = "" }
 sep_outer = { open = "", close = "" }
 
 [mode]
@@ -47,23 +47,24 @@ progress_error = { bg = "lightred" }
 [which]
 cols = 3
 mask = { bg = "black" }
-cand = { fg = "yellow" }
-rest = { fg = "yellow" }
-desc = { fg = "darkgray" }
-separator = " "
-separator_style = {}
+cand = { fg = "green" }
+rest = { fg = "green" }
+desc = { fg = "white" }
+border = { fg = "darkgray" }
+separator = " ➜ "
+separator_style = { fg = "darkgray" }
 
 [confirm]
 border = { fg = "darkgray" }
-title = { fg = "darkgray" }
+title = { fg = "white" }
 content = { fg = "white" }
 list = { fg = "white" }
-btn_yes = { fg = "white", bg = "darkgray" }
-btn_no = { fg = "darkgray", bg = "black" }
+btn_yes = { fg = "green", bg = "black" }
+btn_no = { fg = "red", bg = "black" }
 
 [spot]
 border = { fg = "darkgray" }
-title = { fg = "darkgray" }
+title = { fg = "white" }
 tbl_col = { fg = "darkgray" }
 tbl_cell = { bg = "black" }
 
@@ -79,7 +80,7 @@ inactive = { fg = "darkgray" }
 
 [input]
 border = { fg = "darkgray" }
-title = { fg = "darkgray" }
+title = { fg = "white" }
 value = { fg = "white" }
 selected = { fg = "black", bg = "white" }
 
@@ -90,7 +91,7 @@ inactive = { fg = "darkgray" }
 
 [tasks]
 border = { fg = "darkgray" }
-title = { fg = "darkgray" }
+title = { fg = "white" }
 hovered = { bg = "black" }
 
 [help]
@@ -99,8 +100,6 @@ run = { fg = "cyan" }
 desc = { fg = "darkgray" }
 hovered = { bg = "black" }
 footer = { fg = "white", bg = "black" }
-
-
 
 [filetype]
 rules = [

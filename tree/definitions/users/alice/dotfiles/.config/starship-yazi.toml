@@ -2,9 +2,9 @@
 
 # Round
 format = """
-[](fg:bright-black)\
-[ ](fg:white bg:bright-black)\
-[ ](fg:bright-black)\
+[ ](fg:white)\
+[*](fg:blue bg:none)\
+[ ](fg:white)\
 $cmd_duration\
 $directory\
 $git_branch\
