@@ -22,3 +22,5 @@ require("plugins.gitsigns")
 require("plugins.nvim-autopairs")
 require("plugins.blink")
 require("plugins.toggleterm")
+
+require("plugins.conform")
