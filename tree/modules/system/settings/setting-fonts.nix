@@ -45,13 +45,6 @@
           autohint = true;
           style = "medium";
         };
-        # Controlled by setting-stylix-fonts-sleek.nix
-        # defaultFonts = {
-        #   serif = ["Eczar"];
-        #   sansSerif = ["DeepMind Sans Medium"];
-        #   monospace = ["IoskeleyMono Nerd Font"];
-        #   emoji = ["Noto Color Emoji"];
-        # };
       };
     };
   };

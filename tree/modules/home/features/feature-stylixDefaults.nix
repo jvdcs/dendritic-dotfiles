@@ -1,6 +1,7 @@
 {
   flake.modules.homeManager.feature-stylixDefaults = {pkgs, ...}: {
     stylix = {
+      enable = true;
       targets = {
         yazi.enable = false;
         vscode.enable = false;

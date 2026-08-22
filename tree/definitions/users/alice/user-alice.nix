@@ -16,6 +16,7 @@
       "keyd"
       "mpd"
     ];
+
     imports = with modules.homeManager; [
       setting-disableDefaultHomeFolders
       setting-githubAuthentication
@@ -39,6 +40,7 @@
       feature-vicinae
       feature-zathura
       feature-kitty
+      feature-ghostty
       feature-btop
 
       packageSet-audioVisualizers

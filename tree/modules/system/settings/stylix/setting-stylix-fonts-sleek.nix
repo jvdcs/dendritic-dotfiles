@@ -13,7 +13,7 @@
         };
 
         monospace = {
-          package = pkgs.nerd-fonts.jetbrains-mono;
+          package = pkgs.ioskeley-mono.normal-NF;
           name = "IoskeleyMono Nerd Font Medium";
         };
 
