@@ -3,7 +3,7 @@ vim.loader.enable()
 --
 --
 --
-local ffi = require('ffi')
+local ffi = require("ffi")
 ffi.cdef([[
   int getpid(void);
   int isatty(int fd);
@@ -13,10 +13,10 @@ ffi.cdef([[
 --
 -- Cap ShaDa history limits to prevent disk I/O stutter on startup and quit
 vim.opt.shada = {
-  "'20", -- Max files with marks saved (default: 100)
-  "<50", -- Max lines saved per register (default: 1000)
-  "s10", -- Max size of an item in KB (default: 10)
-  "h",   -- Disable search highlight restore on startup (default: enabled)
+	"'20", -- Max files with marks saved (default: 100)
+	"<50", -- Max lines saved per register (default: 1000)
+	"s10", -- Max size of an item in KB (default: 10)
+	"h", -- Disable search highlight restore on startup (default: enabled)
 }
 
 --

@@ -53,7 +53,7 @@ cand = { fg = "green" }
 rest = { fg = "green" }
 desc = { fg = "white" }
 border = { fg = "darkgray" }
-separator = " ➜ "
+separator = "  "
 separator_style = { fg = "darkgray" }
 
 [confirm]

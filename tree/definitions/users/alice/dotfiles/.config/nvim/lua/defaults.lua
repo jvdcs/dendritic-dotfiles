@@ -1,3 +1,4 @@
+vim.o.laststatus = 3
 vim.opt.termsync = true
 
 vim.opt.splitbelow = true
