@@ -1,3 +1,11 @@
+{...}: {
+  flake.modules.homeManager.feature-neovim = {pkgs, ...}: {
+    home.packages = with pkgs; [
+      neovim
+    ];
+  };
+}
+
 # {...}: {
 #   flake.modules.homeManager.feature-neovim = {pkgs, ...}: let
 #     typstar = pkgs.vimUtils.buildVimPlugin {
@@ -49,10 +57,3 @@
 #   };
 # }
 
-{...}: {
-  flake.modules.homeManager.feature-neovim = {pkgs, ...}: {
-    home.packages = with pkgs; [
-      neovim
-    ];
-  };
-}

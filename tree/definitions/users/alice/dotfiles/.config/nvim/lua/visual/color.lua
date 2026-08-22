@@ -23,6 +23,18 @@ local c = {
 }
 
 local groups = {
+  -- treesitter captures that diverge from what they'd otherwise inherit
+  ["@variable"] = { fg = c.fg, underline = false },
+  ["@variable.builtin"] = { fg = c.fg, italic = true },
+  ["@variable.parameter"] = { fg = c.blue, italic = true },
+  ["@variable.member"] = { fg = c.fg },
+  ["@module"] = { fg = c.fg, underline = true },
+  ["@function.macro"] = { fg = c.green, italic = true },
+  ["@punctuation.bracket"] = { fg = c.gray04 },
+  ["@punctuation.delimiter"] = { fg = c.gray04 },
+  ["@string.regexp"] = { fg = c.blue },
+  ["@string.special"] = { fg = c.blue },
+
   MyHeirlinePill = { bg = c.gray02 },
   MyHeirlineBg = { bg = c.bg },
 
@@ -85,18 +97,6 @@ local groups = {
   Special = { fg = c.fg, italic = true },
   Delimiter = { fg = c.gray04 },
   Error = { fg = c.red, italic = true },
-
-  -- treesitter captures that diverge from what they'd otherwise inherit
-  ["@variable"] = { fg = c.fg, underline = false },
-  ["@variable.builtin"] = { fg = c.fg, italic = true },
-  ["@variable.parameter"] = { fg = c.blue, italic = true },
-  ["@variable.member"] = { fg = c.fg },
-  ["@module"] = { fg = c.fg, underline = true },
-  ["@function.macro"] = { fg = c.green, italic = true },
-  ["@punctuation.bracket"] = { fg = c.gray04 },
-  ["@punctuation.delimiter"] = { fg = c.gray04 },
-  ["@string.regexp"] = { fg = c.blue },
-  ["@string.special"] = { fg = c.blue },
 
   -- Telescope UI (Inherits standard floating window styling)
   TelescopeNormal = { link = "Normal" },
@@ -184,6 +184,57 @@ local groups = {
   NoiceCmdlinePopupBorder = { fg = c.gray03 },
   NoiceCmdlinePopupTitle = { fg = c.fg },
   NoiceCmdlinePopupTitleCmdline = { fg = c.fg },
+
+  -- blink.cmp
+  -- Menu/doc/signature default-link to Pmenu/NormalFloat/FloatBorder already,
+  -- these overrides are only needed for things that don't have a sane default —
+  -- mainly per-kind icon colors and the fuzzy-match highlight.
+  BlinkCmpMenu = { fg = c.fg, bg = c.bg },
+  BlinkCmpMenuBorder = { link = "FloatBorder" },
+  BlinkCmpMenuSelection = { bg = c.gray02 },
+  -- NOTE: if you ever add BlinkCmpSource, it stops BlinkCmpMenuSelection from
+  -- applying on the same row (upstream bug, blink.cmp#1371) — leave it undefined.
+  BlinkCmpLabel = { fg = c.fg },
+  BlinkCmpLabelMatch = { fg = c.green, italic = true }, -- the fuzzy-matched substring
+  BlinkCmpLabelDeprecated = { fg = c.gray05, strikethrough = true },
+  BlinkCmpLabelDescription = { fg = c.gray05 },
+  BlinkCmpLabelDetail = { fg = c.gray05 },
+  BlinkCmpGhostText = { fg = c.gray04 },
+  BlinkCmpDoc = { fg = c.fg },
+  BlinkCmpDocBorder = { link = "FloatBorder" },
+  BlinkCmpDocSeparator = { fg = c.gray03 },
+  BlinkCmpSignatureHelp = { link = "NormalFloat" },
+  BlinkCmpSignatureHelpBorder = { link = "FloatBorder" },
+  BlinkCmpSignatureHelpActiveParameter = { fg = c.yellow, bold = true },
+  -- Kind icons — mirrored against your existing syntax palette
+  -- (Function=green, Type=blue, Constant=magenta, Statement=gray06, etc.)
+  BlinkCmpKind = { fg = c.gray05 },              -- fallback for any kind not listed below
+  BlinkCmpKindText = { fg = c.fg },
+  BlinkCmpKindMethod = { fg = c.green },
+  BlinkCmpKindFunction = { fg = c.green },
+  BlinkCmpKindConstructor = { fg = c.green },
+  BlinkCmpKindField = { fg = c.fg },
+  BlinkCmpKindVariable = { fg = c.fg },
+  BlinkCmpKindProperty = { fg = c.fg },
+  BlinkCmpKindClass = { fg = c.blue },
+  BlinkCmpKindInterface = { fg = c.blue },
+  BlinkCmpKindStruct = { fg = c.blue },
+  BlinkCmpKindModule = { fg = c.blue, underline = true }, -- matches your @module
+  BlinkCmpKindEnum = { fg = c.blue },
+  BlinkCmpKindEnumMember = { fg = c.magenta },
+  BlinkCmpKindKeyword = { fg = c.gray06 },
+  BlinkCmpKindOperator = { fg = c.gray06, italic = true },
+  BlinkCmpKindTypeParameter = { fg = c.blue, italic = true },
+  BlinkCmpKindConstant = { fg = c.magenta },
+  BlinkCmpKindValue = { fg = c.magenta },
+  BlinkCmpKindSnippet = { fg = c.yellow },
+  BlinkCmpKindFile = { fg = c.gray05 },
+  BlinkCmpKindFolder = { fg = c.gray05 },
+  BlinkCmpKindReference = { fg = c.cyan },
+  BlinkCmpKindColor = { fg = c.cyan },
+  BlinkCmpKindUnit = { fg = c.cyan },
+  BlinkCmpKindEvent = { fg = c.red },
+  BlinkCmpSource = { fg = c.gray05, italic = true }, -- e.g. "LSP"/"Buffer" label on the right of the menu
 }
 
 for name, hl in pairs(groups) do

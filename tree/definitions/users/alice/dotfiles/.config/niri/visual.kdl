@@ -52,6 +52,10 @@ animations {
         spring damping-ratio=1.0 stiffness=800 epsilon=0.001
     }
 }
+window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
+}
 cursor {
     xcursor-size 6
 }
@@ -88,9 +92,11 @@ layout {
         active-color "#000000"
     }
     border {
-        // on
+        on
         width 2
-        active-color "#86adcd"
+        // active-color "#86adcd"
+        active-color "#323231"
+        // on
         inactive-color "#222221"
         urgent-color "#86adcd"
     }
@@ -103,7 +109,6 @@ layout {
         offset x=0 y=8
         color "#000000cc"
     }
-    gaps 0
 }
 recent-windows {
     // off

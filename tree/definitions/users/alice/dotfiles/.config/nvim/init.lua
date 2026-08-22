@@ -20,5 +20,5 @@ require("plugins.nvim-treesitter")
 
 require("plugins.gitsigns")
 require("plugins.nvim-autopairs")
-require("plugins.mini")
+require("plugins.blink")
 require("plugins.toggleterm")

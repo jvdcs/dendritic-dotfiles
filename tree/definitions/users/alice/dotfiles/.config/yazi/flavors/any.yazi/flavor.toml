@@ -1,4 +1,5 @@
 # "$schema" = "https://yazi-rs.github.io/schemas/theme.json"
+
 [mgr]
 cwd = { fg = "white" }
 hovered = { fg = "white", bg = "black" }
@@ -32,6 +33,7 @@ select_main = { fg = "black", bg = "cyan" }
 select_alt = { fg = "cyan", bg = "black" }
 unset_main = { fg = "black", bg = "cyan" }
 unset_alt = { fg = "cyan", bg = "black" }
+
 
 [status]
 overall = { fg = "white" }
@@ -152,7 +154,7 @@ rules = [
 	{ url = "*.{log,bak,cache,tmp,swp}", fg = "darkgray" },
  
 	# --- Empty files ---
-	{ mime = "inode/empty", fg = "darkgray" },
+	{ mime = "inode/empty", fg = "darkgray", bg = "black" },
  
 	# --- Fallback: any remaining file, then any directory ---
 	{ url = "*", fg = "white" },

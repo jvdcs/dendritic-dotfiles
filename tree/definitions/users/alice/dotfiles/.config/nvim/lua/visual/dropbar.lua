@@ -2,7 +2,6 @@ vim.pack.add({
   "https://github.com/nvim-telescope/telescope-fzf-native.nvim",
   "https://github.com/Bekaboo/dropbar.nvim",
 })
-
 local fzf_dir = vim.fn.stdpath("data") .. "/site/pack/core/opt/telescope-fzf-native.nvim"
 local built = vim.uv.fs_stat(fzf_dir .. "/build/libfzf.so") or vim.uv.fs_stat(fzf_dir .. "/build/libfzf.dll")
 if vim.uv.fs_stat(fzf_dir) and not built then
@@ -13,24 +12,30 @@ if vim.uv.fs_stat(fzf_dir) and not built then
   end
 end
 
-vim.keymap.set("n", "C-c", function()
-  require("dropbar.api").pick()
-end, { desc = "Pick breadcrumb context" })
-
 require("dropbar").setup({
   bar = {
-    truncate = true,        -- shorten winbar if it doesn't fit the window
-    -- update_debounce = 32,   -- ms to wait before redrawing on rapid updates
+    truncate = false,
+
+    -- Ms to wait before redrawing on rapid updates
+    -- update_debounce = 32,   
     padding = { left = 1, right = 1 },
     pick = { pivots = "asdcnjklfvbhgzxm" }, -- keys shown in pick mode
+
+    -- BLACKBOX: makes dropbar work on file types not convered by treesitter
+    -- enable = function(buf, win, _)
+    --   buf = vim._resolve_bufnr(buf)
+    --   if not vim.api.nvim_buf_is_valid(buf) or not vim.api.nvim_win_is_valid(win) then return false end
+    --   if vim.fn.win_gettype(win) ~= '' or vim.wo[win].winbar ~= '' or vim.bo[buf].ft == 'help' then return false end
+    --   local stat = vim.uv.fs_stat(vim.api.nvim_buf_get_name(buf))
+    --   return not (stat and stat.size > 1024 * 1024) -- was: ft=='markdown' or treesitter or lsp; now always on
+    -- end,
   },
   menu = {
-    -- quick_navigation = true, -- jump cursor to nearest clickable entry on move
-    -- preview = true,          -- preview symbol in source window on hover
-    -- hover = true,            -- highlight entry under cursor
-    -- entry = { padding = { left = 1, right = 1 } },
+    quick_navigation = true, -- jump cursor to nearest clickable entry on move
+    preview = false,          -- preview symbol in source window on hover
+    hover = true,            -- highlight entry under cursor
+    entry = { padding = { left = 1, right = 1 } },
     -- scrollbar = { enable = true, background = true },
-    -- win_configs = { border = "rounded" }, -- e.g. "single" | "double" | "none"
     keymaps = {
       h = "<C-w>q", -- go back / close submenu (same as default q/<Esc>)
       l = function()

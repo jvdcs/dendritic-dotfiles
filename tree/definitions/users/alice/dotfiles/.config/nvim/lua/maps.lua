@@ -29,7 +29,7 @@ S("n", "<leader>sh", "<cmd>Telescope highlights<CR>", { desc = "[s]earch highlig
 
 S("n", "-", "<cmd>Oil --preview<CR>", { desc = "[-] open parent directory" })
 
-S("n", "<C-c>", function()
+S("n", "<C-g>", function()
   require("dropbar.api").pick()
 end, { desc = "Pick breadcrumb context" })
 
@@ -53,10 +53,8 @@ local function toggle_all_folds()
 end
 S("n", "<C-f>", toggle_all_folds, { desc = "Toggle all folds" })
 
--- Map <Alt-j> and <Alt-k> to navigate down and up in command-line suggestions
-vim.keymap.set("c", "<Down>", "<C-n>", { desc = "Next command line suggestion" })
-vim.keymap.set("c", "<Up>", "<C-p>", { desc = "Previous command line suggestion" })
-
-vim.opt.wildmenu = true            -- Enable command-line completion menu
-vim.opt.wildoptions = "pum"        -- Display suggestions as a vertical popup menu
-vim.opt.wildmode = "full"          -- Command completion mode behavior
+-- vim.keymap.set("c", "<Down>", "<C-n>", { desc = "Next command line suggestion" })
+-- vim.keymap.set("c", "<Up>", "<C-p>", { desc = "Previous command line suggestion" })
+-- vim.opt.wildmenu = true            -- Enable command-line completion menu
+-- vim.opt.wildoptions = "pum"        -- Display suggestions as a vertical popup menu
+-- vim.opt.wildmode = "full"          -- Command completion mode behavior

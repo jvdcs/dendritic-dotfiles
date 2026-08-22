@@ -12,6 +12,10 @@
       "rev": "78336bc89ee5365633bcf754d93df01678b5c08f",
       "src": "https://github.com/Saghen/blink.cmp"
     },
+    "blink.nvim": {
+      "rev": "d1e7c7c45d45c6b6a25427bf62db4db73b03ff3d",
+      "src": "https://github.com/saghen/blink.nvim"
+    },
     "cmp-cmdline": {
       "rev": "d126061b624e0af6c3a556428712dd4d4194ec6d",
       "src": "https://github.com/hrsh7th/cmp-cmdline"
