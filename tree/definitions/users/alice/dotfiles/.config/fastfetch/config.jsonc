@@ -3,7 +3,7 @@
   "logo": {
     "source": "~/saves/images/NixOS.png",
     "type": "kitty-icat",
-    "height": 20,
+    "height": 4,
     "padding": {
       "top": 1,
       "left": 0,
