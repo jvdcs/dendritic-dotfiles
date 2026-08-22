@@ -74,7 +74,7 @@
         obs-studio # streaming/recording
         easyeffects # PipeWire audio effects
         pinta # simple image editor
-        # aseprite # pixel editor
+        aseprite # pixel editor
         # ardour # digital audio workstation
       ];
     };

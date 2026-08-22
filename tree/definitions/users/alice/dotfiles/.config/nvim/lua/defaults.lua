@@ -1,3 +1,5 @@
+vim.opt.termsync = true
+
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 

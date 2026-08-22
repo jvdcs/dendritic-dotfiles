@@ -21,12 +21,6 @@ S("n", "<leader>wq", "<C-w>c", { desc = "[w]indow close" })
 S("n", "<leader>r", "<cmd>restart<CR>", { desc = "[r]estart nvim" })
 S("n", "<C-s>", "<cmd>write<CR>", { desc = "[s]ave file" })
 
-S("n", "<leader>b", "<cmd>Telescope buffers<CR>", { desc = "[b]uffer list" })
-S("n", "<leader>h", "<cmd>Telescope help_tags<CR>", { desc = "[h]elp tags" })
-S("n", "<leader>/", "<cmd>Telescope live_grep<CR>", { desc = "grep" })
-S("n", "<leader>f", "<cmd>Telescope find_files<CR>", { desc = "[f]ind files" })
-S("n", "<leader>sh", "<cmd>Telescope highlights<CR>", { desc = "[s]earch highlights" })
-
 S("n", "-", "<cmd>Oil --preview<CR>", { desc = "[-] open parent directory" })
 
 S("n", "<C-g>", function()

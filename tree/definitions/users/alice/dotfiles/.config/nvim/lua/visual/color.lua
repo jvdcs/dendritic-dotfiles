@@ -75,16 +75,12 @@ local groups = {
   DiagnosticUnderlineHint = { sp = c.green, underline = true },
 
   -- diff: fg-only, matching Helix's diff.plus/minus/delta gutter glyphs.
-  -- gitsigns.nvim etc. derive sign colors from these automatically.
   DiffAdd = { fg = c.green },
   DiffDelete = { fg = c.red },
   DiffChange = { fg = c.magenta },
   DiffText = { fg = c.yellow },
 
-  -- base syntax groups. Everything not listed here (String, Character,
-  -- Number, Boolean, Float, Conditional, Repeat, Label, Exception,
-  -- Include, Define, Macro, StorageClass, Structure, Typedef, SpecialChar,
-  -- Tag, SpecialComment, Debug) default-links to one of these.
+  -- base syntax groups
   Comment = { fg = c.gray04, italic = true },
   Constant = { fg = c.magenta },
   String = { fg = c.cyan, italic = true },
@@ -98,31 +94,31 @@ local groups = {
   Delimiter = { fg = c.gray04 },
   Error = { fg = c.red, italic = true },
 
-  -- Telescope UI (Inherits standard floating window styling)
-  TelescopeNormal = { link = "Normal" },
-  TelescopePromptNormal = { link = "Normal" },
-  TelescopeResultsNormal = { link = "Normal" },
-  TelescopePreviewNormal = { link = "Normal" },
-  TelescopeBorder = { link = "FloatBorder" },
-  TelescopePromptBorder = { link = "FloatBorder" },
-  TelescopeResultsBorder = { link = "FloatBorder" },
-  TelescopePreviewBorder = { link = "FloatBorder" },
+  -- Snacks.nvim UI (Picker & Components)
+  SnacksPicker = { link = "Normal" },
+  SnacksPickerInput = { link = "Normal" },
+  SnacksPickerList = { link = "Normal" },
+  SnacksPickerPreview = { link = "Normal" },
+  SnacksPickerBorder = { link = "FloatBorder" },
+  SnacksPickerInputBorder = { link = "FloatBorder" },
+  SnacksPickerListBorder = { link = "FloatBorder" },
+  SnacksPickerPreviewBorder = { link = "FloatBorder" },
 
-  TelescopeMatching = { fg = c.green, italic = true }, -- Matched characters in search results
-  TelescopeSelection = { fg = c.fg, bg = c.gray02 },  -- Active row highlight (optional)
-  TelescopeSelectionCaret = { fg = c.green },        -- Pointer character highlight (optional)
+  SnacksPickerMatch = { fg = c.green, italic = true }, -- Matched characters in search results
+  SnacksPickerSelected = { fg = c.fg, bg = c.gray02 }, -- Active row highlight
+  SnacksPickerTree = { fg = c.gray04 },
 
-  TelescopeResultsDirectory = { fg = c.gray05 }, -- Dims the path (e.g. lua/config/)
-  TelescopeResultsFileName = { fg = c.fg },      -- Keeps trailing filename bright
+  SnacksPickerDir = { fg = c.gray05 },  -- Dims the path
+  SnacksPickerFile = { fg = c.fg },     -- Keeps trailing filename bright
 
-  TelescopeTitle = { fg = c.fg },
-  TelescopePromptTitle = { fg = c.fg },
-  TelescopeResultsTitle = { fg = c.fg },
-  TelescopePreviewTitle = { fg = c.fg },
+  SnacksPickerTitle = { fg = c.fg },
+  SnacksPickerInputTitle = { fg = c.fg },
+  SnacksPickerListTitle = { fg = c.fg },
+  SnacksPickerPreviewTitle = { fg = c.fg },
 
   -- WhichKey UI & Background
-  WhichKeyNormal = { bg = c.bg }, -- Float background (v3+)
-  WhichKeyBorder = { link = "FloatBorder" },     -- Inherits your FloatBorder styling
+  WhichKeyNormal = { bg = c.bg },
+  WhichKeyBorder = { link = "FloatBorder" },
 
   -- nvim-notify UI
   NotifyBackground = { bg = c.bg },
@@ -147,30 +143,29 @@ local groups = {
   NotifyTRACETitle = { fg = c.magenta, italic = true },
 
   -- Folding (Native Neovim & nvim-ufo)
-  Folded = { fg = c.gray05, bg = c.gray01 }, -- The folded text and its background
-  FoldColumn = { fg = c.gray04 },            -- The gutter where the fold arrows sit
+  Folded = { fg = c.gray05, bg = c.gray01 },
+  FoldColumn = { fg = c.gray04 },
 
-  UfoFoldedFg = { fg = c.gray05 },           -- UFO specific text color
-  UfoFoldedBg = { bg = c.gray01 },           -- UFO specific background color
-  UfoFoldedEllipsis = { fg = c.blue },       -- The "..." indicating hidden lines
+  UfoFoldedFg = { fg = c.gray05 },
+  UfoFoldedBg = { bg = c.gray01 },
+  UfoFoldedEllipsis = { fg = c.blue },
   UfoPreviewNormal = { link = "NormalFloat" },
   UfoPreviewBorder = { link = "FloatBorder" },
 
-  -- Native Neovim Winbar (inherited by dropbar)
+  -- Native Neovim Winbar
   WinBar = { link = "Normal" },
   WinBarNC = { link = "Normal" },
 
   -- DropBar
-  DropBarMenuNormalFloat    = { fg = c.fg, bg = c.gray01 },                   -- Background & text of the dropdown popup
+  DropBarMenuNormalFloat    = { fg = c.fg, bg = c.gray01 },
   DropBarMenuCurrentContext = { fg = c.fg, bg = c.gray03, bold = true },
   DropBarMenuHover          = { fg = c.fg, bg = c.gray02, bold = true },
-  DropBarMenuSbar           = { bg = c.gray02 },                          -- Dropdown scrollbar track
-  DropBarMenuThumb          = { bg = c.gray04 },                          -- Dropdown scrollbar thumb
+  DropBarMenuSbar           = { bg = c.gray02 },
+  DropBarMenuThumb          = { bg = c.gray04 },
 
-  -- Forces the entire row, including the web-devicon, to invert colors on selection
-  DropBarMenuHoverEntry  = { fg = c.bg, bg = c.fg },              -- The row background
-  DropBarMenuHoverSymbol = { fg = c.bg, bg = c.fg, bold = true }, -- The text
-  DropBarMenuHoverIcon   = { fg = c.bg, bg = c.fg },              -- The icon (Nix, Git, etc.)
+  DropBarMenuHoverEntry  = { fg = c.bg, bg = c.fg },
+  DropBarMenuHoverSymbol = { fg = c.bg, bg = c.fg, bold = true },
+  DropBarMenuHoverIcon   = { fg = c.bg, bg = c.fg },
 
   -- Gitsigns
   GitSignsAdd = { fg = c.green },
@@ -186,16 +181,11 @@ local groups = {
   NoiceCmdlinePopupTitleCmdline = { fg = c.fg },
 
   -- blink.cmp
-  -- Menu/doc/signature default-link to Pmenu/NormalFloat/FloatBorder already,
-  -- these overrides are only needed for things that don't have a sane default —
-  -- mainly per-kind icon colors and the fuzzy-match highlight.
   BlinkCmpMenu = { fg = c.fg, bg = c.bg },
   BlinkCmpMenuBorder = { link = "FloatBorder" },
   BlinkCmpMenuSelection = { bg = c.gray02 },
-  -- NOTE: if you ever add BlinkCmpSource, it stops BlinkCmpMenuSelection from
-  -- applying on the same row (upstream bug, blink.cmp#1371) — leave it undefined.
   BlinkCmpLabel = { fg = c.fg },
-  BlinkCmpLabelMatch = { fg = c.green, italic = true }, -- the fuzzy-matched substring
+  BlinkCmpLabelMatch = { fg = c.green, italic = true },
   BlinkCmpLabelDeprecated = { fg = c.gray05, strikethrough = true },
   BlinkCmpLabelDescription = { fg = c.gray05 },
   BlinkCmpLabelDetail = { fg = c.gray05 },
@@ -206,9 +196,7 @@ local groups = {
   BlinkCmpSignatureHelp = { link = "NormalFloat" },
   BlinkCmpSignatureHelpBorder = { link = "FloatBorder" },
   BlinkCmpSignatureHelpActiveParameter = { fg = c.yellow, bold = true },
-  -- Kind icons — mirrored against your existing syntax palette
-  -- (Function=green, Type=blue, Constant=magenta, Statement=gray06, etc.)
-  BlinkCmpKind = { fg = c.gray05 },              -- fallback for any kind not listed below
+  BlinkCmpKind = { fg = c.gray05 },
   BlinkCmpKindText = { fg = c.fg },
   BlinkCmpKindMethod = { fg = c.green },
   BlinkCmpKindFunction = { fg = c.green },
@@ -219,7 +207,7 @@ local groups = {
   BlinkCmpKindClass = { fg = c.blue },
   BlinkCmpKindInterface = { fg = c.blue },
   BlinkCmpKindStruct = { fg = c.blue },
-  BlinkCmpKindModule = { fg = c.blue, underline = true }, -- matches your @module
+  BlinkCmpKindModule = { fg = c.blue, underline = true },
   BlinkCmpKindEnum = { fg = c.blue },
   BlinkCmpKindEnumMember = { fg = c.magenta },
   BlinkCmpKindKeyword = { fg = c.gray06 },
@@ -234,7 +222,7 @@ local groups = {
   BlinkCmpKindColor = { fg = c.cyan },
   BlinkCmpKindUnit = { fg = c.cyan },
   BlinkCmpKindEvent = { fg = c.red },
-  BlinkCmpSource = { fg = c.gray05, italic = true }, -- e.g. "LSP"/"Buffer" label on the right of the menu
+  BlinkCmpSource = { fg = c.gray05, italic = true },
 }
 
 for name, hl in pairs(groups) do
