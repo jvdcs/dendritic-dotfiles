@@ -45,13 +45,13 @@
           autohint = true;
           style = "medium";
         };
-        defaultFonts = {
-          serif = ["Eczar"];
-          sansSerif = ["DeepMind Sans Medium"];
-          monospace = ["IoskeleyMono Nerd Font"];
-          # monospace = ["JetBrainsMono Nerd Font"];
-          emoji = ["Noto Color Emoji"];
-        };
+        # Controlled by setting-stylix-fonts-sleek.nix
+        # defaultFonts = {
+        #   serif = ["Eczar"];
+        #   sansSerif = ["DeepMind Sans Medium"];
+        #   monospace = ["IoskeleyMono Nerd Font"];
+        #   emoji = ["Noto Color Emoji"];
+        # };
       };
     };
   };

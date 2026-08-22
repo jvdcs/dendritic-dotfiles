@@ -26,18 +26,18 @@ const alt_a = {
     mode: ["emacs", "vi_insert"]
     event: { edit: movetolinestart }
 }
-const ctrl_s = {
-    name: "rg>fzf(cwd)>helix"
-    modifier: "control"
-    keycode: "char_s"
-    mode: ["emacs", "vi_insert"]
-    event: [
-      {
-        send: executehostcommand
-        cmd: "nu ~/.config/nushell/maps/functions/search.nu"
-      }
-    ]
-}
+# const ctrl_s = {
+#     name: "rg>fzf(cwd)>helix"
+#     modifier: "control"
+#     keycode: "char_s"
+#     mode: ["emacs", "vi_insert"]
+#     event: [
+#       {
+#         send: executehostcommand
+#         cmd: "nu ~/.config/nushell/maps/functions/search.nu"
+#       }
+#     ]
+# }
 const ctrl_space = {
     name: "open yazi"
     modifier: "control" 
@@ -64,6 +64,6 @@ export-env {
     $alt_q
     $alt_s
     $alt_a
-    $ctrl_s
+    # $ctrl_s
   ]
 }

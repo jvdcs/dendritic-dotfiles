@@ -179,6 +179,7 @@ local groups = {
   NoiceCmdlinePopupBorder = { fg = c.gray03 },
   NoiceCmdlinePopupTitle = { fg = c.fg },
   NoiceCmdlinePopupTitleCmdline = { fg = c.fg },
+  NoiceLspProgressTitle = { fg = c.gray03 },
 
   -- blink.cmp
   BlinkCmpMenu = { fg = c.fg, bg = c.bg },
