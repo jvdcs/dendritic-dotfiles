@@ -23,6 +23,11 @@
         window-padding-y = 5;
         term = "xterm-256color";
 
+        # cursor flash fix attempt (useless so far)
+        synchronize-modifiers = true;
+        vsync = true;
+        fps-limit = 119; # just below 120
+
         # manually set because stylix ghostty target is broken
         font-family = "IoskeleyMono Nerd Font Medium";
         background = "#1a1a19";

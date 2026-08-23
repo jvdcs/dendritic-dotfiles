@@ -1,35 +1,67 @@
-vim.pack.add({ "https://github.com/rebelot/heirline.nvim" })
+vim.pack.add({ "https://github.com/lewis6991/gitsigns.nvim" })
+require("gitsigns").setup() -- populates vim.b.gitsigns_head per buffer
 
-local utils = require("heirline.utils")
+vim.o.laststatus = 3
+vim.o.showcmdloc = "statusline"
 
-local absolute_center = {
-  provider = function()
-    local win_w = vim.api.nvim_win_get_width(0)
-    local file = vim.fn.expand("%:t")
-    local text = (file ~= "" and file or "-") .. (vim.bo.modified and " [+]" or "")
+local CAPL, CAPR = "", ""
 
-    -- Subtract 1 to account for the left cap ()
-    local pad = math.max(0, math.floor((win_w - #text) / 2) - 1)
+vim.api.nvim_set_hl(0, "StModeN", { fg = "#1e1e2e", bg = "#a6e3a1", bold = true })
+vim.api.nvim_set_hl(0, "StModeNSep", { fg = "#a6e3a1" })
+vim.api.nvim_set_hl(0, "StModeI", { fg = "#1e1e2e", bg = "#89b4fa", bold = true })
+vim.api.nvim_set_hl(0, "StModeISep", { fg = "#89b4fa" })
+vim.api.nvim_set_hl(0, "StModeV", { fg = "#1e1e2e", bg = "#cba6f7", bold = true })
+vim.api.nvim_set_hl(0, "StModeVSep", { fg = "#cba6f7" })
+vim.api.nvim_set_hl(0, "StModeC", { fg = "#1e1e2e", bg = "#f9e2af", bold = true })
+vim.api.nvim_set_hl(0, "StModeCSep", { fg = "#f9e2af" })
+vim.api.nvim_set_hl(0, "StModeR", { fg = "#1e1e2e", bg = "#f38ba8", bold = true })
+vim.api.nvim_set_hl(0, "StModeRSep", { fg = "#f38ba8" })
+vim.api.nvim_set_hl(0, "StBranch", { fg = "#1e1e2e", bg = "#fab387", bold = true }) -- git branch pill
+vim.api.nvim_set_hl(0, "StBranchSep", { fg = "#fab387" })
+vim.api.nvim_set_hl(0, "StNoGit", { fg = "#1e1e2e", bg = "#6c7086", bold = true }) -- fallback (cwd) pill, dimmer on purpose
+vim.api.nvim_set_hl(0, "StNoGitSep", { fg = "#6c7086" })
 
-    return string.rep(" ", pad) .. text
-  end,
+local modes = {
+	n = { "NORMAL", "StModeN" },
+	i = { "INSERT", "StModeI" },
+	v = { "VISUAL", "StModeV" },
+	[""] = { "VISUAL", "StModeV" },
+	V = { "V-LINE", "StModeV" },
+	c = { "COMMAND", "StModeC" },
+	R = { "REPLACE", "StModeR" },
+	t = { "TERMINAL", "StModeV" },
 }
 
-local StatusLine = {
-  hl = "MyHeirlineBg",
-  utils.surround(
-    { "", "" },
-    function()
-      return utils.get_highlight("MyHeirlinePill").bg -- Pulls background dynamically from any highlight group
-    end,
-    {
-      absolute_center,
-      { provider = "%=" },
-      { provider = "%l:%c " },
-    }
-  ),
-}
+_G.Statusline = {}
+function _G.Statusline.mode()
+	local m = modes[vim.fn.mode()] or { vim.fn.mode(), "StModeN" }
+	return "%#"
+		.. m[2]
+		.. "Sep#"
+		.. CAPL
+		.. "%#"
+		.. m[2]
+		.. "# "
+		.. m[1]
+		.. " %#"
+		.. m[2]
+		.. "Sep#"
+		.. CAPR
+		.. "%#StatusLine#"
+end
 
-require("heirline").setup({
-  statusline = StatusLine,
-})
+function _G.Statusline.branch()
+	if vim.b.gitsigns_head then
+		return "%#StBranchSep#"
+			.. CAPL
+			.. "%#StBranch#  "
+			.. vim.b.gitsigns_head
+			.. " %#StBranchSep#"
+			.. CAPR
+			.. "%#StatusLine#"
+	end
+	local cwd = vim.fn.fnamemodify(vim.fn.getcwd(), ":t") -- fallback: current directory name
+	return "%#StNoGitSep#" .. CAPL .. "%#StNoGit#  " .. cwd .. " %#StNoGitSep#" .. CAPR .. "%#StatusLine#"
+end
+
+vim.o.statusline = "%{%v:lua.Statusline.mode()%} %S%=%t %m%=%{%v:lua.Statusline.branch()%}"

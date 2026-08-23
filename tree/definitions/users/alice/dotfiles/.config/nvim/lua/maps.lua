@@ -18,13 +18,14 @@ S("n", "<leader>ws", "<C-w>s", { desc = "[w]indow split down" })
 S("n", "<leader>wd", "<C-w>v", { desc = "[w]indow split left" })
 S("n", "<leader>wq", "<C-w>c", { desc = "[w]indow close" })
 
-S("n", "<leader>r", "<cmd>restart<CR>", { desc = "[r]estart nvim" })
+S("n", "<leader>R", "<cmd>restart<CR>", { desc = "[r]estart nvim" })
+S("n", "<leader>r", "<cmd>rename<CR>", { desc = "[r]estart nvim" })
 S("n", "<C-s>", "<cmd>write<CR>", { desc = "[s]ave file" })
 
 S("n", "-", "<cmd>Oil --preview<CR>", { desc = "[-] open parent directory" })
 
 S("n", "<C-g>", function()
-  require("dropbar.api").pick()
+	require("dropbar.api").pick()
 end, { desc = "Pick breadcrumb context" })
 
 S("n", "<leader>cd", "<cmd>cd %:p:h<CR>", { desc = "CD to buffer" })
@@ -38,12 +39,12 @@ S("n", "<C-l>", "zo", { desc = "Open current fold" })
 
 local all_folds_closed = false
 local function toggle_all_folds()
-  if all_folds_closed then
-    require("ufo").openAllFolds()
-  else
-    require("ufo").closeAllFolds()
-  end
-  all_folds_closed = not all_folds_closed
+	if all_folds_closed then
+		require("ufo").openAllFolds()
+	else
+		require("ufo").closeAllFolds()
+	end
+	all_folds_closed = not all_folds_closed
 end
 S("n", "<C-f>", toggle_all_folds, { desc = "Toggle all folds" })
 
