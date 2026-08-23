@@ -29,7 +29,8 @@
         fps-limit = 119; # just below 120
 
         # manually set because stylix ghostty target is broken
-        font-family = "IoskeleyMono Nerd Font Medium";
+        # font-family = "IoskeleyMono Nerd Font Medium";
+        font-family = "IoskeleyMonoNL Nerd Font Medium";
         background = "#1a1a19";
         foreground = "#d1d1d1";
         cursor-color = "#d1d1d1";

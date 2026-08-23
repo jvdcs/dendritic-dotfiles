@@ -20,6 +20,8 @@ require("snacks").setup({
 			input = {
 				keys = {
 					["<Esc>"] = { "close", mode = { "n", "i" } },
+					["<C-B>"] = { "qflist", mode = { "i", "n" } },
+					["<C-b>"] = { "loclist", mode = { "i", "n" } },
 				},
 			},
 		},
@@ -40,14 +42,12 @@ require("snacks").setup({
 })
 
 local S = vim.keymap.set
-
 S("n", "<leader>F", function()
 	Snacks.picker.files({ cwd = vim.fs.dirname(vim.api.nvim_buf_get_name(0)) })
 end, { desc = "Find files in current buffer dir" })
 S("n", "<leader>?", function()
 	Snacks.picker.grep({ cwd = vim.fs.dirname(vim.api.nvim_buf_get_name(0)) })
 end, { desc = "Live grep in current buffer dir" })
-
 S("n", "<leader>b", function()
 	Snacks.picker.buffers()
 end, { desc = "[b]uffer list" })

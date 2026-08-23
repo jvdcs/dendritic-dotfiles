@@ -19,7 +19,7 @@ S("n", "<leader>wd", "<C-w>v", { desc = "[w]indow split left" })
 S("n", "<leader>wq", "<C-w>c", { desc = "[w]indow close" })
 
 S("n", "<leader>R", "<cmd>restart<CR>", { desc = "[r]estart nvim" })
-S("n", "<leader>r", "<cmd>rename<CR>", { desc = "[r]estart nvim" })
+S("n", "<leader>r", vim.lsp.buf.rename, { desc = "[r]ename variable" })
 S("n", "<C-s>", "<cmd>write<CR>", { desc = "[s]ave file" })
 
 S("n", "-", "<cmd>Oil --preview<CR>", { desc = "[-] open parent directory" })

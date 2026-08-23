@@ -17,7 +17,8 @@
           dm-sans
           # monospace
           julia-mono
-          ioskeley-mono.normal-NF
+          # ioskeley-mono.normal-NF #disabled cause kitty literally suffers with ligatures on this for some reason
+          ioskeley-mono.normal-NL-NF
           nerd-fonts.space-mono
           nerd-fonts.jetbrains-mono
           nerd-fonts.symbols-only
