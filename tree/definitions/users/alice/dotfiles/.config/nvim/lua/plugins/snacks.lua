@@ -20,8 +20,8 @@ require("snacks").setup({
 			input = {
 				keys = {
 					["<Esc>"] = { "close", mode = { "n", "i" } },
-					["<C-B>"] = { "qflist", mode = { "i", "n" } },
-					["<C-b>"] = { "loclist", mode = { "i", "n" } },
+					-- ["<M-Q>"] = { "qflist", mode = { "i", "n" } },
+					["<M-q>"] = { "loclist", mode = { "i", "n" } },
 				},
 			},
 		},
@@ -42,6 +42,11 @@ require("snacks").setup({
 })
 
 local S = vim.keymap.set
+-- S("n", "<M-N>", "<cmd>cprev<CR>", { desc = "Prev quickfix item" })
+-- S("n", "<M-P>", "<cmd>cnext<CR>", { desc = "Next quickfix item" })
+S("n", "<C-p>", "<cmd>lprev<CR>", { desc = "Prev location item" })
+S("n", "<C-n>", "<cmd>lnext<CR>", { desc = "Next location item" })
+
 S("n", "<leader>F", function()
 	Snacks.picker.files({ cwd = vim.fs.dirname(vim.api.nvim_buf_get_name(0)) })
 end, { desc = "Find files in current buffer dir" })

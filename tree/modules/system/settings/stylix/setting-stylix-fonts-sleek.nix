@@ -14,7 +14,7 @@
 
         monospace = {
           package = pkgs.ioskeley-mono.normal-NF;
-          name = "IoskeleyMono Nerd Font Medium";
+          name = "IoskeleyMonoNL Nerd Font Medium";
         };
 
         emoji = {
