@@ -25,3 +25,4 @@ require("plugins.toggleterm")
 
 require("plugins.conform")
 require("plugins.grapple")
+require("plugins.typst-preview")

@@ -157,6 +157,7 @@ p:set_multi({
 	{ "GitSignsUntracked", { fg = p.cyan } },
 
 	-- Noice
+	{ "NoicePopup", { fg = p.fg } },
 	{ "NoiceCmdlinePopupBorder", { fg = p.gray03 } },
 	{ "NoiceCmdlinePopupBorderSearch", { fg = p.gray03 } },
 	{ "NoiceCmdlinePopupTitle", { fg = p.fg } },
