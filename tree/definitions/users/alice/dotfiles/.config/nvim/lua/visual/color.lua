@@ -177,8 +177,10 @@ local groups = {
 
 	-- Noice
 	NoiceCmdlinePopupBorder = { fg = c.gray03 },
+	NoiceCmdlinePopupBorderSearch = { fg = c.gray03 },
 	NoiceCmdlinePopupTitle = { fg = c.fg },
 	NoiceCmdlinePopupTitleCmdline = { fg = c.fg },
+	NoiceCmdlinePopupTitleSearch = { fg = c.yellow },
 	NoiceLspProgressTitle = { fg = c.gray04 },
 
 	-- blink.cmp

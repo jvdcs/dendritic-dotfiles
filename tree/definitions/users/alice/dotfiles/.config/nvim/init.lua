@@ -10,7 +10,6 @@ require("visual.heirline")
 require("visual.dropbar")
 
 require("plugins.nvim-lspconfig")
-require("plugins.oil")
 require("plugins.yazi")
 require("plugins.which-key")
 require("plugins.snacks")
@@ -24,3 +23,4 @@ require("plugins.blink")
 require("plugins.toggleterm")
 
 require("plugins.conform")
+require("plugins.grapple")

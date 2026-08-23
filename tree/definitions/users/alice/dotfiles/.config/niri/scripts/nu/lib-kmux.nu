@@ -16,7 +16,7 @@ export def get_appid_from_session [
   --name: string
 ]: nothing -> int {
   get_niri_windows  
-  | where app_id =~ $name
+  | where title? =~ $name
   | get id.0
 }
 
@@ -24,7 +24,7 @@ export def is_session_visible [
   --name: string
 ]: nothing -> bool {
   get_niri_windows 
-  | any {|x| $x.app_id =~ $name}
+  | any {|x| $x.title? =~ $name}
 }
 
 export def is_session_existing [

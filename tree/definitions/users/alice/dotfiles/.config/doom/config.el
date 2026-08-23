@@ -202,7 +202,8 @@
  doom-font                 (font-spec
                             ;; :family "JuliaMono"
                             ;; :family "MonoLisa"
-                            :family "JetbrainsMono Nerd Font"
+                            ;;:family "JetbrainsMono Nerd Font"
+                            :family "IoskeleyMono Nerd Font Medium"
                             :size 15
                             :weight 'medium)
  doom-serif-font           (font-spec

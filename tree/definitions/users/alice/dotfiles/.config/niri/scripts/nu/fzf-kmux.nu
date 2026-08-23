@@ -16,7 +16,7 @@ def main [] {
     # focus window with specified session
     niri msg action focus-window --id (get_appid_from_session --name $n | into int)
   } else {
-    # exec nohup new kitty with specified session
-    exec nohup sh -c $"kitty --class=kitty-($n) -- tmux attach -t ($n)" o+e> (std null-device)
+    # spawn instantly using the daemon with +new-window
+    exec nohup sh -c $"ghostty +new-window --title=ghostty-($n) -e tmux attach -t ($n)" o+e> (std null-device)
   }
 }

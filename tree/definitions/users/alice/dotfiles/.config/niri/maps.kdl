@@ -21,7 +21,7 @@ binds {
     Super+T            repeat=false           { spawn-sh "~/.config/niri/scripts/sh/emacs-todo.sh"; }
 
     Super+S               { screenshot show-pointer=false; }
-    Super+Shift+S         { spawn-sh "kitty yazi ~/saves/images/screenshots"; }
+    // Super+Shift+S         { spawn-sh "ghostty -e yazi ~/saves/images/screenshots"; }
 
     Super+Space        repeat=false           { spawn-sh "vicinae toggle"; }
     Super+P            repeat=false           { spawn-sh "vicinae vicinae://launch/clipboard/history"; }
@@ -33,7 +33,7 @@ binds {
     Super+E            repeat=false           { spawn-sh "nu ~/.config/niri/scripts/nu/yazi-kmux.nu"; }
     Super+N            repeat=false           { spawn-sh "nu ~/.config/niri/scripts/nu/new-kmux.nu"; }
                 
-    Super+Shift+B      repeat=false           { spawn-sh "kitty btop"; }
+    Super+Shift+B      repeat=false           { spawn-sh "ghostty -e btop"; }
     Super+B            repeat=false           { spawn-sh "zen-beta"; }
     Super+M            repeat=false           { spawn-sh "emacsclient -c"; }
     Super+V            repeat=false           { spawn-sh "code"; }
