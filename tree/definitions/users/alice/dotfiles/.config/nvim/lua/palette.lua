@@ -14,5 +14,13 @@ return {
 	red = "#ff968c",
 	magenta = "#de9bc8",
 
-	-- set("")
+	set = function(highlight_group, config)
+		vim.api.nvim_set_hl(0, highlight_group, config)
+	end,
+
+	set_multi = function(self, ab_pairs)
+		for _, ab in ipairs(ab_pairs) do
+			self.set(ab[1], ab[2])
+		end
+	end,
 }

@@ -23,7 +23,7 @@ require("noice").setup({
 			["cmp.entry.get_documentation"] = true,
 		},
 		hover = { enabled = true },
-		signature = { enabled = true },
+		signature = { enabled = false }, -- disabled to avoid conflict with blink
 	},
 	presets = {
 		bottom_search = false,
