@@ -22,6 +22,7 @@ vim.opt.tabstop = 2 -- Number of spaces that a <Tab> counts for
 vim.opt.shiftwidth = 2 -- Number of spaces to use for each step of indent
 vim.opt.softtabstop = 2 -- Number of spaces that a <Tab> counts for while performing editing operations
 vim.opt.expandtab = true -- Convert tabs to spaces
+vim.opt.smartindent = true -- Automatically indent on new lines
 
 vim.opt.number = true -- Enable absolute line numbers
 vim.g.have_nerd_font = true
@@ -33,7 +34,7 @@ vim.opt.ignorecase = true -- Case insensitive search
 vim.opt.smartcase = true -- same thing
 
 -- vim.opt.clipboard = 'unnamedplus' -- sync os and nvim clipboard
-vim.opt.updatetime = 250
+vim.opt.updatetime = 50
 
 vim.opt.scrolloff = 10
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
