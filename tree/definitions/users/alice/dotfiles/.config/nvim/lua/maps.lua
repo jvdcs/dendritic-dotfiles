@@ -2,6 +2,8 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 local S = vim.keymap.set
+
+vim.keymap.set({ "n", "v" }, "gx", "<Nop>")
 -- window navigation
 S("n", "<leader>wh", "<C-w>h", { desc = "Window left" })
 S("n", "<leader>wj", "<C-w>j", { desc = "Window down" })

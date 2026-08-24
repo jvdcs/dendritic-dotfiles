@@ -2,6 +2,10 @@ vim.pack.add({ "https://github.com/lewis6991/gitsigns.nvim" })
 require("gitsigns").setup() -- populates vim.b.gitsigns_head per buffer
 
 vim.o.laststatus = 3
+-- 0: Never show statuslines
+-- 1: Show statusline only if there are 2 or more splits
+-- 2: Show a statusline for every split pane (default)
+-- 3: Show one global statusline at the very bottom
 vim.o.showcmdloc = "statusline"
 
 local CAPL, CAPR = "", ""

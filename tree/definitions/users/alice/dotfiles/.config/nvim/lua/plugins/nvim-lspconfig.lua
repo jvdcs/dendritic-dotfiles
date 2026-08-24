@@ -3,7 +3,16 @@
 -- server spawned by nvim inherits this, so fix it once, here, globally.
 vim.env.PATH = vim.env.PATH .. ":/etc/profiles/per-user/" .. vim.env.USER .. "/bin"
 
-vim.pack.add({ "https://github.com/neovim/nvim-lspconfig" })
+vim.pack.add({
+	"https://github.com/folke/lazydev.nvim",
+	"https://github.com/neovim/nvim-lspconfig",
+})
+
+require("lazydev").setup({
+	-- library = {
+	--   { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+	-- },
+})
 
 -- lua
 vim.lsp.config("lua_ls", {

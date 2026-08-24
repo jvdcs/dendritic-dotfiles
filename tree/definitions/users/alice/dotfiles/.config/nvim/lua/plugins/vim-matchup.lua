@@ -10,7 +10,7 @@ vim.g.matchup_matchparen_insert_timeout = 20 -- Limits insert mode highlighting 
 local p = require("palette")
 p.set("MatchParen", {
 	fg = p.fg,
-	bold = true,
-	bg = p.gray04,
+	-- bold = true,
+	bg = p.gray03,
 	-- underline = true,
 })

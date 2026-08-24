@@ -37,3 +37,4 @@ require("plugins.visual-surround")
 require("plugins.mini-pairs")
 
 require("plugins.neotab")
+require("plugins.luasnip")
