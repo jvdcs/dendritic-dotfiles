@@ -25,4 +25,10 @@ require("plugins.toggleterm")
 
 require("plugins.conform")
 require("plugins.grapple")
+
 require("plugins.typst-preview")
+
+require("plugins.mini-bufdelete")
+require("plugins.indent-blankline")
+require("plugins.rainbow-delimiters")
+require("plugins.vim-matchup")

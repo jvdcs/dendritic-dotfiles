@@ -16,7 +16,6 @@ S("n", "<leader>ww", "<C-w>p", { desc = "[w]indow previous" })
 -- Window Splitting
 S("n", "<leader>ws", "<C-w>s", { desc = "[w]indow split down" })
 S("n", "<leader>wd", "<C-w>v", { desc = "[w]indow split left" })
-S("n", "<leader>wq", "<C-w>c", { desc = "[w]indow close" })
 
 S("n", "<leader>R", "<cmd>restart<CR>", { desc = "[r]estart nvim" })
 S("n", "<leader>r", vim.lsp.buf.rename, { desc = "[r]ename variable" })

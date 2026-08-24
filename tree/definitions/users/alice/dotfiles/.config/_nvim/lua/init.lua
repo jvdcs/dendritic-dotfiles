@@ -1,15 +1,3 @@
--- Everything Typst-specific lives under lua/lang/typst/ (this file plus
--- snippets.lua), instead of being spread across plugins/, snippets/, lsp/,
--- and queries/ the way it was before. The one exception is lsp/tinymist.lua
--- and queries/typst/folds.scm -- those two stay at the top level because
--- Neovim's own runtime conventions require server configs and treesitter
--- query files to live in exactly those fixed paths to be auto-discovered.
-local map = vim.keymap.set
-
--- Math textobject ($...$)
--- (this used to be duplicated verbatim in plugins/editor.lua too -- it's
--- only ever used for Typst/LaTeX-style math delimiters, so it only needs
--- to exist here)
 require("mini.ai").setup({
 	custom_textobjects = {
 		["$"] = require("mini.ai").gen_spec.pair("$", "$", { type = "non-balanced" }),
@@ -51,62 +39,7 @@ require("typstar").setup({
 	},
 })
 
-map({ "s", "i" }, "<M-j>", "<Cmd>TypstarSmartJump<CR>")
-map({ "s", "i" }, "<M-k>", "<Cmd>TypstarSmartJumpBack<CR>")
-map({ "n", "i" }, "<M-t>", "<Cmd>TypstarToggleSnippets<CR>")
-
 -- Typst Preview Setup & Keymaps
 require("typst-preview").setup({})
 map("n", "<leader>pv", ":TypstPreview<CR>", { desc = "Preview toggle" })
 map("n", "<leader>ps", ":TypstPreviewStop<CR>", { desc = "Preview stop" })
-
--- Helper to check if any window in the current tab is an open Snacks picker
-local function is_snacks_picker_open()
-	for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
-		local buf = vim.api.nvim_win_get_buf(win)
-		local ft = vim.bo[buf].filetype
-		if ft == "snacks_picker_list" or ft == "snacks_picker_input" then
-			return true
-		end
-	end
-	return false
-end
-
--- Safely launch only once per buffer when entering
-vim.api.nvim_create_autocmd({ "BufEnter", "VimEnter" }, {
-	pattern = "*.typ",
-	callback = function(args)
-		vim.schedule(function()
-			if vim.api.nvim_get_current_buf() ~= args.buf then
-				return
-			end
-			if vim.b[args.buf].typst_preview_active then
-				return
-			end
-			if is_snacks_picker_open() then
-				return
-			end
-			if vim.api.nvim_win_get_config(0).relative ~= "" or vim.bo.buftype ~= "" then
-				return
-			end
-
-			vim.b[args.buf].typst_preview_active = true
-			vim.cmd("TypstPreview")
-		end)
-	end,
-})
-
--- Only kill the preview when the buffer is actually deleted, not just hidden
-vim.api.nvim_create_autocmd("BufDelete", {
-	pattern = "*.typ",
-	callback = function(args)
-		if vim.b[args.buf] then
-			vim.b[args.buf].typst_preview_active = false
-		end
-
-		if is_snacks_picker_open() then
-			return
-		end
-		vim.cmd("TypstPreviewStop")
-	end,
-})

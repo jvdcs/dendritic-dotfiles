@@ -14,14 +14,14 @@ end
 
 require("dropbar").setup({
 	bar = {
-		truncate = false,
+		truncate = true,
 
 		-- Ms to wait before redrawing on rapid updates
 		-- update_debounce = 32,
 		padding = { left = 1, right = 1 },
 		pick = { pivots = "asdcnjklfvbhgzxm" }, -- keys shown in pick mode
 
-		-- custom function makes dropbar appear even if the file has no treesitter support
+		-- custom function makes dropbar appear even if the file has no treesitter support, NOTE: this is not a complex hack, this is just the edit of the actual function inside of dropbar.
 		enable = function(buf, win, _)
 			buf = vim._resolve_bufnr(buf)
 			if not vim.api.nvim_buf_is_valid(buf) or not vim.api.nvim_win_is_valid(win) then
@@ -57,11 +57,10 @@ require("dropbar").setup({
 			},
 		},
 	},
-	-- sources = {
-	--   path       = { max_depth = 16 }, -- max path segments shown
-	--   treesitter = { max_depth = 16 },
-	--   lsp        = { max_depth = 16 },
-	--   markdown   = { max_depth = 6 },
-	--   terminal   = { show_current = true },
-	-- },
+	sources = {
+		path = { max_depth = 3 }, -- max path segments shown
+		treesitter = { max_depth = 3 },
+		lsp = { max_depth = 3 },
+		markdown = { max_depth = 3 },
+	},
 })
