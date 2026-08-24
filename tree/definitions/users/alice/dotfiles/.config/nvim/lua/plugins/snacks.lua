@@ -20,8 +20,8 @@ require("snacks").setup({
 			input = {
 				keys = {
 					["<Esc>"] = { "close", mode = { "n", "i" } },
-					-- ["<M-Q>"] = { "qflist", mode = { "i", "n" } },
-					["<M-q>"] = { "loclist", mode = { "i", "n" } },
+					["<M-q>"] = { "qflist", mode = { "i", "n" } },
+					-- ["<M-q>"] = { "loclist", mode = { "i", "n" } },
 					["<C-s>"] = { "edit_split", mode = { "i", "n" } },
 					["<C-d>"] = { "edit_vsplit", mode = { "i", "n" } },
 				},

@@ -56,8 +56,8 @@ end
 S("n", "<C-f>", toggle_all_folds, { desc = "Toggle all folds" })
 
 -- snacks
-S("n", "<C-p>", "<cmd>lprev<CR>", { desc = "Prev location item" })
-S("n", "<C-n>", "<cmd>lnext<CR>", { desc = "Next location item" })
+-- S("n", "<C-p>", "<cmd>lprev<CR>", { desc = "Prev location item" })
+-- S("n", "<C-n>", "<cmd>lnext<CR>", { desc = "Next location item" })
 S("n", "<C-p>", "<cmd>cprev<CR>", { desc = "Prev quickfix item" })
 S("n", "<C-n>", "<cmd>cnext<CR>", { desc = "Next quickfix item" })
 S("n", "<leader>F", function()
