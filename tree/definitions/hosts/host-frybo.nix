@@ -2,7 +2,6 @@
   library,
   modules,
   helpers,
-  inputs,
   ...
 }: {
   flake.modules = library.defineHostModule {
@@ -59,7 +58,7 @@
 
       # === MATH ===
       feature-lean
-      # === 
+      # ===
 
       # === CONTAINERIZATION ===
       feature-podman

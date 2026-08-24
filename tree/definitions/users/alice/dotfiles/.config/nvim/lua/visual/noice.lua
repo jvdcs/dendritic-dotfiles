@@ -15,6 +15,22 @@ require("noice").setup({
 		confirm = {
 			format = { "{message}" }, -- show the question text, then the Yes/No buttons
 		},
+
+		notify = {
+			timeout = 1.5 * 1000, -- 2 seconds (in milliseconds)
+		},
+		-- For the mini view (bottom-right notifications)
+		mini = {
+			timeout = 1 * 1000, -- 1.5 seconds
+		},
+		-- For the popup view (centered floating windows)
+		popup = {
+			timeout = 3 * 1000, -- 3 seconds
+		},
+		-- For cmdline_popup (fancy command line)
+		cmdline_popup = {
+			timeout = 5 * 1000, -- 5 seconds
+		},
 	},
 	lsp = {
 		override = {
