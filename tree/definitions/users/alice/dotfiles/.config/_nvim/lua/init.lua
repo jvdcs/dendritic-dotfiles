@@ -38,8 +38,3 @@ require("typstar").setup({
 		},
 	},
 })
-
--- Typst Preview Setup & Keymaps
-require("typst-preview").setup({})
-map("n", "<leader>pv", ":TypstPreview<CR>", { desc = "Preview toggle" })
-map("n", "<leader>ps", ":TypstPreviewStop<CR>", { desc = "Preview stop" })

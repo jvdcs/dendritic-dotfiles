@@ -11,3 +11,12 @@ require("toggleterm").setup({
 	close_on_exit = true, -- Close window when subshell process exits
 	float_opts = { border = "curved" }, -- Options: 'single' | 'double' | 'shadow' | 'curved'
 })
+
+vim.api.nvim_create_autocmd("TermOpen", {
+	callback = function()
+		vim.opt_local.number = false
+		vim.opt_local.relativenumber = false
+		vim.opt_local.statuscolumn = "" -- override any custom statuscolumn for this buffer
+		vim.opt_local.signcolumn = "no" -- optional, kills the empty gutter too
+	end,
+})

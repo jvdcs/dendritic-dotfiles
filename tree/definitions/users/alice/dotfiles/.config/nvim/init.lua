@@ -34,3 +34,6 @@ require("plugins.rainbow-delimiters")
 require("plugins.vim-matchup")
 
 require("plugins.visual-surround")
+require("plugins.mini-pairs")
+
+require("plugins.neotab")
