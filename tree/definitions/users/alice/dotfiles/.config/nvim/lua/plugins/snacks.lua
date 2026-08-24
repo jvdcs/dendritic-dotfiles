@@ -22,6 +22,8 @@ require("snacks").setup({
 					["<Esc>"] = { "close", mode = { "n", "i" } },
 					-- ["<M-Q>"] = { "qflist", mode = { "i", "n" } },
 					["<M-q>"] = { "loclist", mode = { "i", "n" } },
+					["<C-s>"] = { "edit_split", mode = { "i", "n" } },
+					["<C-d>"] = { "edit_vsplit", mode = { "i", "n" } },
 				},
 			},
 		},
@@ -40,38 +42,3 @@ require("snacks").setup({
 		},
 	},
 })
-
-local S = vim.keymap.set
--- S("n", "<M-N>", "<cmd>cprev<CR>", { desc = "Prev quickfix item" })
--- S("n", "<M-P>", "<cmd>cnext<CR>", { desc = "Next quickfix item" })
-S("n", "<C-p>", "<cmd>lprev<CR>", { desc = "Prev location item" })
-S("n", "<C-n>", "<cmd>lnext<CR>", { desc = "Next location item" })
-
-S("n", "<leader>F", function()
-	Snacks.picker.files({ cwd = vim.fs.dirname(vim.api.nvim_buf_get_name(0)) })
-end, { desc = "Find files in current buffer dir" })
-S("n", "<leader>?", function()
-	Snacks.picker.grep({ cwd = vim.fs.dirname(vim.api.nvim_buf_get_name(0)) })
-end, { desc = "Live grep in current buffer dir" })
-S("n", "<leader>b", function()
-	Snacks.picker.buffers()
-end, { desc = "[b]uffer list" })
-S("n", "<leader>h", function()
-	Snacks.picker.help()
-end, { desc = "[h]elp tags" })
-S("n", "<leader>/", function()
-	Snacks.picker.grep()
-end, { desc = "grep" })
-S("n", "<leader>f", function()
-	Snacks.picker.files()
-end, { desc = "[f]ind files" })
-S("n", "<leader>H", function()
-	Snacks.picker.highlights()
-end, { desc = "[s]earch highlights" })
-
-S("n", "<leader>wS", function()
-	Snacks.picker.files({ confirm = "split" })
-end, { desc = "[w]indow open file right" })
-S("n", "<leader>wD", function()
-	Snacks.picker.files({ confirm = "vsplit" })
-end, { desc = "[w]indow open file down" })

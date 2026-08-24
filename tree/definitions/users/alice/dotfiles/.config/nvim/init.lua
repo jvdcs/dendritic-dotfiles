@@ -32,3 +32,5 @@ require("plugins.mini-bufdelete")
 require("plugins.indent-blankline")
 require("plugins.rainbow-delimiters")
 require("plugins.vim-matchup")
+
+require("plugins.visual-surround")

@@ -2,40 +2,48 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 local S = vim.keymap.set
--- Window Navigation
-S("n", "<leader>wh", "<C-w>h", { desc = "[w]indow left" })
-S("n", "<leader>wj", "<C-w>j", { desc = "[w]indow down" })
-S("n", "<leader>wk", "<C-w>k", { desc = "[w]indow up" })
-S("n", "<leader>wl", "<C-w>l", { desc = "[w]indow right" })
-S("n", "<leader>wH", "<C-w>H", { desc = "[w]indow move left" })
-S("n", "<leader>wJ", "<C-w>J", { desc = "[w]indow move down" })
-S("n", "<leader>wK", "<C-w>K", { desc = "[w]indow move up" })
-S("n", "<leader>wL", "<C-w>L", { desc = "[w]indow move right" })
-S("n", "<leader>ww", "<C-w>p", { desc = "[w]indow previous" })
+-- window navigation
+S("n", "<leader>wh", "<C-w>h", { desc = "Window left" })
+S("n", "<leader>wj", "<C-w>j", { desc = "Window down" })
+S("n", "<leader>wk", "<C-w>k", { desc = "Window up" })
+S("n", "<leader>wl", "<C-w>l", { desc = "Window right" })
+S("n", "<leader>wH", "<C-w>H", { desc = "Window move left" })
+S("n", "<leader>wJ", "<C-w>J", { desc = "Window move down" })
+S("n", "<leader>wK", "<C-w>K", { desc = "Window move up" })
+S("n", "<leader>wL", "<C-w>L", { desc = "Window move right" })
+S("n", "<leader>ww", "<C-w>p", { desc = "Window previous" })
 
--- Window Splitting
-S("n", "<leader>ws", "<C-w>s", { desc = "[w]indow split down" })
-S("n", "<leader>wd", "<C-w>v", { desc = "[w]indow split left" })
+-- insert windows
+S("n", "<leader>wd", "<C-w>v", { desc = "Insert Window right" })
+S("n", "<leader>ws", "<C-w>s", { desc = "Insert Window down" })
+-- S("n", "<leader>iwh", ":leftabove vsplit<CR>", { desc = "Insert Window left" })
+-- S("n", "<leader>iwl", ":rightbelow vsplit<CR>", { desc = "Insert Window right" })
+-- S("n", "<leader>iwk", ":leftabove split<CR>", { desc = "Insert Window up" })
+-- S("n", "<leader>iwj", ":rightbelow split<CR>", { desc = "Insert Window down" })
+-- S("n", "<leader>iwH", ":topleft vsplit<CR>", { desc = "Insert Window far left" })
+-- S("n", "<leader>iwL", ":botright vsplit<CR>", { desc = "Insert Window far right" })
+-- S("n", "<leader>iwK", ":topleft split<CR>", { desc = "Insert Window far up" })
+-- S("n", "<leader>iwJ", ":botright split<CR>", { desc = "Insert Window far down" })
 
-S("n", "<leader>R", "<cmd>restart<CR>", { desc = "[r]estart nvim" })
-S("n", "<leader>r", vim.lsp.buf.rename, { desc = "[r]ename variable" })
-S("n", "<C-s>", "<cmd>write<CR>", { desc = "[s]ave file" })
-
-S("n", "-", "<cmd>Oil --preview<CR>", { desc = "[-] open parent directory" })
+-- misc
+S("n", "<leader>R", "<cmd>restart<CR>", { desc = "Restart Nvim" })
+S("n", "<leader>r", vim.lsp.buf.rename, { desc = "Rename Variable" })
+S("n", "<C-s>", "<cmd>write<CR>", { desc = "Save File" })
 
 S("n", "<C-g>", function()
 	require("dropbar.api").pick()
-end, { desc = "Pick breadcrumb context" })
+end, { desc = "Dropbar navigate" })
 
-S("n", "<leader>cd", "<cmd>cd %:p:h<CR>", { desc = "CD to buffer" })
-S("n", "<leader>cl", "<cmd>lcd %:p:h<CR>", { desc = "LCD to buffer" })
+-- change cwd
+S("n", "<leader>cd", "<cmd>cd %:p:h<CR>", { desc = "Change cwd to buffer's" })
+S("n", "<leader>cl", "<cmd>lcd %:p:h<CR>", { desc = "Change cwd of current window to buffer's" })
 
+-- yazi plugin
 S({ "n", "v" }, "<C-space>", "<cmd>Yazi<cr>", { desc = "Open yazi at current file" })
 
--- UFO Folding API (Uncomment and assign keys as needed)
+-- ufo folding
 S("n", "<C-h>", "zc", { desc = "Close current fold" })
 S("n", "<C-l>", "zo", { desc = "Open current fold" })
-
 local all_folds_closed = false
 local function toggle_all_folds()
 	if all_folds_closed then
@@ -47,8 +55,95 @@ local function toggle_all_folds()
 end
 S("n", "<C-f>", toggle_all_folds, { desc = "Toggle all folds" })
 
--- vim.keymap.set("c", "<Down>", "<C-n>", { desc = "Next command line suggestion" })
--- vim.keymap.set("c", "<Up>", "<C-p>", { desc = "Previous command line suggestion" })
--- vim.opt.wildmenu = true            -- Enable command-line completion menu
--- vim.opt.wildoptions = "pum"        -- Display suggestions as a vertical popup menu
--- vim.opt.wildmode = "full"          -- Command completion mode behavior
+-- snacks
+S("n", "<C-p>", "<cmd>lprev<CR>", { desc = "Prev location item" })
+S("n", "<C-n>", "<cmd>lnext<CR>", { desc = "Next location item" })
+S("n", "<C-p>", "<cmd>cprev<CR>", { desc = "Prev quickfix item" })
+S("n", "<C-n>", "<cmd>cnext<CR>", { desc = "Next quickfix item" })
+S("n", "<leader>F", function()
+	Snacks.picker.files({ cwd = vim.fs.dirname(vim.api.nvim_buf_get_name(0)) })
+end, { desc = "Find files in current buffer's dir" })
+S("n", "<leader>?", function()
+	Snacks.picker.grep({ cwd = vim.fs.dirname(vim.api.nvim_buf_get_name(0)) })
+end, { desc = "Grep in current buffer's dir" })
+S("n", "<leader>b", function()
+	Snacks.picker.buffers()
+end, { desc = "Search buffer list" })
+S("n", "<leader>h", function()
+	Snacks.picker.help()
+end, { desc = "Search help tags" })
+S("n", "<leader>/", function()
+	Snacks.picker.grep()
+end, { desc = "Grep cwd" })
+S("n", "<leader>f", function()
+	Snacks.picker.files()
+end, { desc = "Find files" })
+S("n", "<leader>H", function()
+	Snacks.picker.highlights()
+end, { desc = "Search highlights" })
+
+-- grapple
+-- grapple
+S("n", "<leader>gg", function()
+	require("grapple").toggle()
+end, { desc = "Grapple toggle tag" })
+S("n", "<leader>gt", function()
+	require("grapple").toggle_tags()
+end, { desc = "Grapple open list" })
+S("n", "<leader>ga", function()
+	require("grapple").select({ index = 1 })
+end, { desc = "Grapple file 1" })
+S("n", "<leader>gs", function()
+	require("grapple").select({ index = 2 })
+end, { desc = "Grapple file 2" })
+S("n", "<leader>gd", function()
+	require("grapple").select({ index = 3 })
+end, { desc = "Grapple file 3" })
+S("n", "<leader>gf", function()
+	require("grapple").select({ index = 4 })
+end, { desc = "Grapple file 4" })
+
+-- multicursor-nvim
+S({ "n", "v" }, "<A-n>", function()
+	require("multicursor-nvim").matchAddCursor(1)
+end, { desc = "Add next match cursor" })
+S({ "n", "v" }, "<A-N>", function()
+	require("multicursor-nvim").matchAddCursor(-1)
+end, { desc = "Add next match cursor" })
+-- S({ "n", "v" }, "<C-s>", function() require("multicursor-nvim").matchSkipCursor(1) end, { desc = "Skip match cursor" })
+-- S({ "n", "v" }, "<C-Up>", function() require("multicursor-nvim").lineAddCursor(-1) end, { desc = "Add cursor above" })
+-- S({ "n", "v" }, "<C-Down>", function() require("multicursor-nvim").lineAddCursor(1) end, { desc = "Add cursor below" })
+S("n", "<Esc>", function()
+	if require("multicursor-nvim").hasCursors() then
+		require("multicursor-nvim").clearCursors()
+	else
+		vim.cmd("nohlsearch")
+	end
+end, { desc = "Clear cursors" })
+
+-- maps escape to exit terminal-insert mode
+S("t", "<Esc>", [[<C-\><C-n>]], { noremap = true, silent = true })
+
+-- nvim-surround
+vim.keymap.set("x", "S", function()
+	-- wait silently for exactly one keypress
+	local char = vim.fn.getcharstr()
+
+	-- exit safely after hitting escape or enter
+	if char == "\27" or char == "\r" then
+		return
+	end
+
+	require("visual-surround").surround(char)
+end, { desc = "Surround visual selection" })
+
+-- mini-bufdelete
+vim.keymap.set("n", "<leader>db", function()
+	require("mini.bufremove").delete(0, false) -- (0 = current buffer, false = don't force write/discard)
+end, { desc = "Delete buffer" })
+vim.keymap.set("n", "<leader>dw", "<C-w>c", { desc = "Delete Window" })
+
+-- typst preview
+vim.keymap.set("n", "<leader>tp", ":TypstPreview<CR>", { desc = "Start typst preview" })
+vim.keymap.set("n", "<leader>ts", ":TypstPreviewStop<CR>", { desc = "Stop typst preview" })
+vim.keymap.set("n", "<leader>tt", ":TypstPreviewToggle<CR>", { desc = "Toggle Typst preview" })

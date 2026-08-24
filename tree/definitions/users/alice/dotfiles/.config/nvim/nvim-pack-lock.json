@@ -204,6 +204,10 @@
       "rev": "a6975e7c1ee157615bbc80fc25e4392f71c344d4",
       "src": "https://github.com/mg979/vim-visual-multi"
     },
+    "visual-surround.nvim": {
+      "rev": "79ad15fde05006093ed971808158efb62a77944a",
+      "src": "https://github.com/NStefan002/visual-surround.nvim"
+    },
     "which-key.nvim": {
       "rev": "3aab2147e74890957785941f0c1ad87d0a44c15a",
       "src": "https://github.com/folke/which-key.nvim"

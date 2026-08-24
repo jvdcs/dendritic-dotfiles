@@ -6,7 +6,3 @@ require("typst-preview").setup({
 	-- port = 0,               -- Custom port (0 = random)
 	-- host = nil,             -- Custom host (0.0.0.0 not supported)
 })
-
-vim.keymap.set("n", "<leader>tp", ":TypstPreview<CR>", { desc = "Start Typst preview" })
-vim.keymap.set("n", "<leader>ts", ":TypstPreviewStop<CR>", { desc = "Stop Typst preview" })
-vim.keymap.set("n", "<leader>tt", ":TypstPreviewToggle<CR>", { desc = "Toggle Typst preview" })

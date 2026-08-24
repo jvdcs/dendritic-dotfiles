@@ -1,16 +1,5 @@
 vim.loader.enable()
 
---
---
---
-local ffi = require("ffi")
-ffi.cdef([[
-  int getpid(void);
-  int isatty(int fd);
-]])
-
---
---
 -- Cap ShaDa history limits to prevent disk I/O stutter on startup and quit
 vim.opt.shada = {
 	"'20", -- Max files with marks saved (default: 100)
@@ -19,8 +8,6 @@ vim.opt.shada = {
 	"h", -- Disable search highlight restore on startup (default: enabled)
 }
 
---
---
 ---- Disable unused legacy Vimscript plugins and executable checks on boot
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
