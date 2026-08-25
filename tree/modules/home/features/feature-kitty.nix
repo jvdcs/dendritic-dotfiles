@@ -28,6 +28,7 @@
         "ctrl+shift+n" = "no_op";
         "ctrl+shift+h" = "no_op";
         "ctrl+shift+l" = "no_op";
+        "ctrl+shift+e" = "no_op";
 
         "ctrl+shift+k" = "scroll_line_up";
         "ctrl+shift+j" = "scroll_line_down";

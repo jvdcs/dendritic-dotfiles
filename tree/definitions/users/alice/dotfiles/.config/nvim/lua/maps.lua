@@ -62,6 +62,28 @@ S("n", "<C-f>", toggle_all_folds, { desc = "Toggle all folds" })
 -- S("n", "<C-n>", "<cmd>lnext<CR>", { desc = "Next location item" })
 S("n", "<C-p>", "<cmd>cprev<CR>", { desc = "Prev quickfix item" })
 S("n", "<C-n>", "<cmd>cnext<CR>", { desc = "Next quickfix item" })
+S("n", "<leader>e", function()
+	local current_win = vim.api.nvim_get_current_win()
+	local buf = vim.api.nvim_win_get_buf(current_win)
+	local ft = vim.api.nvim_get_option_value("filetype", { buf = buf })
+
+	if ft == "snacks_picker_list" then
+		-- We're in the explorer → go back to the previous window
+		vim.cmd("wincmd p")
+	else
+		-- We're not in the explorer → find or open it
+		local explorer_win = vim.tbl_filter(function(w)
+			local b = vim.api.nvim_win_get_buf(w)
+			return vim.api.nvim_get_option_value("filetype", { buf = b }) == "snacks_picker_list"
+		end, vim.api.nvim_list_wins())[1]
+
+		if explorer_win then
+			vim.api.nvim_set_current_win(explorer_win)
+		else
+			Snacks.picker.explorer()
+		end
+	end
+end, { desc = "Toggle focus between explorer and last window" })
 S("n", "<leader>F", function()
 	Snacks.picker.files({ cwd = vim.fs.dirname(vim.api.nvim_buf_get_name(0)) })
 end, { desc = "Find files in current buffer's dir" })
@@ -130,12 +152,10 @@ S("t", "<Esc>", [[<C-\><C-n>]], { noremap = true, silent = true })
 vim.keymap.set("x", "S", function()
 	-- wait silently for exactly one keypress
 	local char = vim.fn.getcharstr()
-
 	-- exit safely after hitting escape or enter
 	if char == "\27" or char == "\r" then
 		return
 	end
-
 	require("visual-surround").surround(char)
 end, { desc = "Surround visual selection" })
 

@@ -82,8 +82,8 @@ ls.add_snippets("typst", {
 	ms("ee", fmta("_<>_<>", { i(1), i(0) })),
 
 	-- Logic
-	ms("=>", t("=>")),
 	ms("=v", t("arrow.b.double ")),
+	ms("===", t("equiv")),
 	ms("fa", t("forall")),
 	ms("te", t("exists")),
 	ms("sor", t("union")),
@@ -96,8 +96,6 @@ ls.add_snippets("typst", {
 	ms("_", fmta("_(<>)<>", { i(1), i(0) })),
 
 	ms("//", fmta("frac(<>, <>)<>", { i(1, "a"), i(2, "b"), i(0) })),
-	ms("eq", fmta("<> &= <> \\ \n<>", { i(1, "a"), i(2, "b"), i(0) })),
-	ms("===", t("equiv")),
 
 	-- Calculus
 	ms("lim", fmta("lim_(<> ->> <>) <>", { i(1, "n"), i(2, "oo"), i(0) })),

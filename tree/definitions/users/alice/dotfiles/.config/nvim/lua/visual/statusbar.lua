@@ -64,7 +64,7 @@ end
 -- Mode mappings: label, pill bg, text fg
 local modes = {
 	n = { "N", p.gray04, p.fg },
-	i = { "I", p.fg, p.bg },
+	i = { "I", p.blue, p.bg },
 	v = { "V", p.green, p.bg },
 	[""] = { "V", p.green, p.bg },
 	V = { "VL", p.green, p.bg },

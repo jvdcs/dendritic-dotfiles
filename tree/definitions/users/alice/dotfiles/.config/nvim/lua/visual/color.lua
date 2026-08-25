@@ -33,14 +33,18 @@ p:set_multi({
 	{ "MatchParen", { fg = p.fg, bg = p.gray04 } },
 	{ "Cursor", { fg = p.bg, bg = p.fg } },
 	{ "StatusLine", { fg = p.fg, bg = p.gray02 } },
-	{ "StatusLineNC", { fg = p.gray05, bg = p.gray01 } },
+
+	{ "StatusLineNC", { fg = p.gray05, bg = p.bg } }, -- status line plit at window boundary
+
 	{ "TabLine", { fg = p.gray04 } },
 	{ "TabLineSel", { fg = p.fg, bg = p.gray02 } },
 	{ "TabLineFill", { fg = p.gray04 } },
 	{ "Pmenu", { fg = p.fg, bg = p.gray01 } },
 	{ "PmenuSel", { fg = p.bg, bg = p.fg } },
 	{ "PmenuThumb", { bg = p.gray04 } },
-	{ "Directory", { fg = p.gray05 } },
+
+	{ "Directory", { fg = p.blue } }, -- set to blue for snacksexplorer (see snacks section below)
+
 	{ "NonText", { fg = p.gray03 } },
 	{ "ErrorMsg", { fg = p.red, italic = true } },
 	{ "WarningMsg", { fg = p.yellow, italic = true } },
@@ -89,7 +93,12 @@ p:set_multi({
 	{ "SnacksPickerSelected", { fg = p.fg, bg = p.gray02 } }, -- Active row highlight
 	{ "SnacksPickerTree", { fg = p.gray04 } },
 
-	{ "SnacksPickerDir", { fg = p.gray05 } }, -- Dims the path
+	{ "SnacksPickerDir", { fg = p.gray05 } }, -- Dims the path in pickers
+	{ "SnacksPickerDirectory", { fg = p.blue } },
+	{ "SnacksPickerPathHidden", { fg = p.fg, italic = true } },
+
+	{ "SnacksPickerIconKey", { fg = p.blue } },
+
 	{ "SnacksPickerFile", { fg = p.fg } }, -- Keeps trailing filename bright
 
 	{ "SnacksPickerTitle", { fg = p.fg } },
