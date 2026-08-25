@@ -61,7 +61,7 @@
   "editor.inlineSuggest.enabled": false,
   "editor.occurrencesHighlight": "off",
   "editor.selectionHighlight": false,
-  "editor.cursorBlinking": "blink",
+  "editor.cursorBlinking": "solid",
   "editor.cursorSurroundingLines": 8,
   "editor.cursorSurroundingLinesStyle": "all",
   // "editor.cursorSmoothCaretAnimation": "on",

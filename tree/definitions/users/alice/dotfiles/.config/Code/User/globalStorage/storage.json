@@ -9,9 +9,6 @@
                 "folderUri": "file:///home/alice/sandbox/__python__/neural/UDL"
             },
             {
-                "folderUri": "file:///home/alice"
-            },
-            {
                 "folderUri": "file:///etc/nixos"
             }
         ],
@@ -89,7 +86,7 @@
             "editorPartMinWidth": 220,
             "titleBarHeight": 30,
             "activityBarWidth": 44,
-            "sideBarWidth": 173,
+            "sideBarWidth": 177,
             "auxiliaryBarWidth": 0,
             "statusBarHeight": 32,
             "windowBorder": false,
@@ -97,14 +94,14 @@
             "partBounds": {
                 "sideBar": {
                     "top": 34,
-                    "left": 1191,
-                    "width": 167,
+                    "left": 1187,
+                    "width": 171,
                     "height": 764
                 },
                 "editor": {
                     "top": 34,
                     "left": 8,
-                    "width": 1177,
+                    "width": 1173,
                     "height": 764
                 }
             }
@@ -112,8 +109,8 @@
     },
     "windowsState": {
         "lastActiveWindow": {
-            "folder": "file:///etc/nixos",
-            "backupPath": "/home/alice/.config/Code/Backups/96f02383a64c6d57ef29ecc4e4810a2f",
+            "folder": "file:///home/alice/sandbox/__python__/neural/UDL",
+            "backupPath": "/home/alice/.config/Code/Backups/06b739b22a4006a29f62f49cd2443959",
             "uiState": {
                 "mode": 1,
                 "x": 16,
@@ -126,7 +123,7 @@
     },
     "windowSplashWorkspaceOverride": {
         "layoutInfo": {
-            "sideBarWidth": 173,
+            "sideBarWidth": 177,
             "auxiliaryBarWidth": 170,
             "workspaces": {
                 "3d81f909cd5a180b1e70da17fbd8454d": {
