@@ -17,19 +17,19 @@ require("noice").setup({
 		},
 
 		notify = {
-			timeout = 1 * 1000, -- 2 seconds (in milliseconds)
+			timeout = 1 * 1000,
 		},
 		-- For the mini view (bottom-right notifications)
 		mini = {
-			timeout = 1 * 1000, -- 1.5 seconds
+			timeout = 1 * 1000,
 		},
 		-- For the popup view (centered floating windows)
 		popup = {
-			timeout = 2 * 1000, -- 3 seconds
+			timeout = 2 * 1000,
 		},
 		-- For cmdline_popup (fancy command line)
 		cmdline_popup = {
-			timeout = 3 * 1000, -- 5 seconds
+			timeout = 3 * 1000,
 		},
 	},
 	lsp = {
