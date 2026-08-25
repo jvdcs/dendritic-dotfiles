@@ -92,6 +92,10 @@
       "rev": "281bb1a2c60c3618c854bef2c0933276eb2362c2",
       "src": "https://github.com/echasnovski/mini.bufremove"
     },
+    "mini.hipatterns": {
+      "rev": "7c840c71d6a91f53d734cab2b6fe2290d285ec3b",
+      "src": "https://github.com/echasnovski/mini.hipatterns"
+    },
     "mini.nvim": {
       "rev": "629bf6792187e11b4829411c1648f86f28df3963",
       "src": "https://github.com/nvim-mini/mini.nvim"

@@ -10,6 +10,7 @@ require("visual.diagnostics")
 require("visual.statusbar")
 require("visual.icons")
 require("visual.dropbar")
+require("visual.todo-comments")
 
 require("plugins.nvim-lspconfig")
 require("plugins.yazi")
