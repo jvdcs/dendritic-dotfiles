@@ -1,3 +1,5 @@
+-- ORDER MATTERS
+
 require("defaults")
 require("maps")
 require("optimizations")

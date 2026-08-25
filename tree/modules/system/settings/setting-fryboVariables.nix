@@ -1,13 +1,15 @@
 {
-  flake.modules.nixos.setting-fryboVariables = {lib, ...}: {
+  flake.modules.nixos.setting-fryboVariables = {...}: {
     environment.sessionVariables = {
       PATH = [
         "$HOME/.emacs.d/bin"
         "$HOME/.cargo/bin"
       ];
 
-      VISUAL = "hx";
-      EDITOR = "hx";
+      VISUAL = "nvim";
+      EDITOR = "nvim";
+      # VISUAL = "hx";
+      # EDITOR = "hx";
       LSP_USE_PLISTS = "true";
       XDG_SESSION_TYPE = "wayland";
       MOZ_ENABLE_WAYLAND = "1";

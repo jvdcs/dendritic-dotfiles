@@ -148,6 +148,10 @@
       "rev": "b73018b75affd13fa38e2fc94ef753b465f770d7",
       "src": "https://github.com/stevearc/oil.nvim"
     },
+    "orgmode": {
+      "rev": "005368b30cea12ececfbe27240b4269939aac6e6",
+      "src": "https://github.com/nvim-orgmode/orgmode"
+    },
     "pixel.nvim": {
       "rev": "fd06541f7c790e22ad18f0ee5873b246de5b4a87",
       "src": "https://github.com/bjarneo/pixel.nvim"

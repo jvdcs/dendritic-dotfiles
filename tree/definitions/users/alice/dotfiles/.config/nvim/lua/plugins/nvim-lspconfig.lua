@@ -40,25 +40,14 @@ vim.lsp.config("basedpyright", {
 	},
 })
 
--- qml
-vim.lsp.config("qmlls", {
-	cmd = { "qmlls", "-E", "-I", "/home/alice/.config/quickshell/" }, -- some distros ship it as `qmlls6`
-})
-
--- bash
 vim.lsp.config("bashls", {
 	filetypes = { "bash", "sh", "zsh" }, -- default is just { 'bash', 'sh' }
 })
 
--- tinymist, nixd, ruff, rust_analyzer: nvim-lspconfig's defaults are already correct, no override needed
--- tinymist note: if you ever open a standalone .typ file outside a git repo, its default root_dir
--- won't find one and the server won't start — fix then with a root_dir fallback, not needed today
-
--- tinymist: auto‑export PDF on save
 vim.lsp.config("tinymist", {
 	settings = {
 		exportPdf = "onSave", -- "onSave" | "onType" | "never"
 	},
 })
 
-vim.lsp.enable({ "lua_ls", "basedpyright", "ruff", "qmlls", "bashls", "nixd", "tinymist", "rust_analyzer" })
+vim.lsp.enable({ "lua_ls", "basedpyright", "ruff", "qmlls", "bashls", "nixd", "tinymist", "rust_analyzer", "nushell" })

@@ -10,6 +10,9 @@
             },
             {
                 "folderUri": "file:///home/alice"
+            },
+            {
+                "folderUri": "file:///etc/nixos"
             }
         ],
         "emptyWindows": []
@@ -52,7 +55,8 @@
             "file:///home/alice/sandbox/__python__/neural/UDL/udlbook": "__default__profile__",
             "file:///home/alice/syncthing/_210": "__default__profile__",
             "file:///home/alice/sandbox/__python__/neural/UDL": "__default__profile__",
-            "file:///etc/nixos/tree/modules": "__default__profile__"
+            "file:///etc/nixos/tree/modules": "__default__profile__",
+            "file:///etc/nixos": "__default__profile__"
         },
         "emptyWindows": {}
     },
@@ -85,7 +89,7 @@
             "editorPartMinWidth": 220,
             "titleBarHeight": 30,
             "activityBarWidth": 44,
-            "sideBarWidth": 180,
+            "sideBarWidth": 173,
             "auxiliaryBarWidth": 0,
             "statusBarHeight": 32,
             "windowBorder": false,
@@ -93,36 +97,36 @@
             "partBounds": {
                 "sideBar": {
                     "top": 34,
-                    "left": 1220,
-                    "width": 174,
-                    "height": 800
+                    "left": 1191,
+                    "width": 167,
+                    "height": 764
                 },
                 "editor": {
                     "top": 34,
                     "left": 8,
-                    "width": 1206,
-                    "height": 800
+                    "width": 1177,
+                    "height": 764
                 }
             }
         }
     },
     "windowsState": {
         "lastActiveWindow": {
-            "folder": "file:///home/alice",
-            "backupPath": "/home/alice/.config/Code/Backups/7a7d5c529e389d2801a8a479d9ef603a",
+            "folder": "file:///etc/nixos",
+            "backupPath": "/home/alice/.config/Code/Backups/96f02383a64c6d57ef29ecc4e4810a2f",
             "uiState": {
                 "mode": 1,
                 "x": 16,
                 "y": 10,
-                "width": 1440,
-                "height": 870
+                "width": 1404,
+                "height": 834
             }
         },
         "openedWindows": []
     },
     "windowSplashWorkspaceOverride": {
         "layoutInfo": {
-            "sideBarWidth": 180,
+            "sideBarWidth": 173,
             "auxiliaryBarWidth": 170,
             "workspaces": {
                 "3d81f909cd5a180b1e70da17fbd8454d": {
@@ -272,6 +276,10 @@
                 "2003637b7e05e8f71156a0d66f1f1b2c": {
                     "sideBarVisible": true,
                     "auxiliaryBarVisible": false
+                },
+                "74a043b79918d696fc78adad5c1287d0": {
+                    "sideBarVisible": true,
+                    "auxiliaryBarVisible": false
                 }
             }
         }
@@ -279,7 +287,17 @@
     "userDataProfiles": [
         {
             "location": "builtin/agents",
-            "name": "Agents"
+            "name": "Agents",
+            "useDefaultFlags": {
+                "settings": true,
+                "keybindings": true,
+                "prompts": true,
+                "mcp": true,
+                "languageModels": true,
+                "snippets": true,
+                "tasks": true,
+                "extensions": true
+            }
         }
     ]
 }
