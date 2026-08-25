@@ -3,6 +3,8 @@ vim.pack.add({
 })
 
 require("snacks").setup({
+	notifier = { enabled = false },
+	animate = { enabled = true },
 	explorer = {
 		enabled = true,
 		replace_netrw = true,
@@ -36,12 +38,11 @@ require("snacks").setup({
 				hidden = true,
 				ignored = false,
 				layout = {
-					preset = "sidebar", -- 使用侧边栏布局
-					-- preview = false, -- 关闭预览窗口，节省空间
+					preset = "sidebar",
 					layout = {
-						position = "left", -- 确保在左侧
-						width = 32, -- 设置为你想要的宽度
-						min_width = 32, -- 最小宽度，防止被意外缩小
+						position = "left",
+						width = 32,
+						min_width = 32,
 					},
 				},
 				win = {

@@ -1,12 +1,11 @@
 -- ORDER MATTERS
-
 require("defaults")
 require("maps")
 require("optimizations")
 
 require("visual.color")
 require("visual.ui")
-require("visual.noice")
+require("visual.noice") --problematic
 require("visual.diagnostics")
 require("visual.statusbar")
 require("visual.icons")
@@ -21,7 +20,6 @@ require("plugins.nvim-ufo")
 require("plugins.nvim-treesitter")
 
 require("plugins.gitsigns")
-require("plugins.nvim-autopairs")
 require("plugins.blink")
 require("plugins.toggleterm")
 
@@ -36,7 +34,11 @@ require("plugins.rainbow-delimiters")
 require("plugins.vim-matchup")
 
 require("plugins.visual-surround")
-require("plugins.mini-pairs")
 
-require("plugins.neotab")
+require("plugins.neotab") -- conflicts with luasnip
 require("plugins.luasnip")
+require("plugins.mini-pairs")
+-- require("plugins.nvim-autopairs")
+
+require("plugins.winshift")
+-- require("plugins.hover")

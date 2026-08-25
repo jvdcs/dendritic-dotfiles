@@ -89,16 +89,25 @@ function _G.Statusline.mode()
 	return pill(" " .. label .. " ", fg, bg, p.bg, STL_BG, true) .. " "
 end
 
+local function truncate(str, max_len)
+	if vim.fn.strchars(str) <= max_len then
+		return str
+	end
+	-- truncate and append ellipsis
+	return vim.fn.strpart(str, 0, max_len) .. "…"
+end
+
 function _G.Statusline.branch()
 	local text
 	if vim.b.gitsigns_head then
-		text = " " .. vim.b.gitsigns_head .. " "
+		text = vim.b.gitsigns_head
 	else
-		text = "  " .. vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. "  "
+		-- text = "  " .. vim.fn.fnamemodify(vim.fn.getcwd(), ":t") .. "  "
+		text = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
 	end
 
 	-- Rightmost pill: left cap faces inner fill, right cap faces true edge.
-	return pill(text, p.fg, p.gray04, STL_BG, p.bg, true)
+	return pill(truncate(" " .. text .. " ", 10), p.fg, p.gray04, STL_BG, p.bg, true)
 end
 
-vim.o.statusline = "%{%v:lua.Statusline.mode()%}%S%=%t %m%=%{%v:lua.Statusline.branch()%}"
+vim.o.statusline = "%{%v:lua.Statusline.mode()%}%=%t %m%=%{%v:lua.Statusline.branch()%}"

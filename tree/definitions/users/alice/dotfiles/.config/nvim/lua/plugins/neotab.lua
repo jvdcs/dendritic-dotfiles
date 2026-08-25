@@ -1,8 +1,8 @@
 vim.pack.add({ "https://github.com/kawre/neotab.nvim" })
 
 require("neotab").setup({
-	tabkey = "<Tab>", -- key that triggers tab-out, "" to disable
-	reverse_key = "<S-Tab>", -- key that triggers tab-out backwards, "" to disable
+	tabkey = "", -- key that triggers tab-out, "" to disable
+	reverse_key = "", -- key that triggers tab-out backwards, "" to disable
 	act_as_tab = true, -- if no pair to jump out of, falls back to a normal <Tab>
 	behavior = "nested", -- "nested" (jump to closest pair) | "closing" (prioritize closing pair)
 	pairs = { -- characters it will tab out of

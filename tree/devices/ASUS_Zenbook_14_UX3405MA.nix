@@ -6,28 +6,28 @@
     pkgs,
     ...
   }: {
-    imports =
-      [ (modulesPath + "/hardware/cpu/intel-npu.nix")
-        (modulesPath + "/installer/scan/not-detected.nix")
-      ];
+    imports = [
+      (modulesPath + "/hardware/cpu/intel-npu.nix")
+      (modulesPath + "/installer/scan/not-detected.nix")
+    ];
 
-    boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "vmd" "nvme" ];
-    boot.initrd.kernelModules = [ ];
-    boot.kernelModules = [ "kvm-intel" ];
-    boot.extraModulePackages = [ ];
+    boot.initrd.availableKernelModules = ["xhci_pci" "thunderbolt" "vmd" "nvme"];
+    boot.initrd.kernelModules = [];
+    boot.kernelModules = ["kvm-intel"];
+    boot.extraModulePackages = [];
 
-    fileSystems."/" =
-      { device = "/dev/disk/by-uuid/9e3817fa-fddc-4e7d-aeae-cfd6dae89f41";
-        fsType = "ext4";
-      };
+    fileSystems."/" = {
+      device = "/dev/disk/by-uuid/9e3817fa-fddc-4e7d-aeae-cfd6dae89f41";
+      fsType = "ext4";
+    };
 
-    fileSystems."/boot" =
-      { device = "/dev/disk/by-uuid/9B3C-C5DF";
-        fsType = "vfat";
-        options = [ "fmask=0022" "dmask=0022" ];
-      };
+    fileSystems."/boot" = {
+      device = "/dev/disk/by-uuid/9B3C-C5DF";
+      fsType = "vfat";
+      options = ["fmask=0022" "dmask=0022"];
+    };
 
-    swapDevices = [ ];
+    swapDevices = [];
 
     nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
     hardware.cpu.intel.npu.enable = true;

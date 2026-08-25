@@ -60,6 +60,10 @@
       "rev": "fae936abb5e0345b85c3a03ecf38525b0828b992",
       "src": "https://github.com/rebelot/heirline.nvim"
     },
+    "hover.nvim": {
+      "rev": "e73c00da3a9c87a21d2a8ddf7ab4a39824bd5d56",
+      "src": "https://github.com/lewis6991/hover.nvim"
+    },
     "indent-blankline.nvim": {
       "rev": "d28a3f70721c79e3c5f6693057ae929f3d9c0a03",
       "src": "https://github.com/lukas-reineke/indent-blankline.nvim"
@@ -231,6 +235,10 @@
     "wilder.nvim": {
       "rev": "679f348dc90d80ff9ba0e7c470c40a4d038dcecf",
       "src": "https://github.com/gelguy/wilder.nvim"
+    },
+    "winshift.nvim": {
+      "rev": "37468ed6f385dfb50402368669766504c0e15583",
+      "src": "https://github.com/sindrets/winshift.nvim"
     },
     "yazi.nvim": {
       "rev": "bc9fee91b847921f411ff2bb20eb0ceb46a5ab20",

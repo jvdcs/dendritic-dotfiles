@@ -20,6 +20,7 @@ require("luasnip").log.set_loglevel("info") -- Controls how much information Lua
 --
 
 local ls = require("luasnip")
+local nt = require("neotab")
 local s = ls.snippet
 local i = ls.insert_node
 local t = ls.text_node
@@ -28,6 +29,8 @@ local fmta = require("luasnip.extras.fmt").fmta
 vim.keymap.set({ "i", "s" }, "<Tab>", function()
 	if ls.expand_or_jumpable() then
 		ls.expand_or_jump()
+	else -- HACK: to not conflict with neotab
+		nt.tabout()
 	end
 end, { silent = true })
 
@@ -35,6 +38,8 @@ end, { silent = true })
 vim.keymap.set({ "i", "s" }, "<S-Tab>", function()
 	if ls.jumpable(-1) then
 		ls.jump(-1)
+	else -- HACK: to not conflict with neotab
+		nt.tabreverse()
 	end
 end, { silent = true })
 

@@ -7,13 +7,12 @@ require("mini.pairs").setup({
 	-- markdown = true,                                            -- handle markdown code blocks
 })
 
--- 3. Clean Native Tab-Out (Steps over closing brackets/quotes on <Tab>)
-vim.keymap.set("i", "<Tab>", function()
-	local line = vim.fn.getline(".")
-	local col = vim.fn.col(".")
-	-- Check if the character directly under/ahead of the cursor is a closer
-	if line:sub(col, col):match("[%)}%]\"'`>]") then
-		return "<Right>"
-	end
-	return "<Tab>"
-end, { expr = true, silent = true })
+-- vim.keymap.set("i", "<Tab>", function()
+-- 	local line = vim.fn.getline(".")
+-- 	local col = vim.fn.col(".")
+-- 	-- Check if the character directly under/ahead of the cursor is a closer
+-- 	if line:sub(col, col):match("[%)}%]\"'`>]") then
+-- 		return "<Right>"
+-- 	end
+-- 	return "<Tab>"
+-- end, { expr = true, silent = true })

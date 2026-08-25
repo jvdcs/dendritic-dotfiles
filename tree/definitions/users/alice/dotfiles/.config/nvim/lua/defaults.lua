@@ -2,6 +2,7 @@ vim.o.laststatus = 3
 vim.opt.termsync = true
 vim.opt.autoread = true
 vim.opt.swapfile = false -- swapfile warnings
+vim.opt.title = false -- disabled for term
 
 vim.opt.splitbelow = true
 vim.opt.splitright = true
