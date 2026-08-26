@@ -37,6 +37,8 @@
 
       feature-neovim
 
+      packageSet-games
+
       feature-vicinae
       feature-zathura
       feature-kitty

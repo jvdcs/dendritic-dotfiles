@@ -46,7 +46,7 @@ vim.lsp.config("bashls", {
 
 vim.lsp.config("tinymist", {
 	settings = {
-		exportPdf = "onSave", -- "onSave" | "onType" | "never"
+		-- exportPdf = "onSave", -- "onSave" | "onType" | "never"
 	},
 })
 

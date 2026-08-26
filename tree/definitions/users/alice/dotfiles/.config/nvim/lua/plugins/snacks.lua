@@ -7,6 +7,7 @@ require("snacks").setup({
 	animate = { enabled = true },
 	explorer = {
 		enabled = true,
+		auto_update = true,
 		replace_netrw = true,
 	},
 	picker = {

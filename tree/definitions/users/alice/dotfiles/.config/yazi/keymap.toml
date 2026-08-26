@@ -31,6 +31,7 @@ prepend_keymap = [
 
   # MY DEFAULTS
   { on = [ "<Tab>" ], run = "back",    desc = "Go back to previous directory" },
+  { on = [ "<C-i>" ], run = "back",    desc = "Go back to previous directory" },
   { on = "<Esc>", run = "escape", desc = "Exit visual mode, clear selected, or cancel search" },
   { on = [ "<C-o>" ], run = "forward", desc = "Go forward to next directory" },
   { on = [

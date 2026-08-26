@@ -5,4 +5,5 @@ require("typst-preview").setup({
 	-- open_cmd = nil,         -- Custom command to open preview, e.g. "firefox %s -P typst-preview"
 	-- port = 0,               -- Custom port (0 = random)
 	-- host = nil,             -- Custom host (0.0.0.0 not supported)
+	open_cmd = "zen %s",
 })

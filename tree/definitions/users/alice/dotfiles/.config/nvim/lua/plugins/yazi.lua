@@ -6,7 +6,7 @@ vim.pack.add({
 require("yazi").setup({
 	-- open_for_directories = true, -- true = yazi replaces netrw when you `:e` a directory
 	open_multiple_tabs = true, -- true = open all visible splits as yazi tabs
-	-- change_neovim_cwd_on_close = true, -- changes cwd if yazi exits without entering a file
+	change_neovim_cwd_on_close = true, -- changes cwd if yazi exits without entering a file
 	integrations = { -- for <C-s> inside yazi.nvim
 		grep_in_directory = function(directory)
 			Snacks.picker.grep({ cwd = directory })

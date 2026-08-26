@@ -81,7 +81,8 @@
 
     packageSet-games = {pkgs, ...}: {
       home.packages = with pkgs; [
-        osu-lazer
+        # osu-lazer
+        prismlauncher # minecraft
       ];
     };
 

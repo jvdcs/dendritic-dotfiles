@@ -58,8 +58,8 @@ require("dropbar").setup({
 		},
 	},
 	sources = {
-		path = { max_depth = 3 }, -- max path segments shown
-		treesitter = { max_depth = 3 },
+		path = { max_depth = 4 }, -- max path segments shown
+		treesitter = { max_depth = 6 },
 		lsp = { max_depth = 6 },
 		markdown = { max_depth = 3 },
 	},

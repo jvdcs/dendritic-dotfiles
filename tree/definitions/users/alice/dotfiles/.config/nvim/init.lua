@@ -41,5 +41,7 @@ require("plugins.luasnip")
 require("plugins.mini-pairs")
 -- require("plugins.nvim-autopairs")
 
-require("plugins.winshift")
+-- require("plugins.winshift")
 -- require("plugins.hover")
+
+require("plugins.yankassassin")

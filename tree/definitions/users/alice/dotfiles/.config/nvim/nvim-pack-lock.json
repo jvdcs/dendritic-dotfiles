@@ -4,6 +4,10 @@
       "rev": "0abc8f390b278c3b4aabc4c004ac8a088b65cf24",
       "src": "https://github.com/L3MON4D3/LuaSnip"
     },
+    "YankAssassin.nvim": {
+      "rev": "4074b307bec6bb8c92b59fb3544e3dc3e43fcf6d",
+      "src": "https://github.com/svban/YankAssassin.nvim"
+    },
     "base16-nvim": {
       "rev": "09944b3120451d2881dc8cfb13c85c11949f477d",
       "src": "https://github.com/RRethy/base16-nvim"
