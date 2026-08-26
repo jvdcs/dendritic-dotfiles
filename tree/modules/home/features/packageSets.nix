@@ -75,6 +75,7 @@
         easyeffects # PipeWire audio effects
         pinta # simple image editor
         aseprite # pixel editor
+        reaper # DAW
         # ardour # digital audio workstation
       ];
     };

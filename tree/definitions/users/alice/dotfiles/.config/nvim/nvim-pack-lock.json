@@ -216,6 +216,10 @@
       "rev": "cdc07ac78467a233fd62c493de29a17e0cf2b2b6",
       "src": "https://github.com/folke/tokyonight.nvim"
     },
+    "treesitter-modules.nvim": {
+      "rev": "290eec96bfc43ed28264661dd30e894a60c4b99c",
+      "src": "https://github.com/MeanderingProgrammer/treesitter-modules.nvim"
+    },
     "typst-preview.nvim": {
       "rev": "1c2e19486397be1c580b560fc50ee36abe329c46",
       "src": "https://github.com/chomosuke/typst-preview.nvim"
