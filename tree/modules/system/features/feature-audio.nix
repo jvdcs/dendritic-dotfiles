@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.feature-audio = {
+  flake.modules.nixos.feature-audio = {pkgs, ...}: {
     services.pipewire = {
       enable = true;
       wireplumber.enable = true;
@@ -16,6 +16,10 @@
         };
       };
     };
+
+    environment.systemPackages = [
+      pkgs.alsa-utils
+    ];
 
     # https://discourse.nixos.org/t/problems-adjusting-pipewire-sample-rate-nixos/43346/10
     systemd.services.mpd.serviceConfig.SupplementaryGroups = ["pipewire"];

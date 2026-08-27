@@ -54,7 +54,10 @@
       feature-bluetooth
       feature-syncthing
       feature-crabHole
+      feature-flatpak
       feature-keyd
+
+      feature-vsts
 
       # === MATH ===
       feature-lean

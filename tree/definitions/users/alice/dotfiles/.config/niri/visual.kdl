@@ -60,7 +60,8 @@ cursor {
     xcursor-size 6
 }
 output "eDP-1" {
-    mode "2880x1800@120.000"
+    mode "1920x1080@120.000"
+    // mode "2880x1800@120.000"
     scale 2
     transform "normal"
 }
@@ -95,9 +96,11 @@ layout {
     border {
         on
         width 2
-        // active-color "#86adcd"
+        // active-color "#60967d"
+        // active-color "#d1d1d1"
         active-color "#323231"
         // on
+        // inactive-color "#323231"
         inactive-color "#222221"
         urgent-color "#86adcd"
     }

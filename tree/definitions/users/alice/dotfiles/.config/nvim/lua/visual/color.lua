@@ -5,6 +5,8 @@ vim.g.colors_name = "helix-port"
 local p = require("palette")
 p:set_multi({
 	-- treesitter captures that diverge from what they'd otherwise inherit
+	{ "@spell.markdown", { fg = p.gray05, bg = p.bg, underline = false } }, -- docs text
+
 	{ "@variable", { fg = p.fg, underline = false } },
 	{ "@variable.builtin", { fg = p.fg, italic = true } },
 	{ "@variable.parameter", { fg = p.blue, italic = true } },
@@ -27,7 +29,9 @@ p:set_multi({
 	{ "CursorLineNr", { fg = p.fg } },
 	{ "CursorLine", { bg = p.gray01 } },
 	{ "CursorColumn", { bg = p.gray01 } },
+
 	{ "Visual", { fg = p.fg, bg = p.gray03 } },
+
 	{ "Search", { fg = p.fg, bg = p.gray03 } },
 	{ "IncSearch", { fg = p.bg, bg = p.fg } },
 	{ "MatchParen", { fg = p.fg, bg = p.gray04 } },

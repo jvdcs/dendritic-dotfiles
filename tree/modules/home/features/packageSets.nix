@@ -74,9 +74,12 @@
         obs-studio # streaming/recording
         easyeffects # PipeWire audio effects
         pinta # simple image editor
-        aseprite # pixel editor
+        aseprite # pixelart editor
+        # vmpk # virtual keyboard
+        # zrythm # DAW
+        # lmms # DAW
         reaper # DAW
-        # ardour # digital audio workstation
+        # ardour # DAW
       ];
     };
 
