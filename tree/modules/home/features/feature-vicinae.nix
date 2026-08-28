@@ -8,7 +8,9 @@
       inputs.vicinae.homeManagerModules.default
     ];
 
-    programs.vicinae = {
+    #set to programs.vicinae = ... for newest flake
+    #set to services.vicinae = ... for oldflake
+    services.vicinae = {
       enable = true;
       package = inputs.vicinae.packages.${system}.default;
       systemd = {

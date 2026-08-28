@@ -57,7 +57,7 @@
       feature-flatpak
       feature-keyd
 
-      feature-vsts
+      # feature-vsts
 
       # === MATH ===
       feature-lean

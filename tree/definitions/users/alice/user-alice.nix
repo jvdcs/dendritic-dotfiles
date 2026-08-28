@@ -31,7 +31,7 @@
       feature-cliphist
       feature-vscode
       feature-direnv
-      feature-emacs
+      # feature-emacs
       feature-yazi
       feature-mpd
 

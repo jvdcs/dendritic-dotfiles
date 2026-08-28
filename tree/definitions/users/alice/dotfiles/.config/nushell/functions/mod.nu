@@ -1,6 +1,6 @@
 export def dr [] {
   let answer = (input "Remove ~/.emacs.d and reinstall Doom Emacs? (y/N): ")
-  if ($answer | str trim | str lowercase) == "y" {
+  if ($answer | str trim | str downcase) == "y" {
     rm -r ~/.emacs.d
     git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
     ~/.emacs.d/bin/doom install

@@ -8,6 +8,7 @@
       user = "alice";
       enable = true;
       package = pkgs.syncthing;
+      extraFlags = ["--allow-newer-config"]; # default: [ ]
     };
   };
 }

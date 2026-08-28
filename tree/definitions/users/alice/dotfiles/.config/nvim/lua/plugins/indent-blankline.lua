@@ -17,11 +17,11 @@ local p = require("palette")
 hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
 	p:set_multi({
 		{ "RainbowRed", { fg = p.gray01 } },
-		{ "RainbowYellow", { fg = p.gray02 } },
+		{ "RainbowYellow", { fg = p.gray01 } },
 		{ "RainbowBlue", { fg = p.gray01 } },
-		{ "RainbowOrange", { fg = p.gray02 } },
+		{ "RainbowOrange", { fg = p.gray01 } },
 		{ "RainbowGreen", { fg = p.gray01 } },
-		{ "RainbowViolet", { fg = p.gray02 } },
+		{ "RainbowViolet", { fg = p.gray01 } },
 		{ "RainbowCyan", { fg = p.gray01 } },
 	})
 end)

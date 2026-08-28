@@ -70,8 +70,8 @@ y = "yank_to_clipboard"
 # p = "paste_clipboard_after"
 # P = "paste_clipboard_before"
 #
-A-N = ["search_selection", "extend_search_prev"]
-A-n = ["search_selection", "extend_search_next"]
+# A-N = ["search_selection", "extend_search_prev"]
+# A-n = ["search_selection", "extend_search_next"]
 A-W = ["move_next_long_word_start", "delete_selection"]
 A-w = ["move_prev_long_word_start", "delete_selection"]
 C-j = [
@@ -113,8 +113,8 @@ y = "yank_to_clipboard"
 # p = "paste_clipboard_after"
 # P = "paste_clipboard_before"
 #
-A-N = ["search_selection", "extend_search_prev"]
-A-n = ["search_selection", "extend_search_next"]
+# A-N = ["search_selection", "extend_search_prev"]
+# A-n = ["search_selection", "extend_search_next"]
 
 [keys.normal.space.w]
 c = ":buffer-close"

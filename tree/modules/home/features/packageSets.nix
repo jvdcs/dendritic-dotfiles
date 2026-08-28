@@ -70,15 +70,15 @@
 
     packageSet-creative = {pkgs, ...}: {
       home.packages = with pkgs; [
-        kdePackages.kdenlive # video editor
+        # kdePackages.kdenlive # video editor
         obs-studio # streaming/recording
         easyeffects # PipeWire audio effects
         pinta # simple image editor
-        aseprite # pixelart editor
+        # aseprite # pixelart editor
         # vmpk # virtual keyboard
         # zrythm # DAW
         # lmms # DAW
-        reaper # DAW
+        # reaper # DAW
         # ardour # DAW
       ];
     };
@@ -102,6 +102,7 @@
         # gocryptfs # encrypted filesystem
         # newsflash # rss reader
         google-chrome
+        firefox
         caprine # messenger
         lastfm # music tracker
       ];
