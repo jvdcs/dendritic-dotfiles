@@ -35,7 +35,7 @@ vim.opt.undofile = true -- Enable undo/redo changes even after closing and reope
 vim.opt.ignorecase = true -- Case insensitive search
 vim.opt.smartcase = true -- same thing
 
--- vim.opt.clipboard = 'unnamedplus' -- sync os and nvim clipboard
+vim.opt.clipboard = "unnamedplus" -- sync os and nvim clipboard
 vim.opt.updatetime = 1
 
 vim.opt.scrolloff = 10

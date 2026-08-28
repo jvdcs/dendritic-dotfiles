@@ -102,6 +102,7 @@
         # gocryptfs # encrypted filesystem
         # newsflash # rss reader
         google-chrome
+        fragments # torrents
         firefox
         caprine # messenger
         lastfm # music tracker

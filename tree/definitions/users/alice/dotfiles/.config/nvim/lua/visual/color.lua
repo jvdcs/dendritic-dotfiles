@@ -162,12 +162,13 @@ p:set_multi({
 	{ "DropBarMenuHoverIcon", { fg = p.bg, bg = p.fg } },
 
 	-- Gitsigns
-	{ "GitSignsAdd", { fg = p.green } },
-	{ "GitSignsChange", { fg = p.magenta } },
-	{ "GitSignsDelete", { fg = p.red } },
-	{ "GitSignsChangedelete", { fg = p.magenta } },
-	{ "GitSignsTopdelete", { fg = p.red } },
-	{ "GitSignsUntracked", { fg = p.cyan } },
+	{ "GitSignsAdd", { fg = p.green, bg = "NONE", blend = 0 } },
+	{ "GitSignsChange", { fg = p.magenta, bg = "NONE", blend = 0 } },
+	{ "GitSignsDelete", { fg = p.red, bg = "NONE", blend = 0 } },
+	{ "GitSignsChangedelete", { fg = p.magenta, bg = "NONE", blend = 0 } },
+	{ "GitSignsTopdelete", { fg = p.red, bg = "NONE", blend = 0 } },
+	{ "GitSignsUntracked", { fg = p.cyan, bg = "NONE", blend = 0 } },
+	{ "SignColumn", { bg = "NONE" } },
 
 	-- Noice
 	{ "NoicePopup", { fg = p.fg } },
