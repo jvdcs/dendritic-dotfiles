@@ -7,9 +7,9 @@ vim.pack.add({
 require("noice").setup({
 	cmdline = {
 		enabled = true,
-		-- view = "cmdline_popup", -- Changes the default 'cmdline_popup' to the classic bottom view
+		view = "cmdline_popup", -- Changes the default 'cmdline_popup' to the classic bottom view
 	},
-	messages = { enabled = false },
+	messages = { enabled = true },
 	views = {
 		hover = {
 			border = {
@@ -48,7 +48,7 @@ require("noice").setup({
 	},
 	presets = {
 		bottom_search = false,
-		command_palette = false,
+		command_palette = true,
 		long_message_to_split = true,
 		lsp_doc_border = true, -- Enables the border around hover/signature
 	},

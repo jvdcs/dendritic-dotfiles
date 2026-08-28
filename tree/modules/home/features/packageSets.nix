@@ -103,6 +103,7 @@
         # newsflash # rss reader
         google-chrome
         fragments # torrents
+        transmission_4-gtk # torrents
         firefox
         caprine # messenger
         lastfm # music tracker

@@ -26,7 +26,7 @@ _G.diagnostic_statuscol = function()
 
 	-- Diagnostic icon, colored, rendered before the number.
 	-- Reserve 1 char even when empty so the number column doesn't shift.
-	local diag_str = " "
+	local diag_str = "  "
 	if #diags > 0 then
 		local severity = diags[1].severity
 		diag_str = string.format("%%#%s#%s%%*", diag_hl[severity], diag_icons[severity])

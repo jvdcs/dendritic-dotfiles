@@ -5,7 +5,7 @@ require("optimizations")
 
 require("visual.color")
 require("visual.ui")
--- require("visual.noice") -- problematic
+require("visual.noice") -- problematic
 require("visual.diagnostics")
 require("visual.statusbar")
 require("visual.icons")
