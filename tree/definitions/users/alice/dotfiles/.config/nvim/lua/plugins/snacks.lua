@@ -3,12 +3,13 @@ vim.pack.add({
 })
 
 require("snacks").setup({
-	notifier = { enabled = false },
-	animate = { enabled = true },
+	-- statuscolumn = {enabled=true},
+	-- notifier = { enabled = true },
+	-- animate = { enabled = true },
 	explorer = {
 		enabled = true,
 		auto_update = true,
-		replace_netrw = true,
+		replace_netrw = false,
 	},
 	picker = {
 		enabled = true,

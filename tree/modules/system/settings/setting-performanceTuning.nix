@@ -13,6 +13,9 @@
         "kernel.printk" = "3 3 3 3";
         "kernel.hung_task_timeout_secs" = 10;
         "kernel.sched_migration_cost_ns" = 500000;
+
+        "fs.inotify.max_user_watches" = 524288;
+        "fs.inotify.max_user_instances" = 1024;
       };
     };
 

@@ -174,9 +174,9 @@ vim.keymap.set("n", "<leader>tep", ':w !typst compile "%" "%:r.png" --format png
 
 -- Native treesitter node objects (Nvim 0.12+, zero plugins)
 -- an = outer node, in = inner node, ]n/[n = next/prev sibling (extends an active selection)
--- vim.keymap.set({ "x", "o" }, "<M-i>", "in") -- dan/yan work too, via operator-pending
--- vim.keymap.set({ "x", "o" }, "<M-o>", "an")
--- vim.keymap.set("x", "<M-n>", "]n")
--- vim.keymap.set("x", "<M-p>", "[n")
--- vim.keymap.set("n", "<M-i>", "vin") -- start a node selection from normal mode
--- vim.keymap.set("n", "<M-o>", "van")
+vim.keymap.set({ "x", "o" }, "<M-i>", "in") -- dan/yan work too, via operator-pending
+vim.keymap.set({ "x", "o" }, "<M-o>", "an")
+vim.keymap.set("x", "<M-n>", "]n")
+vim.keymap.set("x", "<M-p>", "[n")
+vim.keymap.set("n", "<M-i>", "vin") -- start a node selection from normal mode
+vim.keymap.set("n", "<M-o>", "van")
