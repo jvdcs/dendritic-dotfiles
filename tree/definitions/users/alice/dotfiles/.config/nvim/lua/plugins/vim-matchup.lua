@@ -11,6 +11,6 @@ local p = require("palette")
 p.set("MatchParen", {
 	fg = p.fg,
 	-- bold = true,
-	bg = p.blue,
-	-- underline = true,
+	bg = p.bg,
+	underline = true,
 })

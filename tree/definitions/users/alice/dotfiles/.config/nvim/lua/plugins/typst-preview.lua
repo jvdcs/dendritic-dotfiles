@@ -6,4 +6,5 @@ require("typst-preview").setup({
 	-- port = 0,               -- Custom port (0 = random)
 	-- host = nil,             -- Custom host (0.0.0.0 not supported)
 	open_cmd = "zen %s",
+	follow_cursor = false,
 })

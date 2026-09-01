@@ -45,3 +45,4 @@ require("plugins.mini-pairs")
 -- require("plugins.hover")
 
 require("plugins.yankassassin")
+-- require("plugins.fold-cycle") -- WARN: crashes nvim

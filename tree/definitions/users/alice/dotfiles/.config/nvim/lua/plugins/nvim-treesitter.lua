@@ -13,3 +13,13 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
 	end,
 })
+
+local map = { o = "an", i = "in", n = "]n", p = "[n" }
+for key, seq in pairs(map) do
+	vim.keymap.set("n", "<M-" .. key .. ">", function()
+		vim.api.nvim_feedkeys("v" .. seq, "m", false)
+	end)
+	vim.keymap.set("v", "<M-" .. key .. ">", function()
+		vim.api.nvim_feedkeys(seq, "m", false)
+	end)
+end

@@ -19,7 +19,7 @@ require("dropbar").setup({
 		-- Ms to wait before redrawing on rapid updates
 		-- update_debounce = 32,
 		padding = { left = 1, right = 1 },
-		pick = { pivots = "asdcnjklfvbhgzxm" }, -- keys shown in pick mode
+		pick = { pivots = "asdfghjklzxcvbnm,." }, -- keys shown in pick mode
 
 		-- custom function makes dropbar appear even if the file has no treesitter support, NOTE: this is not a complex hack, this is just the edit of the actual function inside of dropbar.
 		enable = function(buf, win, _)
@@ -42,6 +42,9 @@ require("dropbar").setup({
 		preview = false, -- preview symbol in source window on hover
 		hover = true, -- highlight entry under cursor
 		entry = { padding = { left = 1, right = 1 } },
+		win_configs = {
+			border = "none",
+		},
 		-- scrollbar = { enable = true, background = true },
 		keymaps = {
 			h = "<C-w>q", -- go back / close submenu (same as default q/<Esc>)
@@ -58,9 +61,9 @@ require("dropbar").setup({
 		},
 	},
 	sources = {
-		path = { max_depth = 4 }, -- max path segments shown
+		path = { max_depth = 6 }, -- max path segments shown
 		treesitter = { max_depth = 6 },
 		lsp = { max_depth = 6 },
-		markdown = { max_depth = 3 },
+		markdown = { max_depth = 6 },
 	},
 })

@@ -66,7 +66,8 @@ output "eDP-1" {
     transform "normal"
 }
 layout {
-    // gaps 16
+    gaps 16
+    // gaps 0
     always-center-single-column
     center-focused-column "never"
     default-column-width {

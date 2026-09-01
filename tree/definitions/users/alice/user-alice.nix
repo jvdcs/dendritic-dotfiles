@@ -36,6 +36,8 @@
       feature-mpd
 
       feature-neovim
+      feature-vicinae-keyd-bridge
+      feature-rbw
 
       packageSet-games
 

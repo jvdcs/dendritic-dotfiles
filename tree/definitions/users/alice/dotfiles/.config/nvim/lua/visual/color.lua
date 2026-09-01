@@ -5,7 +5,7 @@ vim.g.colors_name = "helix-port"
 local p = require("palette")
 p:set_multi({
 	-- treesitter captures that diverge from what they'd otherwise inherit
-	{ "@spell.markdown", { fg = p.gray05, bg = p.bg, underline = false } }, -- docs text
+	{ "@spell.markdown", { fg = p.fg, bg = p.bg, underline = false } }, -- docs text
 
 	{ "@variable", { fg = p.fg, underline = false } },
 	{ "@variable.builtin", { fg = p.fg, italic = true } },
@@ -108,11 +108,12 @@ p:set_multi({
 	{ "SnacksPickerTitle", { fg = p.fg } },
 	{ "SnacksPickerInputTitle", { fg = p.fg } },
 	{ "SnacksPickerListTitle", { fg = p.fg } },
-	{ "SnacksPickerPreviewTitle", { fg = p.fg } },
+	{ "snackspickerpreviewtitle", { fg = p.fg } },
 
 	-- WhichKey UI & Background
 	{ "WhichKeyNormal", { bg = p.bg } },
 	{ "WhichKeyBorder", { link = "FloatBorder" } },
+	{ "WhichKeyValue", { fg = p.blue } },
 
 	-- nvim-notify UI
 	{ "NotifyBackground", { bg = p.bg } },

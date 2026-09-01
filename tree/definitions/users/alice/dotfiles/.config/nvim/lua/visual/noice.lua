@@ -43,7 +43,7 @@ require("noice").setup({
 			["vim.lsp.util.stylize_markdown"] = true,
 			["cmp.entry.get_documentation"] = true,
 		},
-		hover = { enabled = true },
+		hover = { enabled = false }, -- false to use native instead
 		signature = { enabled = false }, -- disabled to avoid conflict with blink
 	},
 	presets = {

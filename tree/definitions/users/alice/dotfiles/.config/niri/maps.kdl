@@ -29,9 +29,9 @@ binds {
     Super+Slash        repeat=false           { spawn-sh "vicinae vicinae://launch/files/search"; }
 
     Super+Shift+Space  repeat=false           { spawn-sh "nu ~/.config/niri/scripts/nu/custom-run.nu"; }
-    Super+Shift+N      repeat=false           { spawn-sh "nu ~/.config/niri/scripts/nu/fzf-kmux.nu"; }
     Super+E            repeat=false           { spawn-sh "nu ~/.config/niri/scripts/nu/yazi-kmux.nu"; }
-    Super+N            repeat=false           { spawn-sh "nu ~/.config/niri/scripts/nu/new-kmux.nu"; }
+    Super+N            repeat=false           { spawn-sh "nu ~/.config/niri/scripts/nu/fzf-kmux.nu"; }
+    Super+Shift+N      repeat=false           { spawn-sh "nu ~/.config/niri/scripts/nu/new-kmux.nu"; }
                 
     Super+Shift+B      repeat=false           { spawn-sh "kitty btop"; }
     Super+B            repeat=false           { spawn-sh "zen-beta"; }

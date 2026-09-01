@@ -40,6 +40,8 @@
       # ===
 
       # feature-affinitySuite
+      feature-sopsNix
+      feature-bitwarden
       feature-asusctl
 
       feature-geolocation

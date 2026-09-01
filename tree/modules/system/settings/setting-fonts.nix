@@ -29,6 +29,7 @@
           noto-fonts-color-emoji
           # newadd
           times-newer-roman
+          stix-two # for typst math
         ]
         # ++ builtins.attrValues pkgs.ioskeley-mono
         ;

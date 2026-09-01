@@ -78,7 +78,7 @@
         # vmpk # virtual keyboard
         # zrythm # DAW
         # lmms # DAW
-        # reaper # DAW
+        reaper # DAW
         # ardour # DAW
       ];
     };
