@@ -148,10 +148,10 @@ end, { desc = "Grapple open list" })
 -- end, { desc = "Grapple file 4" })
 
 -- multicursor-nvim
-S({ "n", "v" }, "<C-n>", function()
+S({ "n", "v" }, "<A-n>", function()
 	require("multicursor-nvim").matchAddCursor(1)
 end, { desc = "Add next match cursor" })
-S({ "n", "v" }, "<C-A-n>", function()
+S({ "n", "v" }, "<A-N>", function()
 	require("multicursor-nvim").matchAddCursor(-1)
 end, { desc = "Add next match cursor" })
 -- S({ "n", "v" }, "<C-s>", function() require("multicursor-nvim").matchSkipCursor(1) end, { desc = "Skip match cursor" })
@@ -191,3 +191,14 @@ vim.keymap.set("n", "<leader>ts", ":TypstPreviewStop<CR>", { desc = "Stop typst 
 vim.keymap.set("n", "<leader>tt", ":TypstPreviewToggle<CR>", { desc = "Toggle Typst preview" })
 vim.keymap.set("n", "<leader>ted", ':w !typst compile "%" "%:r.pdf"<CR>', { desc = "Export to PDF" })
 vim.keymap.set("n", "<leader>tep", ':w !typst compile "%" "%:r.png" --format png<CR>', { desc = "Export to PNG" })
+
+-- treesitter navigation
+local map = { H = "an", L = "in", J = "]n", K = "[n" }
+for key, seq in pairs(map) do
+	vim.keymap.set("n", "" .. key .. "", function()
+		vim.api.nvim_feedkeys("v" .. seq, "m", false)
+	end)
+	vim.keymap.set("v", "" .. key .. "", function()
+		vim.api.nvim_feedkeys(seq, "m", false)
+	end)
+end
