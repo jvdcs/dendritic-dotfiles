@@ -79,6 +79,7 @@
 
       # === DEs ===
       feature-niri
+      feature-labwc
       # feature-hyprland
       # feature-cosmicDe
       # ===

@@ -5,6 +5,11 @@ local S = vim.keymap.set
 
 vim.keymap.set({ "n", "v" }, "gx", "<Nop>")
 
+S({ "n", "x" }, "<A-s>", "$", { desc = "Go to first non-blank" })
+S({ "n", "x" }, "<A-a>", "^", { desc = "Go to start of line" })
+S({ "i" }, "<A-s>", "<C-o>$", { desc = "Go to start of line" })
+S({ "i" }, "<A-a>", "<C-o>^", { desc = "Go to first non-blank" })
+
 -- window navigation
 -- S("n", "<leader>wh", "<C-w>h", { desc = "Window left" })
 -- S("n", "<leader>wj", "<C-w>j", { desc = "Window down" })
