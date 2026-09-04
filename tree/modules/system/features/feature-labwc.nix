@@ -1,5 +1,5 @@
-{inputs, ...}: {
-  flake.modules.nixos.feature-labwc = {system, ...}: {
+{...}: {
+  flake.modules.nixos.feature-labwc = {...}: {
     programs.labwc.enable = true;
   };
 }

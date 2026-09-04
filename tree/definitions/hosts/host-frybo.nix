@@ -40,8 +40,9 @@
       # ===
 
       # feature-affinitySuite
-      feature-sopsNix
+      feature-inputRemapper
       feature-bitwarden
+      feature-sopsNix
       feature-asusctl
 
       feature-geolocation
@@ -79,7 +80,8 @@
 
       # === DEs ===
       feature-niri
-      feature-labwc
+      # feature-labwc
+      # feature-sway
       # feature-hyprland
       # feature-cosmicDe
       # ===

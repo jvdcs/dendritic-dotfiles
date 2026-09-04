@@ -44,12 +44,13 @@
       feature-vicinae
       feature-zathura
       feature-kitty
-      feature-ghostty
+      # feature-ghostty
       feature-btop
 
       packageSet-audioVisualizers
       packageSet-terminalTools
       packageSet-productivity
+
       packageSet-mediaTools
       packageSet-creative
       packageSet-viewers

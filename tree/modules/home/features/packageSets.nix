@@ -93,6 +93,7 @@
     packageSet-productivity = {pkgs, ...}: {
       home.packages = with pkgs; [
         syncthing # file synchronization
+        onlyoffice-desktopeditors
         rclone
         rclone-browser
         rclone-ui

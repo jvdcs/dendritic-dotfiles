@@ -14,24 +14,25 @@ image_delay = 20
 [opener]
 pdf_viewer = [
   { run = 'sioyek --new-instance %s', block = false, desc = "Sioyek", for = "unix", orphan = true },
-  { run = 'zen %s', block = true, desc = "Zen", for = "unix" },
+  { run = 'onlyoffice-desktopeditors %s', block = false, desc = "Onlyoffice", for = "unix" },
+  { run = 'zen %s', block = false, desc = "Zen", for = "unix" },
 ]
 image_viewer = [
   { run = "sh -c 'swayimg \"$1\" \"$2\"/*' -- %s1 %d1", block = false, desc = "Swayimg", for = "unix", orphan = true },
-  { run = 'zen %s', block = true, desc = "Zen", for = "unix" },
-  { run = 'pinta %s', block = true, desc = "Pinta", for = "unix" },
-  { run = 'aseprite %s', block = true, desc = "Aseprite", for = "unix" },
+  { run = 'zen %s', block = false, desc = "Zen", for = "unix" },
+  { run = 'pinta %s', block = false, desc = "Pinta", for = "unix" },
+  { run = 'aseprite %s', block = false, desc = "Aseprite", for = "unix" },
 ]
 media_viewer = [
   { run = 'mpv %s', block = false, desc = "Mpv", for = "unix", orphan = true },
-  { run = 'zen %s', block = true, desc = "Zen", for = "unix" },
+  { run = 'zen %s', block = false, desc = "Zen", for = "unix" },
 ]
 edit = [
-  { run = 'nvim %s', block = true, desc = "Neovim", for = "unix" },
-  { run = 'hx %s', block = true, desc = "Helix", for = "unix" },
-  { run = 'zen %s', block = true, desc = "Zen", for = "unix" },
+  { run = 'nvim %s', block = false, desc = "Neovim", for = "unix" },
+  { run = 'hx %s', block = false, desc = "Helix", for = "unix" },
+  # { run = 'zen %s', block = false, desc = "Zen", for = "unix" },
   { run = 'code %s', block = false, desc = "Vscode", for = "unix", orphan = true },
-  { run = 'emacsclient -c %s', block = false, desc = "Emacs", for = "unix", orphan = true },
+  # { run = 'emacsclient -c %s', block = false, desc = "Emacs", for = "unix", orphan = true },
   { run = "sh -c 'swayimg \"$1\" \"$2\"/*' -- %s1 %d1", block = false, desc = "Swayimg", for = "unix", orphan = true },
 ]
 

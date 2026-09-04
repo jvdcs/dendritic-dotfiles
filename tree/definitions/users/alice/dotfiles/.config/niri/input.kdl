@@ -20,7 +20,7 @@ input {
         // scroll-method "no-scroll"
         // natural-scroll
         // off
-        accel-speed 0.4
+        accel-speed 0.5
         accel-profile "flat"
     }
 }
